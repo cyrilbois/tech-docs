@@ -90,3 +90,13 @@ gzip / bzip2 是用来压缩单个文件， tar是用来归档。 所以tar结�
 压缩整个文件夹`tar -zcvf outputFileName folderToCompress` 
 [Examples](https://www.tecmint.com/18-tar-command-examples-in-linux/)
 > bzip2 
+
+### sftp 命令
+#### sftp登录
+```
+sftp  name@123.21.331.1
+```
+#### sftp 传文件
+```
+put  /name1.html  /name2/
+```
