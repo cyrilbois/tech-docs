@@ -1,0 +1,92 @@
+---
+Title: Centos 常用命令
+Sort: 1
+Description: Centos 常用命令
+---
+
+> 以下命令仅在centos7上验证过
+### 打开端口
+
+```
+$ sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+$ sudo firewall-cmd --reload
+```
+
+### netstat 使用
+#### 查看某个服务是否在运行
+
+```
+sudo netstat -aple | grep nginx
+```
+
+
+### 查看centos 版本
+cat /etc/centos-release
+**设置环境变量**
+
+```
+export KAFKA_HOME=/home/osboxes/kafka_2.10-0.10.0.1
+echo $KAFKA_HOME
+```
+### 磁盘空间
+
+```
+df -h
+```
+```
+free
+```
+### 查看目录所占空间大小
+
+```
+du -smh *
+```
+### grep 搜索文件
+**指定的文件类型中查找**
+当前子目录中查找： `grep -r abcd *.properties` 当前子目录递归查找含有abcd 的*.properties 文件
+指定目录及子目录中查找：`grep -r 3306 /home/okchem/storage92g/srm/ ` 
+
+### 拷贝整个文件夹
+```
+cp -avr /home/vivek/letters /usb/backup
+```
+### 用户和组
+> /etc/group file that lists all users groups  可以使用cut命令列出来`cut -d: -f1 /etc/group`
+
+**查看当前用户的group:	** `$ groups`
+**查看用户的group:	** `$ groups root` `id -Gn root`
+**添加用户到组:	** `$ sudo usermod -a -G osboxes nginx` 添加用户nginx到组osboxes  `usermod -a -G <groupname> username` 添加完成请用`groups <username> ` 来验证
+**获取组的所有用户:	** `getent group kibana`
+
+其他有用资源： [CentOS7之新建用户与SSH登陆](https://segmentfault.com/a/1190000004141370)
+### 文件权限
+#### 修改文件[夹]owner
+chown 代表change owner；`chown --help` 提供了更详细的信息
+```
+sudo chown -R okchem:root /ebs
+```
+#### 修改文件[夹]访问权限
+chmod 代表change mode; 
+例如：`chmod 644 important.txt` owner可读可写,group可读，others可读
+> First position refers to the user. Second refers to the group of the user, and the third refers to all others.4 = read 2 = write 1 = execute
+
+### PS 命令
+#### 查看java进程 `ps -ef|grep java`
+#### 产看进程的详细信息 `ps -auxwe | grep subscribe`
+
+### 命令行快捷键
+**CTRL-a** 光标移至行首
+**CTRL-e** 光标移至行尾
+**CTRL-u** 删除整行
+**CTRL-h**	删除光标前字符
+
+### gzip / gunzip
+ 压缩单个文件 `gzip fileName` 压缩后的名字=原文件名字加上后缀.gz
+ 解压缩单个文件`gunzip filename` 或者 `gzip -d filename`
+gzip 不能用来压缩整个文件夹至一个.gz 文件。压缩整个文件夹请参考targ + gzip 命令 即： `tar -z`命令。
+> gzip -r  dictName 命令会压缩整个文件夹dictName 里面的所有文件，每个文件被压缩成一个单独的*.gz 文件
+### tar 命令
+gzip / bzip2 是用来压缩单个文件， tar是用来归档。 所以tar结合gzip/bzip2 可以方便的进行整个文件夹的压缩及归档。
+压缩整个文件夹`tar -zcvf outputFileName folderToCompress` 
+[Examples](https://www.tecmint.com/18-tar-command-examples-in-linux/)
+> bzip2 
