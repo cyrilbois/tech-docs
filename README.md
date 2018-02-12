@@ -20,4 +20,5 @@ new mode 10075
 ```
 以上是权限模型改变导致的，可以通过设置 `git config core.filemode false` 绕过这个问题：
 
-
+# GITHUB Webhooks 使用
+通过github的webhooks，可以对github上的事件进行监听并且发送post请求。 可以在我们的web server端来接受post请求做出相应的操作。
