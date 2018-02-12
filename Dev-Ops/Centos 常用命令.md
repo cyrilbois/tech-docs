@@ -18,7 +18,8 @@ $ sudo firewall-cmd --reload
 ```
 sudo netstat -aple | grep nginx
 ```
-
+只查看tcp或者udp的connections需要添加-t参数: `sudo netstat -nplt` 
+> 更多更实用的netstat命令参考：[Linux netstat 命令示例](http://www.binarytides.com/linux-netstat-command-examples/)
 
 ### 查看centos 版本
 cat /etc/centos-release
