@@ -14,7 +14,7 @@ ShowOnHome: false
 ---
 Title: Tech Docs
 Description: Tech Docs collects all documents written by Joe.
-ShowOnHome: false
+ShowOnHome: false // 只用于根目录下面的文件，文件夹中的文件不能加这个属性。
 ---
 ```
 # GIT相关问题应对
