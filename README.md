@@ -8,7 +8,15 @@ ShowOnHome: false
 - 文件名不要出现‘.’
 - 尽量使用英文文件夹；尽量使用英文文件名
 - 文件夹和文件名避免使用空格，可以使用-作为连接符
-
+- 文件的最前端定义的meta信息必须遵循如下格式
+## 文档meta信息的格式
+```
+---
+Title: Tech Docs
+Description: Tech Docs collects all documents written by Joe.
+ShowOnHome: false
+---
+```
 # GIT相关问题应对
 在linux上clone后，如果通过了chmod来修改文件夹及子目录的权限后，所有目录的文件git状态变成modified； 如果尝试用 `git diff` 查看会发现类似如下信息：
 ```
