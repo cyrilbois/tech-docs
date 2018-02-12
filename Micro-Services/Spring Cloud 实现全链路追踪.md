@@ -2,7 +2,7 @@
 Title: Spring Cloud 微服务解决方案
 Description: Spring Cloud 实现微服务注册发现, 服务路由, 负载均衡, 分布式链路调用跟踪, 跨服务日志追踪, 服务监控
 ---
-##Spring Cloud Netflix / Nodejs
+## Spring Cloud Netflix / Nodejs
 尝试使用Spring Cloud Netflix 加 Nodejs 技术栈混合搭建微服务。 （示例并无任何业务意义，只为做演示）
 > 此库为https://github.com/choelea/spring-cloud-netflix 的演进版，在此基础上增加了全链路跟踪，服务监控及跨服务日志跟踪
 **代码：** https://github.com/choelea/spring-cloud-nodejs/
@@ -15,7 +15,7 @@ Description: Spring Cloud 实现微服务注册发现, 服务路由, 负载均�
 6. 跨服务日志跟踪
 7. 服务监控
 
-###  相关版本依赖
+### 相关版本依赖
 **Spring Boot：** 1.5.9.RELEASE
 **Spring Cloud: ** Edgware.RELEASE
 **Nodejs：**  v8.9.1  (本机是v8.9.1的，没有在其他版本上做测试)

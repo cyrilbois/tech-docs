@@ -2,10 +2,10 @@
 Title: Spring Cloud Netflix 加 Nodejs 技术栈混合搭建微服务
 Description: Spring Cloud Netflix 加 Nodejs 技术栈混合搭建微服务
 ---
-##Spring Cloud Netflix / Nodejs
+## Spring Cloud Netflix / Nodejs
 尝试使用Spring Cloud Netflix 加 Nodejs 技术栈混合搭建微服务。 （示例并无任何业务意义，只为做演示）
 **代码：** https://github.com/choelea/spring-cloud-netflix/  **ref：** tags/micros-service-hybrid-demo
-###  相关版本依赖
+### 相关版本依赖
 **Spring Boot：** 1.5.4.RELEASE
 **Spring Cloud: ** Dalston.SR1
 **Nodejs：**  7.2.0  (本机是7.2.0的，没有在其他版本上做测试)
@@ -20,7 +20,7 @@ Description: Spring Cloud Netflix 加 Nodejs 技术栈混合搭建微服务
 
 ## 程序运行
 按照上面的顺序依次运行。  Spring Boot的程序运行：`mvn spring-boot:run` ; nodejs 程序运行：`npm start` 
-###查看服务注册情况： 
+### 查看服务注册情况： 
 打开http://localhost:8761/
 ![eureka 服务](http://img.blog.csdn.net/20170701224809235?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 instance信息的获取主要通过下面的链接：
