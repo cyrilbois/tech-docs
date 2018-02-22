@@ -1,6 +1,6 @@
 ---
-Title: Tech Docs
-Description: Tech Docs collects all documents written by Joe.
+Title: 旧书 Tech. Markdown 文档编辑规范及约定
+Description: 旧书 Tech. Markdown 文档编辑规范及约定
 ShowOnHome: false
 ---
 在线查阅请访问 [旧书 Tech. Docs 官网](http://tech.jiu-shu.com)
