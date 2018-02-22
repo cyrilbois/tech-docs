@@ -61,7 +61,13 @@ git commit --amend // 将当前的staged的修改合并到上次commit，并打�
 git commit --amend -m "New commit message" // 将当前的staged的修改合并到上次commit，并实用新的Message
 ```
 > 使用Interactive Rebasing/squash也可以达到合并的效果，区别就是一个是事先（commit 前）就合并，一个是事后（commit 后）合并。
-
+### 放弃修改
+放弃已经stage的修改，如果确定不再需要全部修改可以使用命令
+```
+git reset --hard // 丢掉所有的修改
+git clean -fd    // 移除所有untrack的文件和文件夹 
+``` 
+> git clean -fd 中 -f means force, -d means 'remove directories'
 ### 切换分支
 > 切换分支前必须保证工作空间是干净的。（没有未提交的修改和新增）
 
