@@ -7,6 +7,11 @@ Description: 阐述如何使用npm发布自己的Package
 
 参考[官方指导](https://docs.npmjs.com/getting-started/publishing-npm-packages)
 
+简洁总结如下步骤：
+1. 创建/添加 npm 包仓库的用户到本地，如果已经有用户直接使用命令 `npm login`,  通过`npm whoami` 查看当前用户
+2. 检查package.json 内容，编写README.md， 发布 `npm publish`
+
+> 发布前注意npm的镜像，国内很多由于网络问题会设置淘宝的镜像，发布前记得切换到https://registry.npmjs.org， 关于NPM的源可以参考文章：[https://registry.npmjs.org](https://registry.npmjs.org)
 # 问题收集
 
 ## 问题1 Incorrect username or password
