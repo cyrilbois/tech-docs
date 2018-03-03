@@ -1,3 +1,8 @@
+---
+Title: Git 常用命令
+Description: Git 常用的命令，使用命令，让效率更高
+...
+
 ## 帮助命令
 
 ```
@@ -16,6 +21,19 @@ git config --global --list // 列出全局配置项
 配置内容保存在当前**用户**目录下的.gitconfig文件中
 
 ## 本地命令
+### 设置邮箱
+##### 设置全局邮箱
+方式一： 运行命令： `git config --global user.email "joe.lea@foxmail.com"`
+方式二:   编辑文件 .gitconfig, 一般在用户目录下，上面的命令运行后也同样会修改这个文件
+```
+[user]
+name =xiaoming
+email = xiaoming@qq.com
+```
+##### 设置项目的提交邮箱
+编辑文件 .git/config 即可
+> github 项目只有设置了提交者的邮箱，才会在contibutors中you展示。 比如：https://github.com/choelea/markdown-cms/graphs/contributors
+
 ### 初始化
 方式一：
 ```
