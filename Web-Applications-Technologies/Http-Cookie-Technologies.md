@@ -2,6 +2,8 @@
 Title: Http Cookie 探索
 Description: 深入了解测试Http Cookie相关; Cookie的设置，domain path等的作用
 ---
+Meta 信息不见了
+
 参考：
 http://blog.csdn.net/lijing198997/article/details/9378047
 http://stackoverflow.com/questions/1062963/how-do-browser-cookie-domains-work
@@ -18,7 +20,8 @@ Cookie with Domain=example.com will not be available for anotherexample.com
 ### Tomcat Java Web App通过服务端来设置浏览器cookie
 服务端在请求的返回中向客户端的浏览器添加cookie。 
 > 示例的服务的context path 为/bee
-```java
+
+```
 @RequestMapping(value = "/cookietest", headers = "Accept=image/**", method = RequestMethod.GET)
 public ResponseEntity<?> cookieTest(final HttpServletRequest request,HttpServletResponse response) {
 	Cookie cookie1 = new Cookie("cookie-1",UUID.randomUUID().toString());
@@ -40,7 +43,9 @@ public ResponseEntity<?> cookieTest(final HttpServletRequest request,HttpServlet
    	return ok();
 }
 ```
+
 ### 测试一
+
 请求 http://diaoyouyun.com/bee/cookietest 如下：
 ![cookietest](http://img.blog.csdn.net/20170211201037340?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
@@ -56,6 +61,7 @@ public ResponseEntity<?> cookieTest(final HttpServletRequest request,HttpServlet
  2. 显示设置domain，只有设置正确的情况，cookie才会被浏览器接受
 
 ### 测试二
+
 > 测试前清空相关站点的cookie
 
 通过请求：http://www.diaoyouyun.com/bee/cookietest 来设置cookie
