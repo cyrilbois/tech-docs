@@ -1,6 +1,6 @@
 ---
-Title: 利用Spring Boot Oauth2 来熟悉oauth2 之 - Authorization Code Grant
-Description: 利用Spring Boot Oauth2 来熟悉oauth2 之 - Authorization Code Grant
+title: 利用Spring Boot Oauth2 来熟悉oauth2 之 - Authorization Code Grant
+description: 利用Spring Boot Oauth2 来熟悉oauth2 之 - Authorization Code Grant
 ---
 ### 参考文献
 

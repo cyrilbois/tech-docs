@@ -1,6 +1,6 @@
 ---
-Title: Windows 常用命令 
-Description: 收集Windows中常用的命令包括：设置环境变量; 查看服务; 查看进程; 列出文件夹名字等;
+title: Windows 常用命令 
+description: 收集Windows中常用的命令包括：设置环境变量; 查看服务; 查看进程; 列出文件夹名字等;
 ---
 ## 设置环境变量
 doc 窗口设置环境变量

@@ -1,6 +1,6 @@
 ---
-Title: Shell 脚本学习笔记
-Description: Shell 学习笔记
+title: Shell 脚本学习笔记
+description: Shell 学习笔记
 ---
 
 ### 括号的使用说明

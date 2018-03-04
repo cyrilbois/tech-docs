@@ -1,6 +1,6 @@
 ---
-Title: 使用ELK来做日志归总
-Description:  阐述使用ELK来做日志归总
+title: 使用ELK来做日志归总
+description:  阐述使用ELK来做日志归总
 ---
 
 # ELK 初探

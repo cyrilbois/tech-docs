@@ -1,6 +1,6 @@
 ---
-Title: Nginx 问题收集
-Description: Nginx 使用问题收集
+title: Nginx 问题收集
+description: Nginx 使用问题收集
 ---
 
 总计收集在使用Nginx过程中遇见的问题。

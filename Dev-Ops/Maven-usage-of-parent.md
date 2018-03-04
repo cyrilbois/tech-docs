@@ -1,6 +1,6 @@
 ---
-Title: Maven父子工程的搭建
-Description: 总结通过maven创建父子工程的方式。
+title: Maven父子工程的搭建
+description: 总结通过maven创建父子工程的方式。
 ---
 尝试dubbo+spring的同时，总结下通过maven创建父子工程的方法。（不考虑unit test）
 ## 版本

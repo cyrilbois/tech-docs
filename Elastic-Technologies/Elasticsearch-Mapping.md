@@ -1,6 +1,6 @@
 ---
-Title: Elasticsearch 自定义Mapping
-Description: Elasticsearch 自定义Mapping
+title: Elasticsearch 自定义Mapping
+description: Elasticsearch 自定义Mapping
 ---
 ## Mapping 定义
 前面有一个篇简单的关于mapping的博客，当时是基于2.4 版本。 elastic技术栈在最近很活跃，目前版本已经更新至5.x。5.x有了比较大的变化。2.4 版本的定义在5.x上大部分已经失去了意义。（比如：[5.x已经不再支持string 类型](https://www.elastic.co/guide/en/elasticsearch/reference/5.0/string.html)）

@@ -1,6 +1,6 @@
 ---
-Title: Metricbeat 的使用
-Description: 通过Metricbeat 来统计并展示系统的信息 cpu， 内存等
+title: Metricbeat 的使用
+description: 通过Metricbeat 来统计并展示系统的信息 cpu， 内存等
 ---
 ### 目标
 统计并展示系统的信息 cpu， 内存等 (当然metricbeat能收集的信息种类还很多)

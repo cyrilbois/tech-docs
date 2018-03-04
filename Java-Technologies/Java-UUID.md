@@ -1,6 +1,6 @@
 ---
-Title: Java 短ID 随机字符串
-Description: Java 短ID 随机字符串
+title: Java 短ID 随机字符串
+description: Java 短ID 随机字符串
 ---
 使用apache common的lib 包。 用1000,0000 次测试，无重复字符串。
 

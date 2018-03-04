@@ -1,7 +1,7 @@
 ---
-Title: Centos 常用命令
-Sort: 1
-Description: Centos 常用命令
+title: Centos 常用命令
+sort: 1
+description: Centos 常用命令
 ---
 
 > 以下命令仅在centos7上验证过

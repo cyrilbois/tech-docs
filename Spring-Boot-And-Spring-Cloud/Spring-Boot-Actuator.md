@@ -1,6 +1,6 @@
 ---
-Title: Spring Boot Actuator
-Description: Spring Boot Actuator
+title: Spring Boot Actuator
+description: Spring Boot Actuator
 ---
 # 监控和管理 - Spring Boot Actuator
 
