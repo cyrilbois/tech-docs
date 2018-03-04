@@ -1,6 +1,6 @@
 ---
-Title: Git 常用命令
-Description: Git 常用的命令，使用命令，让效率更高
+title: Git 常用命令
+description: Git 常用的命令，使用命令，让效率更高
 ...
 
 ## 帮助命令
@@ -75,6 +75,7 @@ git diff // 查看unstage状态下的文件的修改内容，staged的无法查�
 ```
 ### 合并到上次提交
 ```
+git add . // 将修改的文件 stage
 git commit --amend // 将当前的staged的修改合并到上次commit，并打开编辑器修改commit
 git commit --amend -m "New commit message" // 将当前的staged的修改合并到上次commit，并实用新的Message
 ```
@@ -171,9 +172,10 @@ git rebase -i // 列出所有未push的commit，注意是倒序
 将第二个commit（435d22b）修改为:`pick 435d22b ...` 即将这个commit压缩至上面的commit，并放弃当前的commit message。
 > 有些公司会很强调squash。 git估计本地多次提交防止丢失，所以git的commit有可能会很多；而svn的commit就意味着修改可以被其他用户拉取到， 所以svn的每一次commit都要保证系统可以运行，svn的commit会偏少。svn的代码更新时间取决于文件多少和大小；git的代码拉取时间取决于commit的多少。所以。。。是每次提交尽量合理依然很重要，squash/Ineractive Rebasing 很实用。
 
-## Changing a remote's URL
+## Changing remote URL
 repo换了名字，或者之前是https clone下来的，现在想换成ssh；这些情况都面临着修改远程的URL。
 ```
+git remote -v // 查看当前的地址
 git remote set-url origin git@github.com:choelea/tech-docs.git
 ```
 > https的URL一般来说push代码是需要用户明和密码；而ssh的不需要。
