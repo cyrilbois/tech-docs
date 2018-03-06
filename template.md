@@ -21,19 +21,19 @@ showOnHome: false
 
 ## 快捷键
 
- - Cmd-'	"toggleBlockquote"
- - Cmd-B	加粗
- - Cmd-E	"cleanBlock"
- - Cmd-H	"toggleHeadingSmaller"
- - Cmd-I	斜体
- - Cmd-K	"drawLink"
- - Cmd-L	"toggleUnorderedList"
- - Cmd-P	"togglePreview"
- - Cmd-Alt-C	"toggleCodeBlock"
- - Cmd-Alt-I	"drawImage"
- - Cmd-Alt-L	"toggleOrderedList"
- - Shift-Cmd-H	"toggleHeadingBigger"
- - F9	"toggleSideBySide"
- - F11	"toggleFullScreen"
+- Cmd-' 引用
+- Cmd-B	加粗
+- Cmd-E	 清除Block
+- Cmd-H	 标题Header变小
+- Cmd-I	   斜体
+- Cmd-K	  链接
+- Cmd-L	 无序列表
+- Cmd-P	 Preview
+- Cmd-Alt-C	 代码块
+- Cmd-Alt-I	 插入图片
+- Cmd-Alt-L	有序列表
+- Shift-Cmd-H  标题Header变大
+- F9	 窗口拆分
+- F11	全屏
 
 

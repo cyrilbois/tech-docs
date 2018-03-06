@@ -16,14 +16,18 @@ Data-demo 是一个Spring Boot的项目， 通过Spring Boot的CommandLineRunner
 
 数据结构采用常用的产品和类目的多对多的设计。 
 ![这里写图片描述](http://img.blog.csdn.net/20170928091707186?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
-#### Category 数据如下：
+
+**Category 数据如下：**
+
 id | code | name  
 ---|-----|----
 '1'| 'cate-1'| 'Category 1'
 '2'| 'cate-2'| 'Category 2'
 '3'| 'cate-3'| 'Category 3'
 '4'| 'cate-4'| 'Category 4'
-#### Product 数据如下
+
+**Product 数据如下**
+
 id | code | name  | price
 -- | ---- | ----- | -----
 '1'| 'p-0'| 'product 0'| '19'
@@ -54,14 +58,15 @@ id | code | name  | price
 
 最后的二十行是用来方便查询验证的。
 
-#### Product_Category
+**Product_Category**
+
 中间mapping的表格
 
 
 # Mongo 数据
 采用了 Nodejs+express+mongoose 来导入mongo的数据. 项目express-mongoose-microservice-api-boilerplate中的config/test.env来配置mongo的数据库地址。`npm install` 然后运行命令`npm run  produceTestData` 可以初始化1000,020 条产品数据到mongodb。 数据类似mysql的产品数据：
 
-#### 产品 Product
+产品 Product
 ```
 {
 	"_id": "59cb4952d44efa2eb45d4bf7",
