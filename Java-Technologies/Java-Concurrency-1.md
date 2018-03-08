@@ -3,36 +3,65 @@ title:  Java并发编程的艺术-01-并发编程的挑战
 description: Java并发编程的艺术-01-并发编程的挑战
 ...
 
-这个是一个模板, 请务必将showOnHome 修改为true
+**并发编程的目的是为了让程序运行的更快**
 
-# 欢迎使用
-本Markdown编辑器使用simplemde-plus，用它写博客，将会带来全新的体验哦：
+# 知识点汇总
+- 并非启动更多线程程序并发就最大
+- 多线程不一定就快，线程的创建和上下文切换需要成本
+- 减少上下文切换
+	- 无锁并发 - 通过ID将数据分开
+	- CAS算法； 使用Java的Atomic包
+	- 使用最少线程；避免创建不必要的线程导致太多线程等待
 
+## 死锁示例
+下面的示例一般不会出现在大家的代码中，只做展示。
+> 很多面试会有考死锁，简单来说当线程同时需要获取多个锁就很容易出现死锁
 
-- **Markdown和扩展Markdown简洁的语法**
-- **代码块高亮**
-- **图片链接和图片上传**
-- **丰富的快捷键**
+```java
+public class DeadLock {
+	public static String A = "A";
+	public static String B = "B";	
+	public static void main(String[] args) {
+		Thread t1 = new Thread(new Runnable() {			
+			@Override
+			public void run() {
+				synchronized (A) {
+					System.out.println("T1 Locked A");
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					synchronized (B) {
+						System.out.println("T1 Locked B");
+					}
+				}
+			}
+		});
+		
+		Thread t2 =new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				synchronized (B) {
+					System.out.println("T2 Locked B");
+					synchronized (A) {
+						System.out.println("T2 Locked A");
+					}
+				}
+			}
+		});
+		
+		
+		t1.start();
+		t2.start();
+	}
 
+}
+```
 
--------------------
-
-
-## 快捷键
-
-- Cmd-' 引用
-- Cmd-B	加粗
-- Cmd-E	 清除Block
-- Cmd-H	 标题Header变小
-- Cmd-I	   斜体
-- Cmd-K	  链接
-- Cmd-L	 无序列表
-- Cmd-P	 Preview
-- Cmd-Alt-C	 代码块
-- Cmd-Alt-I	 插入图片
-- Cmd-Alt-L	有序列表
-- Shift-Cmd-H  标题Header变大
-- F9	 窗口拆分
-- F11	全屏
+## 避免死锁的出现
+- 避免一个线程同时获取多个锁
+- 
 
 
