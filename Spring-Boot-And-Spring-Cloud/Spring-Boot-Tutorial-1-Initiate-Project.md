@@ -1,7 +1,7 @@
 ---
 title: Spring Boot开发 web 应用 - 01 创建项目
 description: Spring Boot 开发web 应用 - 01 创建项目; 多种方式创建项目
----
+...
 Spring Boot非常适合Web应用程序开发。使用spring-boot-starter-web模块快速启动和运行。 其中使用嵌入式Tomcat，Jetty或Undertow轻松创建自包含的HTTP服务器
 
 Spring Boot支持多种方式来创建一个项目：
@@ -35,7 +35,12 @@ public class HomePageController {
 目录结构如下：
 ![这里写图片描述](http://img.blog.csdn.net/20170613091118932?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
+## 运行测试
 运行SpringBootApplication主程序；访问http://localhost:8080验证。 截止目前，没有任何定制的情况下，我们可以看到Awesome 的模板页面。
-
+### Spring Boot App 运行方式
+有以下方式运行，具体请参考：[Spring Boot应用的后台运行配置](http://blog.didispace.com/spring-boot-run-backend/)
+* 运行Spring Boot的应用主类
+* 使用Maven的Spring Boot插件mvn spring-boot:run来运行
+* 打成jar包后，使用java -jar运行  (可以使用`-Dserver.port` 来在运行时修改端口; 比如：`java -jar -Dserver.port=9999 boot.jar`)
 ## github repo
 [spring-boot-trail-static-content](https://github.com/choelea/spring-boot-trail-static-content.git)   tags/ootb

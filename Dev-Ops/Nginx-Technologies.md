@@ -1,9 +1,35 @@
 ---
 title: Nginx 问题收集
 description: Nginx 使用问题收集
----
+...
 
-总计收集在使用Nginx过程中遇见的问题。
+收集在使用Nginx过程中遇见的问题。
+
+# 知识积累
+## 负载均衡
+平均负载示例如下; 以下配置必须保证两个实例都正常运行在，因为这个配置并不会failover。
+```
+upstream backend {
+        server 127.0.0.1:8080;
+        server 127.0.0.1:8081;
+}
+server {
+        listen 80;
+        server_name auth.jiu-shu.com;
+
+        location / {
+            proxy_redirect off;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://backend;
+            client_max_body_size    10m;
+        }
+    }
+```
+> 上例中的8080 和 8081 端口都是Spring Boot的app。由于Java 是多线程的程序，在同一个虚拟机上运行多个实例并非最佳实践；这里只是方便测试。
+
+# 问题收集
 
 ### 反向代理后request的host和schema和浏览器请求不一致
 反向代理后

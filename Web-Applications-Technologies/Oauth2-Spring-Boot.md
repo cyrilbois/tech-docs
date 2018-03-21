@@ -50,7 +50,8 @@ Chrome打开http://localhost:8080， 并打开开发者工具，选中'Preserve 
  - Authorization Server： 集中授权服务器，负责验证access token
 
 ### 流程分解
-#### 1. 请求资源服务首页：http://localhost:8080/    Response 302 ：
+#### 1. 请求资源服务首页
+请求资源首页：http://localhost:8080/    Response 302 ：
 
 ```
 ...
@@ -60,7 +61,8 @@ Set-Cookie:JSESSIONID=8C24D287C93ECDE88C3D4BD7410668FB;path=/;HttpOnly
 ...
 ```
 
-#### 2.  跳转至登录页面：http://localhost:8080/login　　
+#### 2.  跳转至登录页面
+跳转至登录：http://localhost:8080/login　　
  **Request Headers:** `SESSIONID=8C24D287C93ECDE88C3D4BD7410668FB` **Reponse Headers:** `Location:https://www.facebook.com/dialog/oauth?client_id=233668646673605&redirect_uri=http://localhost:8080/login&response_type=code&state=undAFm`
 #### 3. 页面将跳转至facebook,开始Authorization Code Grant的流程, 对应流程图中的步骤(A)
  **https://www.facebook.com/dialog/oauth?client_id=233668646673605&redirect_uri=http://localhost:8080/login&response_type=code&state=undAFm**
