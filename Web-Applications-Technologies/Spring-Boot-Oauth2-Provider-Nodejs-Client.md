@@ -16,6 +16,12 @@ http
             	.antMatchers(checkTokenPath).access(configurer.getCheckTokenAccess())
 ```
 
+# 运行测试
+## 配置Hosts
+为了更方便的区分，需要配置如下hosts：
+```
+127.0.0.1  auth.server.com  client.node.com  client.springboot.com
+```
 
 
 
