@@ -1,17 +1,17 @@
 ---
 title: 使用ELK来做日志归总
 description:  阐述使用ELK来做日志归总
----
+...
 
 # ELK 初探
-ELK实时日志分析平台 初次尝试。
+ELK实时日志分析平台 初次尝试。 ELK 的多种架构请参考文章: [漫谈ELK在大数据运维中的应用](https://blog.csdn.net/lively1982/article/details/50678657)
 ## 平台
-CentOS 7 
-Oracle JDK 8
-Kibana 4.5.2
-Elaticsearch 2.3.4
-logstash 2.3.4
-filebeat 1.2.3
+* CentOS 7 
+* Oracle JDK 8
+* Kibana 4.5.2
+* Elaticsearch 2.3.4
+* logstash 2.3.4
+* filebeat 1.2.3
 查看version command： `filebeat --version`
 ## 系统架构图
 ![这里写图片描述](http://img.blog.csdn.net/20160712164702664)

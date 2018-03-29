@@ -1,7 +1,7 @@
 ---
 title: Spring Boot 开发web 应用 - 03 Spring Framework 回顾
 description: Spring Boot 开发web 应用 - 03 Spring Framework 回顾
----
+...
 ## 回顾Spring Framework
 
 [Overview of Spring Framework](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/overview.html)
@@ -16,7 +16,7 @@ description: Spring Boot 开发web 应用 - 03 Spring Framework 回顾
 结合[Overview of Spring Framework](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/overview.html) 来更好的理解 Spring Framework。
 
 ### 关于依赖的理解
-####Example
+#### Example
 module A 中有类引用了Module B 中的class。 A依赖B吗（A -> B） ?
 大部分的情况是这个样子的。。。
 打开两节的项目，我们可以看到spring-boot-starter-web 帮助我们引入了如下的module： 

@@ -1,7 +1,7 @@
 ---
 title: Spring Boot 开发web 应用 - 02 探究竟
 description: 探索Spring Boot的实现原理
----
+...
 进一步去了解Spring Boot的实现原理
 # Look Under The Hood
 ### 引入了哪些jar 文件
@@ -32,6 +32,9 @@ description: 探索Spring Boot的实现原理
 可以从上面看到引入了嵌入式的tomcat；在IDE里面去查询对应的jar文件，spring-boot-starter-* 的jar文件并没有任何的java代码，只是将相关依赖集合起来提供一站式服务。
 
 > Starter POMs are a set of convenient dependency descriptors that you can include in your application. You get a one-stop-shop for all the Spring and related technology that you need, without having to hunt through sample code and copy paste loads of dependency descriptors. For example, if you want to get started using Spring and JPA for database access, just include the spring-boot-starter-data-jpa dependency in your project, and you are good to go. [Spring Boot Starter POM.](http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#using-boot-starter-poms)
+
+### spring-boot-autoconfigure 
+Spring-Boot的很多便利之处就在于，你只需要引入相应的依赖， 无需过多的配置，就可以按照约定研发业务功能。 比如， 你无需配置页面文件存放位置，只需要按照约定即可。 这些便利都归功于spring-boot-autoconfigure这个包。 大部分的默认配置都在这里帮忙配置好了， 此外，借助于Java 条件型的annotation 比如： @ConditionalOnClass， 可以完成动态配置，
 
 ### Java 代码
 上一节中创建了项目之后，只有两个很简单的Java 类。
