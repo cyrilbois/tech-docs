@@ -2,7 +2,7 @@
 title: Centos 常用命令
 sort: 1
 description: Centos 常用命令
----
+...
 
 > 以下命令仅在centos7上验证过
 ### 打开端口
@@ -71,6 +71,7 @@ chmod 代表change mode;
 例如：`chmod 644 important.txt` owner可读可写,group可读，others可读
 > First position refers to the user. Second refers to the group of the user, and the third refers to all others.4 = read 2 = write 1 = execute
 
+文件权限更详细的解释可以参考：[Linux File Permissions](https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
 ### PS 命令
 #### 查看java进程 `ps -ef|grep java`
 #### 产看进程的详细信息 `ps -auxwe | grep subscribe`
