@@ -15,7 +15,7 @@ description: 基于Windows 7上来测试Mongodb和Mysql在一对多的场景下�
 Data-demo 是一个Spring Boot的项目， 通过Spring Boot的CommandLineRunner来批量动态插入1000,020 条数据。
 
 数据结构采用常用的产品和类目的多对多的设计。 
-![这里写图片描述](http://img.blog.csdn.net/20170928091707186?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![mysql-product-category](http://tech.jiu-shu.com/Database-Technologies/mysql-product-category.png)
 
 **Category 数据如下：**
 

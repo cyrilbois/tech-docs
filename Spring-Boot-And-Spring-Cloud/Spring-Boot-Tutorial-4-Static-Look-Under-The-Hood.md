@@ -13,7 +13,7 @@ Spring Boot自动配置尝试根据您添加的jar依赖关系自动配置您的
 
  #### WebMvcAutoConfiguration 类
  此类作为webmvc的配置的集合点，下面的部分子类分别实现/扩展了spring-webmvc模块的类帮助SB（Spring Boot）Web 应用快速配置。
-![WebMvcAutoConfiguration](http://img.blog.csdn.net/20170621154823802?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![WebMvcAutoConfiguration](http://tech.jiu-shu.com/Spring-Boot-And-Spring-Cloud/spring-boot-auto-configuratioin.jpg)
 
  1. WebMvcConfigurerAdapter  集合了大部分webmvc的配置；后面涉及到的时候我们会尝试定制。
  2. EnableWebMvcConfiguration @EnableWebMvc注解的替代

@@ -29,11 +29,11 @@ http://blog.csdn.net/isea533/article/details/73744497
 ## 步骤
 ### 创建父maven工程
 #### 创建普通的maven工程，参考如下截图
-![创建maven工程](http://img.blog.csdn.net/20171219152309362?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![maven-create-parent](http://tech.jiu-shu.com/Dev-Ops/maven-create-parent.png)
 #### 填写参数
-![maven工程参数](http://img.blog.csdn.net/20171219152339380?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![maven-create-parent-1](http://tech.jiu-shu.com/Dev-Ops/maven-create-parent-1.png)
 #### 删除无用文件夹
-![这里写图片描述](http://img.blog.csdn.net/20171219152441339?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![maven-create-parent-2](http://tech.jiu-shu.com/Dev-Ops/maven-create-parent-2.png)
 #### 修改pom.xml
 
  1. packaging 从jar改成pom `<packaging>pom</packaging>`
@@ -94,7 +94,7 @@ http://blog.csdn.net/isea533/article/details/73744497
 	<version>0.0.1-SNAPSHOT</version>
 </parent>
 ```
-![Spring Initiator](http://img.blog.csdn.net/20171219155554631?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![Spring Initiator](http://tech.jiu-shu.com/Dev-Ops/spring-io-initiator.png)
 
 在父工程中添加module：
 

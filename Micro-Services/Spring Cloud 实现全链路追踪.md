@@ -22,7 +22,7 @@ description: Spring Cloud 实现微服务注册发现, 服务路由, 负载均�
 ## 架构图 (Architecture for microservice)
 > 此图仅仅是服务注册的，监控和全链路跟踪未添加
 
-![架构图](http://img.blog.csdn.net/20170701223331565?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast) 
+![](http://tech.jiu-shu.com/Micro-Services/nodejs-arch-track.jpg)
 
  - **eureka-server：** Spring Boot + Cloud 技术栈搭建eureka 服务。（服务注册中心）
  - **bookmark-service：** Spring Boot 的微服务程序
@@ -72,11 +72,13 @@ spring-apigateway 作为eureka的客户端结合zuul proxy的反向代理，为�
 ### 测试nodejs
 nodejs 采用eureka-js-client 组件获取/注册微服务。这里nodejs-web只作为服务的消费方，接入eureka server，消费上游的服务并展示给客户端（浏览器）。 
 查看nodejs-web作为eureka client 获取到注册的服务信息，通过向服务直接发起request来获取数据并展示。访问：http://localhost:3000 即可看如下显示：
-![这里写图片描述](http://img.blog.csdn.net/20170701225905199?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+![test](http://tech.jiu-shu.com/Micro-Services/nodejs-arch-track-1.jpg)
 
 ### 查看服务注册情况： 
 打开http://localhost:8761/
-![eureka 服务](http://img.blog.csdn.net/20170701224809235?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![](http://tech.jiu-shu.com/Micro-Services/eureka.jpg)
+
 instance信息的获取主要通过下面的链接：
  - http://localhost:8761/eureka/apps  获取整个注册进来的服务的信息
  - http://localhost:8761/eureka/apps/{app} 获取某个服务的所有的实例信息 例如：http://localhost:8761/eureka/apps/BOOK-SERVICE  

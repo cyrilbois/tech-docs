@@ -7,11 +7,11 @@ description: Spring Boot 开发web 应用 - 03 Spring Framework 回顾
 [Overview of Spring Framework](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/overview.html)
 
 手绘了完整版的依赖关系。（发现问题还望大家指出）
-![完整版依赖](http://img.blog.csdn.net/20170615213412042?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![完整版依赖](http://tech.jiu-shu.com/Spring-Boot-And-Spring-Cloud/spring-dependency.jpg)
 
 简化版的依赖关系。
 
-![简化版依赖关系](http://img.blog.csdn.net/20170616080350111?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![简化版依赖关系](http://tech.jiu-shu.com/Spring-Boot-And-Spring-Cloud/spring-dependency-complete.jpg)
 
 结合[Overview of Spring Framework](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/overview.html) 来更好的理解 Spring Framework。
 

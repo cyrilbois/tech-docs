@@ -9,7 +9,7 @@ description: 使用插件x-pack来加强Kibana 5.x 的访问控制
  
  elastic 技术栈 的另外一个重要的角色是x-pack. 
 
-![这里写图片描述](http://img.blog.csdn.net/20170110135033163?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![elastic-charm](http://tech.jiu-shu.com/Elastic-Technologies/elastic-charm.png)
 
 ### ES安装xpack插件
 参考[安装xpack](https://www.elastic.co/guide/en/x-pack/current/installing-xpack.html)

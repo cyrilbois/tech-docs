@@ -33,7 +33,7 @@ description: 社交分享在网站中的实现的简单说明
 Facebook有调试工具：https://developers.facebook.com/tools/debug/sharing
 
 Linked in 的分享说明参考：https://developer.linkedin.com/docs/share-on-linkedin# 注意最后提到的缓存。
-![Linkedin Share](http://img.blog.csdn.net/20171215113238528?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hvZWxlYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![Linkedin Share](http://tech.jiu-shu.com/Web-Applications-Technologies/linkedin-share-cache.png)
 
 Twitter的工具参考：https://cards-dev.twitter.com/validator
 
