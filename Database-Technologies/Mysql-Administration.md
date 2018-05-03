@@ -4,6 +4,12 @@ description: Mysql 运维相关脚本收集
 ...
 mysql 版本： 5.6
 
+# 建库及用户
+创建数据库dbname及用户dbuser/dbpassword 并授权数据库全不权限给用户dbuser
+```sql
+CREATE DATABASE  IF NOT EXISTS `dbname` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */
+grant all privileges on dbname.* to dbuser@localhost identified by 'dbpassword';
+```
 # Mysql 分库备份脚本
 ```
 #!/bin/sh
