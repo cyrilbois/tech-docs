@@ -10,6 +10,16 @@ mysql 版本： 5.6
 CREATE DATABASE  IF NOT EXISTS `dbname` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */
 grant all privileges on dbname.* to dbuser@localhost identified by 'dbpassword';
 ```
+# SQL 收集
+## 快速删除树形表数据
+如何快速删除树形比如：ProductCategory 这类模型的数据：
+```sql
+SET FOREIGN_KEY_CHECKS=0;
+DELETE FROM okchem.ProductCategory where id > 0;  -- id>0 可以去除错误
+SET FOREIGN_KEY_CHECKS=1;
+```
+> 采用where条件`where id > 0`可以去除如下错误：Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.
+
 # Mysql 分库备份脚本
 ```
 #!/bin/sh
