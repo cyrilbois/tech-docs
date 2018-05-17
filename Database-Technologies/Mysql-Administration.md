@@ -20,6 +20,35 @@ SET FOREIGN_KEY_CHECKS=1;
 ```
 > 采用where条件`where id > 0`可以去除如下错误：Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.
 
+## 快速查询表的依赖
+查询表依赖那些表和查询那些表依赖此表； 
+```
+SELECT TABLE_NAME,
+       COLUMN_NAME,
+       CONSTRAINT_NAME,
+       REFERENCED_TABLE_NAME,
+       REFERENCED_COLUMN_NAME
+FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+WHERE TABLE_SCHEMA = "schemaName" 
+      AND TABLE_NAME = "TableName" 
+      AND REFERENCED_COLUMN_NAME IS NOT NULL;
+      
+SELECT TABLE_NAME,
+       COLUMN_NAME,
+       CONSTRAINT_NAME,
+       REFERENCED_TABLE_NAME,
+       REFERENCED_COLUMN_NAME
+FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+WHERE TABLE_SCHEMA = "schemaName" 
+      AND REFERENCED_TABLE_NAME = "TableName";
+```
+### 使用函数
+#### 为空的时候给默认值
+```
+select ifnull(p.isActive,0) from product
+```
+#### 转换成JSON
+
 # Mysql 分库备份脚本
 ```
 #!/bin/sh
@@ -139,3 +168,10 @@ fi
 新增表格，需要将旧的数据迁入新表。Mysql的自增字段默认行为：
 1. 取最大的(比如： 创建表后，只插入一条数据， ID直接指定为9， 那么下一条插入的数据在不指定ID值的情况下，ID是10）
 2. 删除数据后，ID的起点不会因为删除而改变。 （插入N条数据，假如这N条都是未指定ID的插入，也就是说下一个ID是N+1， 这个时候删除所有的数据，再以不指定ID的方式插入一条数据，这个时候ID是**N+1**）
+# Mysql 系统变量配置
+## windows 下安装的mysql的配置文件地址
+从服务列表`services.msc` 中找到mysql的服务，右键查看属性中的“可执行文件路径”。参考：
+https://blog.csdn.net/postnull/article/details/72455768
+## Win 7 设置表明区分大小写
+参考： https://blog.csdn.net/postnull/article/details/72455768
+在my.ini 文件中添加 `lower_case_table_names=2` 
