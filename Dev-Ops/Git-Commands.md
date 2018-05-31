@@ -53,17 +53,26 @@ git init // 初始化
 git clone 'url'
 ```
 
-### 查看状态 -> 添加新文件 -> 提交修改 
+### 查看状态 
 
 ```
 git status // Shows which files have been modified in the working directory vs Git's staging area.
+```
+
+### 添加新文件 
+```
 git add file-name  // Adds the new or newly modified file-name to Git's staging area (index).
 ```
+
+> 当很多文件修改，而且这些文件不属于同一个功能修改，想分开多个commit来提交的时候，可选择通过`git add  <file>` 先将指定的文件Stage，然后使用`git commit -m ` 来只提交stage的文件。
+
+### Commit 修改
 ```
 git commit -m "A really good commit message" // Commits all files currently in Git's staging area.
 ```
 > 上面的命令只有所有的文件都在staging area在有效。  `git commit -am "A really good commit message"` 可以省掉git add这步，不过新文件必须先add下。
 
+### 回滚 
 ```
 git add . // Add all new and newly modified files.
 git reset HEAD file-name // Unstage the specified file from stage area. 修改的内容还在
