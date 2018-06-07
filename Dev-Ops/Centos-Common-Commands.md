@@ -5,7 +5,26 @@ description: Centos 常用命令
 ...
 
 > 以下命令仅在centos7上验证过
-### 打开端口
+
+### 软件安装
+#### yum 安装
+示例如下：
+```
+sudo yum install elasticsearch
+```
+
+#### rpm  包安装
+```
+sudo rpm -ivh kibana-4.6.6-x86_64.rpm  // 安装后通过 sudo service kibana start 来启动
+```
+
+#### 查看安装程序路径
+```
+sudo rpm -ql kibana  // 查看到安装在了/opt/kibana
+```
+
+
+### 开放端口
 
 ```
 $ sudo firewall-cmd --zone=public --add-port=80/tcp --permanent

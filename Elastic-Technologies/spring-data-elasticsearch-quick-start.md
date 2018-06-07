@@ -6,15 +6,43 @@ description: 通过Spring Data Elasticsearch 实现全文检索; 通过指定 bo
 
 ## Elasticsearch 基础知识
 建立对Elasticsearch的初步的认识可以参考：[https://mp.weixin.qq.com/s/stC_xMP1n3aQ-0ZNAc3eQA](https://mp.weixin.qq.com/s/stC_xMP1n3aQ-0ZNAc3eQA)
+
+上面的有些解释只是为了方便初学者快速掌握知识。ES的索引的Type在后期ES中会逐渐消失。 
+https://www.elastic.co/guide/en/elasticsearch/reference/current/removal-of-types.html
+
 官方的中文文档参考： [https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html](https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html)
 ## 版本
  - Spring Boot： 1.4.7
  - Spring Data Elasticsearch  2.0.11
  - Elasticsearch server 2.4
 
-> 追加补充： 在随后的版本spring-data-elasticsearch 2.1.10.RELEASE 中增加了`AggregatedPage` ， 同时`org.springframework.data.elasticsearch.core.DefaultResultMapper` 也增加了响应的支持。 笔者这里针对聚合的有部分工作，在2.1.10.RELEASE种已经不在需要，或者可以更优化一些。
+> 追加补充： 在随后的版本spring-data-elasticsearch 2.1.10.RELEASE 中增加了`AggregatedPage` ， 同时`org.springframework.data.elasticsearch.core.DefaultResultMapper` 也增加了聚合的支持。 笔者这里针对聚合的有部分工作，在2.1.10.RELEASE种已经不在需要，或者可以更优化一些。
+
+## 安装与运行
+### Elasticsearch 安装及运行
+elasticsearch 是运行于java之上，可以直接下载运行。从https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-6 下载2.4.6 版本。 
+ - ZIP sha   ----- window安装包  
+ - TAR sha   ----- Mac 或者linux安装包
+ - DEB sha   
+ - RPM sha   ----- linux rpm 包可以安装成系统服务
+
+ZIP包解压的直接进入 bin 目录运行 `./elasticserach`, 运行 `./elasticsearch -d` 后台运行
+ RPM 安装后通过 `service elasticsearch start` 来启动
+ 
+### Kibana 安装及运行
+ 和es的类似，elasticsearch2.4 对应kibana的斑斑是4.6； 下载地址： https://www.elastic.co/downloads/past-releases/kibana-4-6-6 
+ > kibana 解压方式无后台运行命令，建议通过rpm方式安装`sudo rpm -ivh kibana-4.6.6-x86_64.rpm` , 以服务方式启动和停止。
+### 安装Kibana的Sense插件
+此版本下没有dev tools，需要单独安装sense插件, 进入Kibana 的安装目录 `/opt/kibana` 运行`./bin/kibana plugin --install elastic/sense`。 
 ## 代码
-https://github.com/choelea/spring-data-elasticsearch-quick-start
+https://github.com/choelea/spring-data-elasticsearch-quick-start  2.0.11.RELEASE
+```
+git clone https://github.com/choelea/spring-data-elasticsearch-quick-start
+cd spring-data-elasticsearch-quick-start/
+git checkout tags/2.0.11.RELEASE
+```
+
+> 最新的master的代码升级Spring Boot到1.5.13.RELEASE， 对应的spring-data-elasticsearch  自动升级至2.1.12.RELEASE， 在此版本基础上，DefaultResultMapper  已经支持了聚合。无需为聚合儿自定义ResultMapper。 
 ## 配置
 ```
 spring.data.elasticsearch.repositories.enabled = true
@@ -25,6 +53,8 @@ spring.data.elasticsearch.cluster-nodes : 192.168.1.99:9300
 
 当前版本下需要指定Field的type，否则也会报错。
 > 修改FieldType 会导致无法通过程序启动异常，需要手动删除后创建索引。 比如: 原有的type字段的FieldType是Long，改成String后会出现类似如下错误：`mapper [type] of different type, current_type [long], merged_type [string]`
+
+
 
 ## 创建索引
 系统启动后，创建索引和创建/更新mapping
@@ -152,3 +182,6 @@ http://localhost:8080/products/aggregation?keyword=China 可以查出总共有5�
   "first": true
 }
 ```
+
+## 高亮显示
+参考：http://tech.jiu-shu.com/Elastic-Technologies/spring-data-elasticsearch-highlight

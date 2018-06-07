@@ -77,6 +77,7 @@ git commit -m "A really good commit message" // Commits all files currently in G
 git add . // Add all new and newly modified files.
 git reset HEAD file-name // Unstage the specified file from stage area. 修改的内容还在
 git checkout -- file-name // 回滚本次修改
+git reset --hard HEAD^  // 回滚到远程仓库的版本，放弃本地所有包括commit的修改
 ```
 ### 检查修改内容
 ```
