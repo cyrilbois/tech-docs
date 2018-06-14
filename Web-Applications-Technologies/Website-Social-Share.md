@@ -31,6 +31,7 @@ description: 社交分享在网站中的实现的简单说明
 ## 注意事项
 在测试的时候很容易碰见，分享的时候没有看见缩略图，内容没更新等等问题。很可能和各自的缓存有关，也可能是你的页面的内容不对。
 Facebook有调试工具：https://developers.facebook.com/tools/debug/sharing
+https://developers.facebook.com/docs/sharing/best-practices
 
 Linked in 的分享说明参考：https://developer.linkedin.com/docs/share-on-linkedin# 注意最后提到的缓存。
 ![Linkedin Share](http://tech.jiu-shu.com/Web-Applications-Technologies/linkedin-share-cache.png)
