@@ -11,6 +11,10 @@ CREATE DATABASE  IF NOT EXISTS `dbname` /*!40100 DEFAULT CHARACTER SET utf8 COLL
 grant all privileges on dbname.* to dbuser@localhost identified by 'dbpassword';
 ```
 # SQL 收集
+## 找出有记录的表
+```
+SELECT  * FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'okchem' and table_rows > 0;
+```
 ## 快速删除树形表数据
 如何快速删除树形比如：ProductCategory 这类模型的数据：
 ```sql
@@ -22,6 +26,8 @@ SET FOREIGN_KEY_CHECKS=1;
 
 ## 快速查询表的依赖
 查询表依赖那些表和查询那些表依赖此表； 
+
+### 查询我依赖的：
 ```
 SELECT TABLE_NAME,
        COLUMN_NAME,
@@ -32,6 +38,10 @@ FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
 WHERE TABLE_SCHEMA = "schemaName" 
       AND TABLE_NAME = "TableName" 
       AND REFERENCED_COLUMN_NAME IS NOT NULL;
+```
+
+### 查询依赖‘我的’：
+```
       
 SELECT TABLE_NAME,
        COLUMN_NAME,
@@ -42,13 +52,30 @@ FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
 WHERE TABLE_SCHEMA = "schemaName" 
       AND REFERENCED_TABLE_NAME = "TableName";
 ```
-### 使用函数
-#### 为空的时候给默认值
+
+
+## 使用函数
+### 为空的时候给默认值
 ```
 select ifnull(p.isActive,0) from product
 ```
-#### 转换成JSON
+### 转换成JSON
 
+## 创建Function
+### Split delimited strings
+参考： https://blog.fedecarg.com/2009/02/22/mysql-split-string-function/
+
+```
+CREATE FUNCTION SPLIT_STR(
+  x VARCHAR(255),
+  delim VARCHAR(12),
+  pos INT
+)
+RETURNS VARCHAR(255)
+RETURN REPLACE(SUBSTRING(SUBSTRING_INDEX(x, delim, pos),
+       LENGTH(SUBSTRING_INDEX(x, delim, pos -1)) + 1),
+       delim, '');
+```
 # Mysql 分库备份脚本
 ```
 #!/bin/sh
@@ -168,7 +195,6 @@ fi
 新增表格，需要将旧的数据迁入新表。Mysql的自增字段默认行为：
 1. 取最大的(比如： 创建表后，只插入一条数据， ID直接指定为9， 那么下一条插入的数据在不指定ID值的情况下，ID是10）
 2. 删除数据后，ID的起点不会因为删除而改变。 （插入N条数据，假如这N条都是未指定ID的插入，也就是说下一个ID是N+1， 这个时候删除所有的数据，再以不指定ID的方式插入一条数据，这个时候ID是**N+1**）
-
 # Mysql 系统变量配置
 ## windows 下安装的mysql的配置文件地址
 从服务列表`services.msc` 中找到mysql的服务，右键查看属性中的“可执行文件路径”。参考：
