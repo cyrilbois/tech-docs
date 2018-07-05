@@ -30,7 +30,7 @@ ZIP包解压的直接进入 bin 目录运行 `./elasticserach`, 运行 `./elasti
  RPM 安装后通过 `service elasticsearch start` 来启动
  
 ### Kibana 安装及运行
- 和es的类似，elasticsearch2.4 对应kibana的斑斑是4.6； 下载地址： https://www.elastic.co/downloads/past-releases/kibana-4-6-6 
+ 和es的类似，elasticsearch2.4 对应kibana的版本是4.6； 下载地址： https://www.elastic.co/downloads/past-releases/kibana-4-6-6 
  > kibana 解压方式无后台运行命令，建议通过rpm方式安装`sudo rpm -ivh kibana-4.6.6-x86_64.rpm` , 以服务方式启动和停止。
 ### 安装Kibana的Sense插件
 此版本下没有dev tools，需要单独安装sense插件, 进入Kibana 的安装目录 `/opt/kibana` 运行`./bin/kibana plugin --install elastic/sense`。 
@@ -184,4 +184,4 @@ http://localhost:8080/products/aggregation?keyword=China 可以查出总共有5�
 ```
 
 ## 高亮显示
-参考：http://tech.jiu-shu.com/Elastic-Technologies/spring-data-elasticsearch-quick-start-2
+参考：http://tech.jiu-shu.com/Elastic-Technologies/spring-data-elasticsearch-highlight
