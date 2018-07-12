@@ -65,6 +65,7 @@ elasticsearchTemplate.createIndex(ProductDoc.class);
 elasticsearchTemplate.putMapping(ProductDoc.class);
 ```
 启动后可以通过`http://192.168.1.99:9200/product-index/_mapping/main/` 来查看mapping。
+> Notes：文档索引的mapping的创建，不会因为注解@Document， 而是因为ElasticsearchRepository的存在。删除ProductDocRespository，可以发现启动服务后，文档不会自动创建。 参考问题：https://stackoverflow.com/questions/29496081/spring-data-elasticsearchs-field-annotation-not-working
 ## 索引文档
 elasticsearch 是通过PUT接口来索引文档。[https://www.elastic.co/guide/cn/elasticsearch/guide/current/index-doc.html](https://www.elastic.co/guide/cn/elasticsearch/guide/current/index-doc.html)。 在使用Spring Data Elasticsearch的的时候，我们可以很方便的通过防JPA Repository的方式来操作;  `ProductDocRespository.save(ProductDoc doc)`  来索引和更新文档。 
 ```
