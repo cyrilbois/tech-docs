@@ -51,3 +51,8 @@ SEO着重于提高页面的收录率及网站在搜索引擎中的排名。
 
 ## 注意事项
 1.	慎用代码copy。 网站上的某些代码，对于网站功能方面是不会有影响的。但是可能是对搜索引擎爬虫有影响的。所以以下的代码copy是要注意的：比如：<title></title> <meta> <a href= rel=”nofollow”>
+
+
+## Google SEO 相关链接
+* Google SEO的帮助文档
+* google可以识别的元标记 https://support.google.com/webmasters/answer/79812, （google 并不认可keyword的meta信息 https://webmasters.googleblog.com/2016/11/saying-goodbye-to-content-keywords.html?hl=zh-Hans&visit_id=1-636691380412463003-1651263000&rd=1）
