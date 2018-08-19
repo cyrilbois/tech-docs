@@ -61,6 +61,10 @@ free
 ```
 du -smh *
 ```
+### 统计文件夹下面的文件数量
+```
+ls -1 | wc -l
+```
 ### grep 搜索文件
 **指定的文件类型中查找**
 当前子目录中查找： `grep -r abcd *.properties` 当前子目录递归查找含有abcd 的*.properties 文件
