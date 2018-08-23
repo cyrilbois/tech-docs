@@ -53,6 +53,10 @@ git init // 初始化
 git clone 'url'
 ```
 
+### 查看本地分支
+```
+git branch -vv  // 列出本地分支 * 标识当前分支
+```
 ### 查看状态 
 
 ```
@@ -112,6 +116,7 @@ git checkout branchename // 切换到branchname分支
 ```
 git log
 git log --oneline --graph --decorate --color
+git log -- <filepath>  // 查看某个文件的日志
 ```
 ### 移除文件
 方式一：完全通过git命令
