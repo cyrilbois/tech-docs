@@ -56,7 +56,13 @@ git clone 'url'
 ### 查看本地分支
 ```
 git branch -vv  // 列出本地分支 * 标识当前分支
+git branch -a // 列出所有分支
 ```
+### 删除本地分支
+```
+git branch -d <BranchName>
+``` 
+
 ### 查看状态 
 
 ```

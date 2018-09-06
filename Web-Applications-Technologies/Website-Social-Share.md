@@ -14,7 +14,7 @@ description: 社交分享在网站中的实现的简单说明
 
 ## 分享内容定制
 一般情况下，类似谷歌和百度的爬虫，会爬取title description （和SEO中的一样）还有图片等作为缩略展示。 因为各自算法的原因，并不是100%能保证你的title和description就会被展示出来；也不能保证你想要出现的图片就以一定会出现在缩略中。
-如果想**告知**爬虫你的网页的title description和图片等，可以通过Open Graph Meta Tags 来**指引**爬虫。 具体可以参考http://ogp.me/， 详情请去百度和google。
+如果想**告知**爬虫你的网页的title description和图片等，可以通过Open Graph Meta Tags 来**指引**爬虫。 具体可以参考[http://ogp.me/](http://ogp.me)， 详情请去百度和google。
 示例：
 
 ```
