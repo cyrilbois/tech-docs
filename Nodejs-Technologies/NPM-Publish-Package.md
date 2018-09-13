@@ -1,8 +1,12 @@
 ---
 title: 向NPM仓库发布自己的Package
 description: 阐述如何使用npm发布自己的Package
----
+...
+
 阐述如何使用npm发布自己的Package
+
+# 创建Nodejs 模块
+参考： [https://docs.npmjs.com/getting-started/creating-node-modules](https://docs.npmjs.com/getting-started/creating-node-modules)
 # Publish
 
 参考[官方指导](https://docs.npmjs.com/getting-started/publishing-npm-packages)

@@ -53,8 +53,11 @@ SEO着重于提高页面的收录率及网站在搜索引擎中的排名。
 使用xenu 这个工具可以扫面网站是否存在死链接
 
 ## 注意事项
-1.	慎用代码copy。 网站上的某些代码，对于网站功能方面是不会有影响的。但是可能是对搜索引擎爬虫有影响的。所以以下的代码copy是要注意的：比如：<title></title> <meta> <a href= rel=”nofollow”>
+1.	慎用代码copy。 网站上的某些代码，对于网站功能方面是不会有影响的。但是可能是对搜索引擎爬虫有影响的。所以以下的代码copy是要注意的：比如：`<title></title> <meta> <a href= rel=”nofollow”>`
 
+## TDK
+TDK 规则（待补充）
+> 不同的页面要避免重复的tdk，如果重复会导致google不认你设置的tdk。 [Why Won't Google Use My META Description](https://moz.com/blog/why-wont-google-use-my-meta-description)
 
 ## Google SEO 相关链接
 * Google SEO的帮助文档

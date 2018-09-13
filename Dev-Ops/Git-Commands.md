@@ -117,13 +117,19 @@ git clean -fd src/* // 移除src目录下面所有的新增的文件
 git checkout branchename // 切换到branchname分支
 ```
 
-### 日志
+### 提交历史 log日志
 
 ```
-git log
+git log  // 默认不用任何参数的话，git log 会按提交时间列出所有的更新，最近的更新排在最上面。
 git log --oneline --graph --decorate --color
 git log -- <filepath>  // 查看某个文件的日志
 ```
+#### 查看历史提交的内容差异
+```
+git log -p -2
+```
+ 我们常用 -p 选项展开显示每次提交的内容差异，用 -2 则仅显示最近的两次更新：
+
 ### 移除文件
 方式一：完全通过git命令
 ```
