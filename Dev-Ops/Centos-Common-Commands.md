@@ -65,9 +65,9 @@ du -smh *
 ```
 ls -1 | wc -l
 ```
-### grep 搜索文件
+### grep 搜索文件内容
 **指定的文件类型中查找**
-当前子目录中查找： `grep -r abcd *.properties` 当前子目录递归查找含有abcd 的*.properties 文件
+当前子目录中查找： `grep -r abcd *.properties` 当前子目录递归查找含有`abcd` 的*.properties 文件
 指定目录及子目录中查找：`grep -r 3306 /home/okchem/storage92g/srm/ ` 
 
 ### 拷贝整个文件夹

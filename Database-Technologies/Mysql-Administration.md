@@ -53,6 +53,24 @@ WHERE TABLE_SCHEMA = "schemaName"
       AND REFERENCED_TABLE_NAME = "TableName";
 ```
 
+##  删除重复的行
+
+```
+DELETE t1 FROM contacts t1
+        INNER JOIN
+    contacts t2 
+WHERE
+    t1.id < t2.id AND t1.email = t2.email; 
+```
+// 当表的记录太多，这种join很危险， 最好的方式是先查出来重复的email，再加上in的条件
+```
+DELETE t1 FROM contacts t1
+        INNER JOIN
+    contacts t2 
+WHERE
+    t1.id < t2.id AND t1.email = t2.email and t2.email in ('..',,,,,,,); 
+```
+
 
 ## 使用函数
 ### 为空的时候给默认值
