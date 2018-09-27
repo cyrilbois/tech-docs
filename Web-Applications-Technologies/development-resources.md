@@ -6,7 +6,10 @@ description: 收集相关资源
 ### 网站收集
 1. 国家旗帜图标：https://countryflags.io/
 
+### JS 库
 
+#### Bootstrap TagsInput
+http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples/
 
 ###  工具
 #### Eclise  插件
