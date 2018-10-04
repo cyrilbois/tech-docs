@@ -38,3 +38,11 @@ Linked in 的分享说明参考：https://developer.linkedin.com/docs/share-on-l
 
 Twitter的工具参考：https://cards-dev.twitter.com/validator
 
+**要想分享在Twitter上正常显示，下面的标签必须全部都加上。**
+```
+<meta property="og:type" content="website">
+<meta property="og:image" content="your page image url"/>
+<meta property="og:title" content="Title of the page"/>
+<meta property="og:description" content="Description of your page"/>
+```
+
