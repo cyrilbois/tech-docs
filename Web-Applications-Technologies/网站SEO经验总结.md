@@ -62,3 +62,11 @@ TDK 规则（待补充）
 ## Google SEO 相关链接
 * Google SEO的帮助文档
 * google可以识别的元标记 https://support.google.com/webmasters/answer/79812, （google 并不认可keyword的meta信息 https://webmasters.googleblog.com/2016/11/saying-goodbye-to-content-keywords.html?hl=zh-Hans&visit_id=1-636691380412463003-1651263000&rd=1）
+
+
+
+# 其他参考
+
+## 移动前端不得不了解的HTML5 head 头标签 
+
+https://www.cnblogs.com/happiness-mumu/p/6054852.html

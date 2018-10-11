@@ -208,6 +208,17 @@ fi
  1. 每天1点执行
  2. 每周日1点20 执行
 
+# Mysql 客户端导入数据
+## 从txt文件导入
+参考： https://blog.csdn.net/huihui520com/article/details/79080512
+https://segmentfault.com/a/1190000009333563
+需要解决问题：--secure-file-priv option so it cannot execute this statement
+```
+windows下：修改my.ini 在[mysqld]内加入secure_file_priv =
+
+linux下：修改my.cnf 在[mysqld]内加入secure_file_priv =
+```
+
 # mysql 数据迁移
 ## 自增字段问题
 新增表格，需要将旧的数据迁入新表。Mysql的自增字段默认行为：
