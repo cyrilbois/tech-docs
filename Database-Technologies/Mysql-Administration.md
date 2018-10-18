@@ -211,7 +211,14 @@ fi
 # Mysql 客户端导入数据
 ## 从txt文件导入
 参考： https://blog.csdn.net/huihui520com/article/details/79080512
+
 https://segmentfault.com/a/1190000009333563
+
+```
+use test;
+load data infile 'D:/tmp/hotwords.txt' into table hot fields terminated by ',' lines terminated by'\r\n';
+ALTER TABLE okchem.hot ADD `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
+```
 需要解决问题：--secure-file-priv option so it cannot execute this statement
 ```
 windows下：修改my.ini 在[mysqld]内加入secure_file_priv =

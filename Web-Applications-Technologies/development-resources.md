@@ -11,6 +11,9 @@ description: 收集相关资源
 #### Bootstrap TagsInput
 http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples/
 
+####  url.js
+https://github.com/jillix/url.js
+
 ###  工具
 #### Eclise  插件
 1. 资源文件（.properties 去重，多个语言并列编辑）  插件  ResourceBundle Editor
@@ -40,3 +43,7 @@ http://www.tablesgenerator.com/markdown_tables
 
 https://www.odoo.com/zh_CN/
 
+### Chrome 插件
+
+#### Run Javascript
+可以在登录后获取到会话，通过Run Javascript来爬取需要登录的API
