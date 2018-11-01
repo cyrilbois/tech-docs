@@ -129,3 +129,19 @@ get -r  folder  /home/joe/
 ```
 put  /name1.html  /name2/
 ```
+
+### crontab 命令
+创建执行任务， 添加cron job
+参考cronjob `crontab -l`
+编辑cronjob `crontab -e`
+
+```
+0 1 * * * /data/scripts/mysql-job.sh A
+20 1 * * 0 /data/scripts/mysql-job.sh I
+```
+两个cron job 分别：
+
+ 1. 每天1点执行
+ 2. 每周日1点20 执行
+
+参考：crontab 时间可以参考： https://www.cnblogs.com/intval/p/5763929.html

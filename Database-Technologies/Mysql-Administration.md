@@ -208,6 +208,7 @@ fi
  1. 每天1点执行
  2. 每周日1点20 执行
 
+参考：crontab 时间可以参考： https://www.cnblogs.com/intval/p/5763929.html
 # Mysql 客户端导入数据
 ## 从txt文件导入
 参考： https://blog.csdn.net/huihui520com/article/details/79080512
