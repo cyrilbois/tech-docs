@@ -1,6 +1,6 @@
 ---
-title:  AWS 亚马逊云解决方案
-description: AWS 亚马逊云解决方案
+title:  AWS 亚马逊云解决方案 - 动态压缩图片
+description: AWS 亚马逊云解决方案 - 动态压缩图片
 ...
 
 
