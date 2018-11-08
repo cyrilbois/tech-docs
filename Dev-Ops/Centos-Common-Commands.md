@@ -114,6 +114,9 @@ gzip 不能用来压缩整个文件夹至一个.gz 文件。压缩整个文件�
 gzip / bzip2 是用来压缩单个文件， tar是用来归档。 所以tar结合gzip/bzip2 可以方便的进行整个文件夹的压缩及归档。
 压缩整个文件夹`tar -zcvf outputFileName folderToCompress` 
 [Examples](https://www.tecmint.com/18-tar-command-examples-in-linux/)
+```
+ar -xvf videos-14-09-12.tar.bz2 // 解压
+```
 > bzip2 
 
 ### sftp 命令
@@ -136,12 +139,9 @@ put  /name1.html  /name2/
 编辑cronjob `crontab -e`
 
 ```
-0 1 * * * /data/scripts/mysql-job.sh A
-20 1 * * 0 /data/scripts/mysql-job.sh I
+0 1 * * * /data/scripts/mysql-job.sh A  // 每天1点执行
+20 1 * * 0 /data/scripts/mysql-job.sh I  // 每周日1点20 执行
 ```
-两个cron job 分别：
-
- 1. 每天1点执行
- 2. 每周日1点20 执行
-
+Cron Job的日志位置： /var/log/cron
 参考：crontab 时间可以参考： https://www.cnblogs.com/intval/p/5763929.html
+> 注意cron的时间有可能和date命令的时间不一致。`tail -f /var/log/cron` 这个命令可以查看cron的时间。 当执行`crontab -e`的时候`/var/log/cron`会有记录。
