@@ -41,8 +41,10 @@ sudo netstat -aple | grep nginx
 > 更多更实用的netstat命令参考：[Linux netstat 命令示例](http://www.binarytides.com/linux-netstat-command-examples/)
 
 ### 查看centos 版本
+```
 cat /etc/centos-release
-**设置环境变量**
+```
+### 设置环境变量 
 
 ```
 export KAFKA_HOME=/home/osboxes/kafka_2.10-0.10.0.1

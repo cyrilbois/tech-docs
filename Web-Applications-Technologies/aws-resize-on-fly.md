@@ -21,6 +21,7 @@ description: AWS 亚马逊云解决方案 - 动态压缩图片
 ## 测试图片
 http://YOUR_BUCKET_WEBSITE_HOSTNAME_HERE/300×300/blue_marble.jpg
 
+> 注意，S3 host static website的时候只支持http不支持https。 https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteEndpoints.html， 因此如果网站是https的，那么就需要采取CDN策略。
 ## 关键代码：
 
 ```javascript
@@ -81,3 +82,7 @@ module.exports = router;
 [AWS Cognito Developer Document](https://aws.amazon.com/cn/documentation/cognito/)
 
 [AWS Cognito Developer Guide](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-dg.pdf)
+
+[Set Cache Control for Entire S3 Bucket](https://faragta.com/aws-s3/set-cache-control-for-entire-s3-bucket.html)
+
+[Website Endpoints](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteEndpoints.html)

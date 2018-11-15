@@ -13,3 +13,7 @@ description: 汇总个人PPT
 
 配合AWS S3的图片服务设计：[图片服务设计.pptx](http://tech.jiu-shu.com/Work-Related/图片服务设计.pptx)
 
+# Keynote 作品
+**逍逍家的家规：**
+ -  Keynote 文件： [jiu-shu-family-rules.key](http://tech.jiu-shu.com/Work-Related/jiu-shu-family-rules.key) 
+ - PDF在线阅读： [jiu-shu-family-rules.pdf](http://tech.jiu-shu.com/Work-Related/jiu-shu-family-rules.pdf)     
