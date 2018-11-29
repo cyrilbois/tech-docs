@@ -46,7 +46,7 @@ router.get('/', (req, res) => {
 module.exports = router;
 ```
 运行demo进行测试；查看cookie中'connect.sid' 和后端log出来的id不一致，是因为cookie中的id是被加密了的。详情可以查看文档中的option - secret。
-> 可以在`/session-demo` 这里添加代码往session里面添加data，刷新这个页面来测试session的效果。
+> 可以在`/session-demo` 这里添加代码往session里面添加data，刷新这个页面来测试session的效果。默认配置创建session后，在没有往session添加东西之前，session每次都会变化。
  
 ## passport 入场
 添加依赖`npm install passport --save`，`npm install passport-local --save` 
