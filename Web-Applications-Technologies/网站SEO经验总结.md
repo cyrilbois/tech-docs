@@ -37,9 +37,11 @@ H标签在页面代码当中起着引导性作用，对于搜索引擎来说，�
 1.	<html lang="en"> 标记当前页面语言
 2.	使用标签表明当前页面内容的语言 <meta http-equiv="content-language" content="pt" />
 3.	使用 hreflang 设置语言和区域网址， 例如：
+```
 <link rel="alternate" hreflang="en" href="https://www.okchem.com/" />
 <link rel="alternate" hreflang="es" href="https://es.okchem.com/" />
 <link rel="alternate" hreflang="pt" href="https://pt.okchem.com/" />
+	```
 
 ## 图片相关 ##
 1.	对于网页中图片的高或宽大于200像素的图片，一定要在代码中看到图片地址而且写上这张图片的高宽大小，以及alt文本和 title文本。 `<img height="290" src=" " width="295" alt=" " title=" " />` alt和title可以一样，但是不能堆砌关键词。
