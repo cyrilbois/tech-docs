@@ -188,6 +188,10 @@ git fetch // 这一步必须
 git rebase // 将未push的commits 放至remote所有commits之上
 // 修复冲突 如果有冲突必须进行修复，完成后，注意提示。一般需要git add 命令来stage下 ，接着git rebase --continue 至到没有任何冲突
 ```
+## Git cherry-pick
+可以理解为”挑拣”提交，它会获取某一个分支的单笔提交，并作为一个新的提交引入到你当前分支上。 参考：[git cherry-pick的使用](https://blog.csdn.net/fightfightfight/article/details/81039050)
+
+
 
 ## Squash
 通过Interactive Rebasing来完成当前分支的commits的squash
