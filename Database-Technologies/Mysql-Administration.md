@@ -94,6 +94,17 @@ RETURN REPLACE(SUBSTRING(SUBSTRING_INDEX(x, delim, pos),
        LENGTH(SUBSTRING_INDEX(x, delim, pos -1)) + 1),
        delim, '');
 ```
+# Mysql 导出导入
+## 导出
+```
+mysqldump -uroot -proot --databases db1 db2 >/tmp/db1_and_db2.sql
+```
+示例：`mysqldump -h 192.168.1.90 -u okchem -p okchem > ./okchem20190306.sql`， 如果设置了不能从本地访问，就需要从其他机器采用制定制定host来导出。
+## 导入
+```
+shell> mysql –u root –p target_db_name < backup-file.sql
+```
+或者选定数据库，使用source命令
 # Mysql 分库备份脚本
 ```
 #!/bin/sh
