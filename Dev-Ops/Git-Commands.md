@@ -62,6 +62,11 @@ git branch -a // 列出所有分支
 ```
 git branch -d <BranchName>
 ``` 
+### 创建分支
+
+```
+git checkout -b <BranchName>  // 创建分支并切换至新建分支
+```
 
 ### 查看状态 
 
