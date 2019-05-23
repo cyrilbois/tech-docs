@@ -1,5 +1,5 @@
 ---
-title: Nginx 问题收集
+title: Nginx 知识点及问题收集
 description: Nginx 使用问题收集
 ...
 
@@ -29,6 +29,27 @@ server {
 ```
 > 上例中的8080 和 8081 端口都是Spring Boot的app。由于Java 是多线程的程序，在同一个虚拟机上运行多个实例并非最佳实践；这里只是方便测试。
 
+# 日志格式
+http://nginx.org/en/docs/http/ngx_http_log_module.html
+1.11.8及以上可以参考如下格式：
+```
+log_format logger-json-log escape=json '{' 
+	'"@timestamp":"$time_local",' 
+	'"http_host":"$http_host",' 
+	'"remote_addr":"$remote_addr",' 
+	'"request_length":$request_length,' 
+	'"request_method":"$request_method",' 
+	'"request_uri":"$request_uri",' 
+	'"request_time":$request_time,'
+	'"server_name":"$server_name",' 
+	'"status":$status,' 
+	'"user_agent":"$http_user_agent",' 
+	'"http_referer":"$http_referer",' 
+	'"upstream_response_time":$upstream_response_time,' 
+	'"upstream_addr":"$upstream_addr",' 
+	'"upstream_connect_time":$upstream_connect_time' 
+'}'; 
+```
 # 问题收集
 
 ### 反向代理后request的host和schema和浏览器请求不一致
