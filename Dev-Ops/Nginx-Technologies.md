@@ -34,7 +34,7 @@ http://nginx.org/en/docs/http/ngx_http_log_module.html
 1.11.8及以上可以参考如下格式：
 ```
 log_format logger-json-log escape=json '{' 
-	'"@timestamp":"$time_local",' 
+	'"@timestamp":"$time_iso8601",' 
 	'"http_host":"$http_host",' 
 	'"remote_addr":"$remote_addr",' 
 	'"request_length":$request_length,' 
@@ -45,9 +45,9 @@ log_format logger-json-log escape=json '{'
 	'"status":$status,' 
 	'"user_agent":"$http_user_agent",' 
 	'"http_referer":"$http_referer",' 
-	'"upstream_response_time":$upstream_response_time,' 
+	'"upstream_response_time":"$upstream_response_time",' 
 	'"upstream_addr":"$upstream_addr",' 
-	'"upstream_connect_time":$upstream_connect_time' 
+	'"upstream_connect_time":"$upstream_connect_time"' 
 '}'; 
 ```
 # 问题收集
