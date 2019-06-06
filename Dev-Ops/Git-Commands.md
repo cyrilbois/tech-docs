@@ -121,7 +121,12 @@ git clean -fd src/* // 移除src目录下面所有的新增的文件
 ```
 git checkout branchename // 切换到branchname分支
 ```
-
+### 搜索提交log
+便捷的方式找出谁提交的这行代码`git log -S "mention here line of code" [file-path]`
+示例：
+```
+git log -S "businessService.findAll()" src/main/java/net/shopxx/controller/admin/BusinessController.java
+```
 ### 提交历史 log日志
 
 ```
