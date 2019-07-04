@@ -98,8 +98,11 @@ RETURN REPLACE(SUBSTRING(SUBSTRING_INDEX(x, delim, pos),
 ## 导出
 ```
 mysqldump -uroot -proot --databases db1 db2 >/tmp/db1_and_db2.sql
+mysqldump -u <db_username> -h <db_host> -p db_name table_name > table_name.sql  // 导出某个表
 ```
-示例：`mysqldump -h 192.168.1.90 -u okchem -p okchem > ./okchem20190306.sql`， 如果设置了不能从本地访问，就需要从其他机器采用制定制定host来导出。
+示例：`mysqldump -h 192.168.1.90 -u root -p demo > ./demo.sql` 导出demo数据库。`mysqldump -h 192.168.1.90 -u root -p demo HotWordsCopy > ./HotWordsCopy.sql` 导出demo数据库中的HotWordsCopy表。
+
+> 如果设置了不能从本地访问，就需要从其他机器采用制定制定host来导出。
 ## 导入
 ```
 shell> mysql –u root –p target_db_name < backup-file.sql
