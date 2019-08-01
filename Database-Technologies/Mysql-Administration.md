@@ -240,7 +240,15 @@ windows下：修改my.ini 在[mysqld]内加入secure_file_priv =
 
 linux下：修改my.cnf 在[mysqld]内加入secure_file_priv =
 ```
+# Mysql 慢查询日志
+## 查看是否开启及日志文件路径
+使用sql `show variables like 'slow_query%';` 来查看配置。 参考：[Mysql开启慢查询-简书](https://www.jianshu.com/p/f7fed1b3b8d6)
 
+## 分析慢查询日志
+```
+mysqldumpslow -s c -t 10 /database/mysql/mysql06_slow.log  // 得到访问次数最多的10个SQL
+mysqldumpslow -s t -t 10 -g “left join” /database/mysql/mysql06_slow.log // 得到按照时间排序的前10条里面含有左连接的查询语句。
+```
 # mysql 数据迁移
 ## 自增字段问题
 新增表格，需要将旧的数据迁入新表。Mysql的自增字段默认行为：
