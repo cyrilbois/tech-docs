@@ -126,8 +126,9 @@ ar -xvf videos-14-09-12.tar.bz2 // 解压
 ```
 sftp  name@123.21.331.1
 ```
-#### sftp 下载文件夹
+#### sftp 下载文件(夹)
 ```
+get  /home/joe/test.lsq  /home/xxx/
 get -r  folder  /home/joe/
 ```
 #### sftp 上传文件
