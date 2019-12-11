@@ -14,8 +14,8 @@ URL: http://localhost:3000/auth/authenticate
 POST-Body:
 ```
 {
-    "email": "joe.li@okchem.com",
-    "password": "okchem"
+    "email": "joe.lea@foxmail.com",
+    "password": "123456"
 }
 ```
 Sample of Response:
@@ -26,7 +26,7 @@ Sample of Response:
     "success": true,
     "data": {
         "id": 104,
-        "userEmail": "joe.li@okchem.com",
+        "userEmail": "joe.lea@foxmail.com",
         "userRole": "BUYER",
         "userStatus": "ACTIVE",
         "userProfile": {

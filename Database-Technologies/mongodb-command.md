@@ -6,7 +6,7 @@ description: Mongodb常用命令
 mongodb 常用命令收集
 ## 导出JSON数据
 ```
-mongoexport -h localhost:27017 -d guide-chem -c product --limit 10000 --skip 10000 --jsonArray -u okchem -p okchem -o /home/okchem/products.json
+mongoexport -h localhost:27017 -d test -c product --limit 10000 --skip 10000 --jsonArray -u user -p password -o /home/joe/products.json
 ```
 **参数说明**
 * -h 指定host 和端口

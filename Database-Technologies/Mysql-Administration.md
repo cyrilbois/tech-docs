@@ -13,7 +13,11 @@ grant all privileges on dbname.* to dbuser@localhost identified by 'dbpassword';
 # SQL 收集
 ## 找出有记录的表
 ```
-SELECT  * FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'okchem' and table_rows > 0;
+SELECT  * FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'test' and table_rows > 0;
+```
+## 粗略找出大记录的表
+```
+SELECT TABLE_ROWS, TABLE_NAME     FROM INFORMATION_SCHEMA.TABLES      WHERE TABLE_SCHEMA = 'test' ORDER BY TABLE_ROWS DESC;
 ```
 ## 快速删除树形表数据
 如何快速删除树形比如：ProductCategory 这类模型的数据：
