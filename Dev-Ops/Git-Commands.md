@@ -161,6 +161,7 @@ git commit -m 'move index.html into web folder'
 ```
 ### ignore 文件
 编辑 .gitignore 文件
+> 如果需要ignore本来已经在git管理的文件，需要先删除提交， 然后再编辑.gitignore 将其加进去。
 
 ## SSH 命令
 windows cmd并没有自带ssh命令，我们可以通过git bash命令窗来运行这些命令。
