@@ -202,6 +202,29 @@ public class CorsFilter extends OncePerRequestFilter {
  ```
 
 
+### Nginx 反向代理实现跨域共享
+
+```
+server {
+    listen       8010;
+		#server_name example.com;
+    server_name  192.168.1.100;
+
+    location / {
+        if ($request_method = 'OPTIONS') {
+                add_header Access-Control-Allow-Origin *;
+                add_header Access-Control-Allow-Methods 'GET, POST, OPTIONS';
+                add_header Access-Control-Allow-Headers *;
+                return 204;
+        }
+        proxy_set_header   Host             $host;
+        proxy_set_header   x-forwarded-for  $remote_addr;
+        proxy_set_header   X-Real-IP        $remote_addr;
+        proxy_pass http://10.3.69.45:8010/;
+    }
+}
+```
+
 
 参考文章: 
 
