@@ -4,6 +4,9 @@ description: Mysql 运维相关脚本收集
 ...
 mysql 版本： 5.6
 
+# 安装：
+centos 默认会安装mariadb, 如果要安装mysql需要手动操作。
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-centos-7
 # 建库及用户
 创建数据库dbname及用户dbuser/dbpassword 并授权数据库全不权限给用户dbuser
 ```sql

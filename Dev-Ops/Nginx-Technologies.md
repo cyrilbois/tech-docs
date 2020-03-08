@@ -29,6 +29,52 @@ server {
 ```
 > 上例中的8080 和 8081 端口都是Spring Boot的app。由于Java 是多线程的程序，在同一个虚拟机上运行多个实例并非最佳实践；这里只是方便测试。
 
+## 反向代理的时候去掉前缀
+ 如下配置,访问`http://www.example.com/api/users/0` 将被代理至`http://localhost:3000/users/0`
+```
+server {
+        listen 80;
+        server_name www.example.com;
+
+			location /api/ {
+				proxy_set_header   Host             $host;
+				proxy_set_header   x-forwarded-for  $remote_addr;
+				proxy_set_header   X-Real-IP        $remote_addr;
+				proxy_pass http://localhost:3000/;
+			}
+}
+```
+## 使用GoAccess来实时监控
+参考： https://goaccess.io/get-started
+```
+yum install goaccess // centos 安装方式
+goaccess  /var/log/nginx/access.log -o /usr/share/nginx/html/report.html --log-format=COMBINED --real-time-html --daemonize // COMBINED适用于没有更改nginx日志格式；开启端口7890的websocket服务
+```
+>  注意开通对应的网络端口; daemonize 守护进程模式在目录`/var/log/nginx`下面执行
+`goaccess access.log -o /usr/share/nginx/html/report.html --log-format=COMBINED --real-time-html --daemonize` 是不会成功的；不报错，但是进程没起来，原因不懂。 需要指定全路径。
+
+配置nginx来访问http://*****/report.html 实时监控
+## Nginx Steam 四层TCP 负载均衡
+https://blog.csdn.net/michaelwoshi/article/details/97163777
+
+日志没有测试成功
+```
+stream {
+    upstream wcsbackend {
+      hash $remote_addr consistent;
+      server 36.110.117.58:8001;
+    }
+    proxy_timeout 30m;
+		log_format basic '$remote_addr [$time_local] '    '$protocol $status $bytes_sent bytes_received '     '$session_time';
+access_log /var/log/nginx/access-stream.log basic buffer=32k;    
+server {
+        listen 8001;
+        proxy_pass wcsbackend;
+    }
+}
+
+```
+
 # 日志格式
 http://nginx.org/en/docs/http/ngx_http_log_module.html
 1.11.8及以上可以参考如下格式：

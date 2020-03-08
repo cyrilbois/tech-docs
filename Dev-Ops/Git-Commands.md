@@ -81,6 +81,11 @@ git add file-name  // Adds the new or newly modified file-name to Git's staging 
 
 > 当很多文件修改，而且这些文件不属于同一个功能修改，想分开多个commit来提交的时候，可选择通过`git add  <file>` 先将指定的文件Stage，然后使用`git commit -m ` 来只提交stage的文件。
 
+### 提交空文件夹
+这个只能说是技巧不能说是方法，原理是在每个空文件夹新建一个.gitignore文件，然后提交。
+```
+find . -type d -empty -exec touch {}/.gitignore \;
+```
 ### Commit 修改
 ```
 git commit -m "A really good commit message" // Commits all files currently in Git's staging area.
@@ -179,6 +184,7 @@ ssh -T git@github.com // 验证SSH 配置成功
 git remote add remote-name remote-repository-location // 示例: git remote add origin git@github.com:choelea/keycloak-demo.git
 git push -u remote-name branch-name // 示例: git push -u origin master;  The -u parameter is needed the first time you push a branch to the remote.
 git remote -v // list the names of all the remote repositories
+git remote set-url origin git@github.com:choelea/simple-java-maven-app.git //可以切换https和ssh方式
 ```
 关联远程repo之前需要先在git服务器上创建对应的repo，如果采用的是github，在创建repository后，会有如下的提示：
 ![Git-Push-Remote](http://tech.jiu-shu.com/Dev-Ops/git-push-remove.png)

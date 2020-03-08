@@ -7,6 +7,23 @@ description: Centos 常用命令
 > 以下命令仅在centos7上验证过
 
 ### 软件安装
+#### CentOS7配置阿里云yum源和EPEL源
+ 以centos7为例安装阿里云yum源
+```
+cd /etc/yum.repos.d/
+mkdir repo_bak
+mv *.repo repo_bak/
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+yum clean all
+yum makecache
+## ready to install software
+```
+EPEL源
+```
+yum list | grep epel-release
+yum install -y epel-release
+```
+https://www.cnblogs.com/jimboi/p/8437788.html  配置好源了， 安装啥都方便了
 #### yum 安装
 示例如下：
 ```
@@ -96,6 +113,8 @@ chmod 代表change mode;
 例如：`chmod 644 important.txt` owner可读可写,group可读，others可读
 > First position refers to the user. Second refers to the group of the user, and the third refers to all others.4 = read 2 = write 1 = execute
 
+给脚本添加执行权限:`chmod +x test.sh `
+
 文件权限更详细的解释可以参考：[Linux File Permissions](https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
 ### PS 命令
 #### 查看java进程 `ps -ef|grep java`
@@ -148,3 +167,8 @@ put  /name1.html  /name2/
 Cron Job的日志位置： /var/log/cron
 参考：crontab 时间可以参考： https://www.cnblogs.com/intval/p/5763929.html
 > 注意cron的时间有可能和date命令的时间不一致。`tail -f /var/log/cron` 这个命令可以查看cron的时间。 当执行`crontab -e`的时候`/var/log/cron`会有记录。
+
+### 后台运行
+```
+nohup ./startAgent.sh > /dev/null 2>&1 &
+```

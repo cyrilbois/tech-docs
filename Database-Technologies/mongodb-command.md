@@ -19,6 +19,12 @@ mongoexport -h localhost:27017 -d test -c product --limit 10000 --skip 10000 --j
 * -p 指定密码
 * -o  指定导出文件路径output
 
+## 导入恢复
+
+```
+mongorestore -h <hostname><:port> -d dbname <path>
+mongorestore -h 127.0.0.1:27017 -d dbname 文件夹目录
+```
 ## 修改字段名称
 
 ```
