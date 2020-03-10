@@ -40,6 +40,13 @@ sudo rpm -ivh kibana-4.6.6-x86_64.rpm  // 安装后通过 sudo service kibana st
 sudo rpm -ql kibana  // 查看到安装在了/opt/kibana
 ```
 
+###  延长SSH会话
+编辑`vim /etc/ssh/sshd_config`
+```
+ClientAliveInterval 30  #客户端每隔多少秒向服务发送一个心跳数据
+ClientAliveCountMax 1800 #客户端多少秒没有相应，服务器自动断掉连接
+```
+重启sshd服务`service sshd restart`
 
 ### 开放端口
 

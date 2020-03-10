@@ -1,8 +1,12 @@
 ---
 title:  mongodb 复制集
 ...
+资源有限，分别用了两台虚机验证复制集，一台虚机启了连个mongod实例，其中一个实例为`arbiterOnly:true,`只作为选举节点。
+## 官方文档
+https://docs.mongodb.com/manual/replication/
+## 架构图
 
-centos示例
+![mongo-rs-arbiter.png](http://tech.jiu-shu.com/Database-Technologies/mongo-rs-arbiter.png)
 ## 安装mongo
 下载 解压 设置环境变量 启动
 ```
@@ -38,15 +42,20 @@ $mongo
 >rs.initiate({
     _id: "rs0",
     members: [
-		{
-						_id: 0,
-						host: "10.0.6.72:27017" 
-			},
-			{
-						_id: 1,
-						host: "10.0.6.83:27017" 
-			}
-		]
+        {
+                        _id: 0,
+                        host: "172.26.206.237:27017" 
+            },
+            {
+                        _id: 1,
+                        host: "172.26.206.238:27017" 
+            },
+            {
+                    _id: 3,
+										arbiterOnly:true,
+                    host: "172.26.206.238:27018"
+            }
+        ]
 })
 ```
 登录从数据库机器：
