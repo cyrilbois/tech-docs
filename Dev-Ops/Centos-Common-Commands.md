@@ -35,6 +35,15 @@ sudo yum install elasticsearch
 sudo rpm -ivh kibana-4.6.6-x86_64.rpm  // 安装后通过 sudo service kibana start 来启动
 ```
 
+#### 开机启动服务
+```
+systemctl start xxx.service #启动
+systemctl stop xxx.service #停止
+systemctl enable xxx.service (开机启动)
+systemctl disable xxx.service (禁止开机启动)
+systemctl enable docker # 开机启动docker
+```
+
 #### 查看安装程序路径
 ```
 sudo rpm -ql kibana  // 查看到安装在了/opt/kibana
@@ -74,8 +83,11 @@ cat /etc/centos-release
 export KAFKA_HOME=/home/osboxes/kafka_2.10-0.10.0.1
 echo $KAFKA_HOME
 ```
-### 磁盘空间
 
+### SELinux
+SELinux会影响
+getenforce
+### 磁盘空间
 ```
 df -h
 ```
