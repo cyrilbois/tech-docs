@@ -6,6 +6,12 @@ description: Nginx 使用问题收集
 收集在使用Nginx过程中遇见的问题。
 
 # 知识积累
+
+## nginx 查看信息
+```
+nginx -V
+nginx -V 2>&1 | grep -o with-http_stub_status_module
+```
 ## 负载均衡
 平均负载示例如下; 以下配置必须保证两个实例都正常运行在，因为这个配置并不会failover。
 ```
