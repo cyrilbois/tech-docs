@@ -11,9 +11,14 @@ sudo systemctl enable docker
 sudo systemctl start docker
 ```
 ## Docker 命令
-容器命令
+### 容器命令
 * 删除所有容器： `docker rm -f $(docker ps -a -q)`
 * 删除所有停止的容器： `docker rm $(docker ps -a -q  --filter status=exited)`
+
+### 镜像命令
+- 查询对应REPOSITORY和tag的镜像ID `docker images registry.cn-hangzhou.aliyuncs.com/sino-dc/apiproxy:2.4 -q`
+- 查找并删除`docker rmi -f $(docker images registry.cn-hangzhou.aliyuncs.com/sino-dc/apiproxy:2.4 -q)`
+
 
 ## 其他组件安装
 ### mysql启动：
