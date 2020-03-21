@@ -92,6 +92,11 @@ git commit -m "A really good commit message" // Commits all files currently in G
 ```
 > 上面的命令只有所有的文件都在staging area在有效。  `git commit -am "A really good commit message"` 可以省掉git add这步，不过新文件必须先add下。
 
+### 打标签 打Tag
+```
+git tag -a 1.0.0 -m "my version 1.0.0"
+git push origin 1.0.0
+```
 ### 回滚 
 ```
 git add . // Add all new and newly modified files.
