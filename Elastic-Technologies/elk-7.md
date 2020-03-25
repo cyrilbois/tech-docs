@@ -87,3 +87,11 @@ format: combine(
         logstash()
     ),
 ```
+
+访问Management -> Index patterns来创建对应的index pattern。 这里采用logstash的格式，就可以
+
+
+
+
+### 其他应用日志收集
+将日志以json格式打印到文件， 通过配置filebeat讲日志推送至elasticsearch即可。

@@ -66,7 +66,7 @@ git branch -d <BranchName>
 
 ```
 git checkout -b test  // 创建分支test并切换至新建分支
- git push -u origin/test
+git push origin test:test  //推送test分支到远程 test分支
 ```
 
 ### 查看状态 
