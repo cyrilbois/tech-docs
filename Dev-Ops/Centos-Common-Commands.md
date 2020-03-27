@@ -129,6 +129,13 @@ cp -avr /home/vivek/letters /usb/backup
 **获取组的所有用户:	** `getent group kibana`
 
 其他有用资源： [CentOS7之新建用户与SSH登陆](https://segmentfault.com/a/1190000004141370)
+
+### 文件编码
+```
+file -i <文件名>
+vim --cmd 'set encoding=utf-8' <文件名> 
+```
+
 ### 文件权限
 #### 修改文件[夹]owner
 chown 代表change owner；`chown --help` 提供了更详细的信息
@@ -147,6 +154,11 @@ chmod 代表change mode;
 #### 查看java进程 `ps -ef|grep java`
 #### 产看进程的详细信息 `ps -auxwe | grep subscribe`
 
+```
+ps -ef|grep java  
+ps -auxwe | grep subscribe // 查看进程更详细的信息
+lsof -p 110559 | grep cwd   // 查看进程执行路径
+```
 ### 命令行快捷键
 **CTRL-a** 光标移至行首
 **CTRL-e** 光标移至行尾
