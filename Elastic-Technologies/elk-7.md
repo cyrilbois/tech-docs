@@ -95,3 +95,7 @@ format: combine(
 
 ### 其他应用日志收集
 将日志以json格式打印到文件， 通过配置filebeat讲日志推送至elasticsearch即可。
+
+## 利用心跳监控应用
+https://www.elastic.co/guide/en/beats/heartbeat/current/index.html
+
