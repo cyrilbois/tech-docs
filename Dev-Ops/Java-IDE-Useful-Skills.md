@@ -17,6 +17,11 @@ Remote System Explorer Operation卡死
 参考： https://blog.csdn.net/wu_cai_/article/details/71637199  （建议选择git-bash）
 直接在eclipse中使用并不是很方便，但是可以快速打开git-bash. 配置方式参考上面。
 
+## Eclipse maven spring boot 项目的诡异问题 unkown error
+降低spring boot版本
+https://www.youtube.com/watch?v=BLkU9Fr741E
+
+
 ## 调试
 ### 断点出用于打印信息的代码收集
 #### Request的Header信息
