@@ -1,5 +1,5 @@
 ---
-title:  Kong Apigateway 快速开始
+title:  Kong Apigateway 快速开始 Docker+DB版
 ...
 
 Kong 是基于Nignx的扩展，这里在深入理解之前我们先来快速尝试一把。 通过docker方式快速实验Kong的Apigateway。
