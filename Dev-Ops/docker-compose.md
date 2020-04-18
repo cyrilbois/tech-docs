@@ -19,6 +19,18 @@ sudo systemctl start docker
 - 查询对应REPOSITORY和tag的镜像ID `docker images registry.cn-hangzhou.aliyuncs.com/sino-dc/apiproxy:2.4 -q`
 - 查找并删除`docker rmi -f $(docker images registry.cn-hangzhou.aliyuncs.com/sino-dc/apiproxy:2.4 -q)`
 
+### 推送镜像至hub.docker.com
+在网站https://hub.docker.com/ 注册个账号；创建对应的repo  。 
+```
+sudo docker login  # 使用注册的docker id登录；注意需要sudo；否则登录不成功
+sudo docker build -t jiu-shu/curator:5.8.1 .
+sudo docker tag jiu-shu/curator:5.8.1 choelea/curator:5.8.1
+sudo docker push choelea/curator:5.8.1
+```
+
+
+### 推送镜像至阿里云镜像服务
+去阿里云创建后按说明操作。
 
 ## 其他组件安装
 ### mysql启动：

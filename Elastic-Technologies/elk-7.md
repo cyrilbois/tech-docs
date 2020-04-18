@@ -99,3 +99,8 @@ format: combine(
 ## 利用心跳监控应用
 https://www.elastic.co/guide/en/beats/heartbeat/current/index.html
 
+## ES 索引的生命周期管理
+extension/curator 是elastic 官方的索引生命周期管理的插件。 这里配置了默认删除指定规则的索引。curator的具体使用参考https://www.elastic.co/guide/en/elasticsearch/client/curator/current/index.html
+```
+docker-compose -f docker-compose.yml -f extensions/curator/curator-compose.yml up
+```
