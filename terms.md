@@ -3,6 +3,16 @@ title:  专业术语
 showOnHome: true
 ...
 
+## 性能相关
+PV=page view
+
+TPS=transactions per second
+
+QPS=queries per second 
+
+RPS=requests per second
+
+RPS=并发数/平均响应时间
 ## 数据库相关
 #### OLTP（on-line transaction processing）
 联机事务处理；OLTP是传统的关系型数据库的主要应用，主要是基本的、日常的事务处理，例如银行交易。OLAP是数据仓库系统的主要应用，支持复杂的分析操作，侧重决策支持，并且提供直观易懂的查询结果。 
