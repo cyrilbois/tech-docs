@@ -95,6 +95,7 @@ git commit -m "A really good commit message" // Commits all files currently in G
 
 ### 打标签 打Tag
 ```
+git tag -l 
 git tag -a 1.0.0 -m "my version 1.0.0"
 git push origin 1.0.0
 ```
