@@ -60,8 +60,8 @@ ClientAliveCountMax 1800 #客户端多少秒没有相应，服务器自动断掉
 重启sshd服务`service sshd restart`
 
 ### 修改主机名称
-hostnamectl set-hostname sino-dev
-`vi /etc/sysconfig/network`
+ - 方式一 hostnamectl set-hostname sino-dev
+ - 方式二 `vi /etc/sysconfig/network`
 ```
 NETWORKDING=yes
 HOSTNAME=SINO-DEV
