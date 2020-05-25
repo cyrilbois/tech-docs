@@ -7,7 +7,11 @@ description: Centos 常用命令
 > 以下命令仅在centos7上验证过
 
 ### 查看系统信息
-`uname -a`
+```
+uname -a
+hostnamectl
+```
+
 ### 软件安装
 #### CentOS7配置阿里云yum源和EPEL源
  以centos7为例安装阿里云yum源
