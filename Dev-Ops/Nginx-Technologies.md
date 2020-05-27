@@ -6,7 +6,8 @@ description: Nginx 使用问题收集
 收集在使用Nginx过程中遇见的问题。
 
 # 知识积累
-
+## nginx安装
+http://nginx.org/en/linux_packages.html#RHEL-CentOS
 ## nginx 查看信息
 ```
 nginx -V

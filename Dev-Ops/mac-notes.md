@@ -22,6 +22,7 @@ Mac 自带了apache2
 * 重启，并且注册开机自启`brew services restart mysql`
 * 查看brew安装的服务状态 `brew services list`
 * 清除已经卸载应用的无用配置`brew services cleanup`
+* 查看安装的服务的信息 `brew info nginx`
 * 注册服务
 注册开机自启后，会创建.plist文件，该文件包含版本信息、编码、安装路径、启动位置、日志路径等信息，取消自启动后会自动删除，执行 `brew services list` 可以看到各个服务该文件的存放位置
 * .plist存放目录  开机自启存放目录`/Library/LaunchDaemons/`
