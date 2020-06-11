@@ -2,6 +2,34 @@
 title:  macOS  系统使用参考
 ...
 
+
+## Java 环境
+这里找`/Library/Java/JavaVirtualMachines/` 参考：https://blog.csdn.net/a158123/article/details/79684499。  
+
+## 环境变量配置
+
+设置JAVA_HOME
+记得切换成root用户(sudo -i)或者给指令添加sudo
+
+#### 临时有效（重启后失效）
+编辑.bash_profile文件：vim ~/.bash_profile
+添加以下内容：
+```
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH
+```
+
+使修改的文件生效：source ~/.bash_profile
+#### 永久有效
+修改文件操作权限：chmod 773 /etc/profile
+编辑/ect/profile文件：vim /etc/profile
+添加以下内容：
+```
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH
+```
+使修改的文件生效：source /etc/profile 
+
 ## 查看端口占用
 ```
 lsof -nP -i4TCP:$PORT | grep LISTEN
