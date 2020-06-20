@@ -37,7 +37,7 @@ server {
 > 上例中的8080 和 8081 端口都是Spring Boot的app。由于Java 是多线程的程序，在同一个虚拟机上运行多个实例并非最佳实践；这里只是方便测试。
 
 ## 反向代理的时候去掉前缀
- 如下配置,访问`http://www.example.com/api/users/0` 将被代理至`http://localhost:3000/users/0`
+ 如下配置,访问`http://www.example.com/api/users/0` 和 `http://www.example.com/users/0` 将被代理至`http://localhost:3000/users/0`; 
 ```
 server {
         listen 80;
@@ -48,6 +48,12 @@ server {
 				proxy_set_header   x-forwarded-for  $remote_addr;
 				proxy_set_header   X-Real-IP        $remote_addr;
 				proxy_pass http://localhost:3000/;
+			}
+				location /user {
+				proxy_set_header   Host             $host;
+				proxy_set_header   x-forwarded-for  $remote_addr;
+				proxy_set_header   X-Real-IP        $remote_addr;
+				proxy_pass http://localhost:3000;
 			}
 }
 ```
