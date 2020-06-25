@@ -34,12 +34,74 @@ sudo docker push choelea/curator:5.8.1
 
 ## 其他组件安装
 ### mysql启动：
+
+#### 快速使用
 ```
 docker run -p 3307:3306 --name mysql3307 \
 -v /mysqldata/3307/logs:/var/log/mysql  \
 -v /mysqldata/3307/db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
 ```
 
+#### 修改配置使用
+下面配置采用 https://hub.docker.com/_/mysql     5.7.29 
+
+**创建目录**
+```
+mkdir /home/mysqld
+cd /home/mysqld
+mkdir   data  logs  conf
+```
+**创建配置 `conf/mysqld.cnf`**
+下面拷贝的5.7.29版本的默认的配置 `/etc/mysql/mysql.conf.d/mysqld.cnf`
+```
+# Copyright (c) 2014, 2016, Oracle and/or its affiliates. All rights reserved.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License, version 2.0,
+# as published by the Free Software Foundation.
+#
+# This program is also distributed with certain software (including
+# but not limited to OpenSSL) that is licensed under separate terms,
+# as designated in a particular file or component or in included license
+# documentation.  The authors of MySQL hereby grant you an additional
+# permission to link the program and your derivative works with the
+# separately licensed software that they have included with MySQL.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License, version 2.0, for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+#
+# The MySQL  Server configuration file.
+#
+# For explanations see
+# http://dev.mysql.com/doc/mysql/en/server-system-variables.html
+
+[mysqld]
+pid-file	= /var/run/mysqld/mysqld.pid
+socket		= /var/run/mysqld/mysqld.sock
+datadir		= /var/lib/mysql
+#log-error	= /var/log/mysql/error.log
+# By default we only accept connections from localhost
+#bind-address	= 127.0.0.1
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+
+# 这里添加你的个性化配置
+```
+
+**启动**
+```
+docker run -p 3307:3306 --name mysql3307 \
+-v $PWD/conf/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf \
+-v $PWD/logs:/var/log/mysql  \
+-v $PWD/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root#123 -d mysql:5.7.29
+```
 
 ### mongodb启动
 
