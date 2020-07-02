@@ -63,3 +63,7 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 找到配置文件路径后修改配置：  https://updates.jenkins.io/update-center.json 修改为：http://mirror.xmission.com/jenkins/updates/update-center.json。
 
 > 很多时候更新update center也未必好使，这个时候可以手动安装插件：http://updates.jenkins-ci.org/download/plugins/ 找到对应的插件下载后手动安装。
+
+安装如下插件
+ - http://updates.jenkins-ci.org/download/plugins/http_request/
+ - http://updates.jenkins-ci.org/download/plugins/generic-webhook-trigger/

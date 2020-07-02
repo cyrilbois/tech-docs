@@ -19,6 +19,9 @@ sudo systemctl start docker
 - 查询对应REPOSITORY和tag的镜像ID `docker images registry.cn-hangzhou.aliyuncs.com/sino-dc/apiproxy:2.4 -q`
 - 查找并删除`docker rmi -f $(docker images registry.cn-hangzhou.aliyuncs.com/sino-dc/apiproxy:2.4 -q)`
 
+### 查看镜像内容
+docker run -it --entrypoint sh image_name
+
 ### 推送镜像至hub.docker.com
 在网站https://hub.docker.com/ 注册个账号；创建对应的repo  。 
 ```
@@ -132,5 +135,16 @@ sudo chmod +x /usr/local/bin/docker-compose
 一般来说设置`restart: always`即可。
 https://stackoverflow.com/questions/43671482/how-to-run-docker-compose-up-d-at-system-start-up
  
+ 
+ 
+ ## 错误收集
+ 
+ ### ENTRYPOINT中脚本的路径错误
+ Spring Boot Docker 的官方文档中Dockerfile的配置
+ ENTRYPOINT ["run.sh"]  需要改成 ["./run.sh"]，否则报错如下
+ ```
+ docker: Error response from daemon: OCI runtime create failed: container_linux.go:349: starting container process caused "exec: \"run.sh\": executable file not found in $PATH": unknown.
+ERRO[0005] error waiting for container: context canceled 
+ ```
 
 
