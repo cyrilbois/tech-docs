@@ -12,6 +12,8 @@ uname -a
 hostnamectl
 ```
 
+ - 查看多少个CPU `grep 'model name' /proc/cpuinfo | wc -l`
+
 ### 软件安装
 #### CentOS7配置阿里云yum源和EPEL源
  以centos7为例安装阿里云yum源
