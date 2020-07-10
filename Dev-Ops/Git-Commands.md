@@ -17,6 +17,7 @@ git config --global setting value
 示例：git config --global user.name "Your Name"
 示例：git config --global user.email "you@someplace.com"
 git config --global --list // 列出全局配置项
+git config --global color.ui auto // 高亮，带颜色显示
 ```
 配置内容保存在当前**用户**目录下的.gitconfig文件中
 
