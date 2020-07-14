@@ -10,6 +10,7 @@ description: Centos 常用命令
 ```
 uname -a
 hostnamectl
+cat  /etc/redhat-release  # 系统详细信息
 ```
 
  - 查看多少个CPU `grep 'model name' /proc/cpuinfo | wc -l`
