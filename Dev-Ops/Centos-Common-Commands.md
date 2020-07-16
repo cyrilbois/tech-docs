@@ -57,7 +57,8 @@ systemctl enable docker # 开机启动docker
 ```
 sudo rpm -ql kibana  // 查看到安装在了/opt/kibana
 ```
-
+### ssh 登录
+ssh-copy-id -i id_rsa.pub osboxes@192.168.1.186
 ###  延长SSH会话
 编辑`vim /etc/ssh/sshd_config`
 ```
@@ -100,6 +101,7 @@ cat /etc/centos-release
 export KAFKA_HOME=/home/osboxes/kafka_2.10-0.10.0.1
 echo $KAFKA_HOME
 ```
+在 /etc/profile 文件中设置的变量是全局变量。而 .bashrc文件（在用户的家目录下）则只对当前用户有用。~/.bashrc、~/.bash_file 是当前用户目录下的配置信息。修改后用 source 命令更新。
 
 ### SELinux
 SELinux会影响
