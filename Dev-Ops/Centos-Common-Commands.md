@@ -104,8 +104,11 @@ echo $KAFKA_HOME
 在 /etc/profile 文件中设置的变量是全局变量。而 .bashrc文件（在用户的家目录下）则只对当前用户有用。~/.bashrc、~/.bash_file 是当前用户目录下的配置信息。修改后用 source 命令更新。
 
 ### SELinux
-SELinux会影响
-getenforce
+```
+getenforce #  查看是否开启
+sudo setenforce 0 # 关闭
+sudo sed -i ‘s/^SELINUX=enforcing$/SELINUX=permissive/’ /etc/selinux/config  # 永久关闭
+```
 ### 磁盘空间
 ```
 df -h
