@@ -4,7 +4,35 @@ title:  mongodb 复制集
 资源有限，分别用了两台虚机验证复制集，一台虚机启了连个mongod实例，其中一个实例为`arbiterOnly:true,`只作为选举节点。
 ## 官方文档
 https://docs.mongodb.com/manual/replication/
-## 架构图
+
+## 单机安装
+
+**安装**
+```
+cd /opt
+curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-4.2.1.tgz
+tar -xvf mongodb-linux-x86_64-rhel70-4.2.1.tgz
+mv mongodb-linux-x86_64-rhel70-4.2.1 mongodb
+export PATH=$PATH:/opt/mongodb/bin
+```
+**创建文件目录**
+
+创建文件目录`mkdir -p /data/mongodb/{data,log}`; 创建配置文件mongod.conf,内容如下：
+```
+systemLog:
+  destination: file
+  path: /data/mongodb/log/mongod.log # log path
+  logAppend: true
+storage:
+  dbPath: /data/mongodb/data # data directory
+net:
+  bindIp: 0.0.0.0
+  port: 27017 # port
+processManagement:
+  fork: true # daemon process
+```
+启动：`mongod -f /data/mongodb/mongod.conf`
+## 复制集架构图
 
 ![mongo-rs-arbiter.png](http://tech.jiu-shu.com/Database-Technologies/mongo-rs-arbiter.png)
 ## 安装mongo
