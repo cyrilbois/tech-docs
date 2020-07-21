@@ -151,7 +151,21 @@ vim --cmd 'set encoding=utf-8' <文件名>
 ```
 
 ### 文件权限
-#### 修改文件[夹]owner
+
+通过`ls -l 文件路径`获取类似信息：`- rw- r-x r- - (数量) userame groupname mtime filename`
+> 这里的数量，如果是文件，指的是数据库连接的文件数量， 如果是文件夹暂时不知  :(
+
+**文件权限的信息如下：**
+- rw- 文件属主的权限
+- r-x 文件属组的权限
+- r-- 其他用户的权限
+
+**文件夹有所不同**
+- x 进入目录
+- rx 显示目录内的文件名
+- wx 修改目录内的文件名
+
+#### 修改文件(夹)owner
 chown 代表change owner；`chown --help` 提供了更详细的信息
 ```
 sudo chown -R okchem:root /ebs
