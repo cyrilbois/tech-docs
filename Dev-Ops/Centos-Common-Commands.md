@@ -52,7 +52,11 @@ systemctl enable xxx.service (开机启动)
 systemctl disable xxx.service (禁止开机启动)
 systemctl enable docker # 开机启动docker
 ```
-
+#### 查看服务日志
+如果是通过systemd启动，可使用如下命令
+```
+journalctl -u kubelet
+```
 #### 查看安装程序路径
 ```
 sudo rpm -ql kibana  // 查看到安装在了/opt/kibana
@@ -74,7 +78,7 @@ ClientAliveCountMax 1800 #客户端多少秒没有相应，服务器自动断掉
 NETWORKDING=yes
 HOSTNAME=SINO-DEV
 ```
-通过`service network restart`重启网络服务生效。查看`hostname`
+通过`service network restart`重启网络服务生效。查看运行`hostname`
 ### 开放端口
 
 ```
