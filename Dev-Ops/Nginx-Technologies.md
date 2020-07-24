@@ -109,6 +109,22 @@ log_format logger-json-log escape=json '{'
 	'"upstream_connect_time":"$upstream_connect_time"' 
 '}'; 
 ```
+# 日志分割
+nginx  本身并不支持日志rotating，需要自己准备类似如下的脚本，在凌晨设置对应的cron job来跑。
+```
+#!/bin/sh
+#Rotate the nginx logs; and remove the logs of the month before last month
+HIST_LOG_PATH=/var/log/nginx/history
+CUR_LOG_PATH=/var/log/nginx
+YESTERDAY=$(date -d "yesterday" +%y-%m-%d)
+MONTH_TO_DELETE=$(date --date='-2 month' +'%y-%m')
+mv ${CUR_LOG_PATH}/access.log ${HIST_LOG_PATH}/access_${YESTERDAY}.log
+mv ${CUR_LOG_PATH}/error.log ${HIST_LOG_PATH}/error_${YESTERDAY}.log
+## 向nginx 主进程发送USR1信号。 USR1信号是重新打开新日志文件
+kill -USR1 $(cat /var/run/nginx.pid)
+rm ${HIST_LOG_PATH}/access_${MONTH_TO_DELETE}*.log
+rm ${HIST_LOG_PATH}/error_${MONTH_TO_DELETE}*.log
+```
 # 问题收集
 
 ### 反向代理后request的host和schema和浏览器请求不一致

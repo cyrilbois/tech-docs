@@ -17,7 +17,25 @@ sudo systemctl start docker
 * 拷贝文件宿主机拷贝至容器 `docker cp 文件路径 {dockerId}:目标路径`， 示例：`docker cp foo.txt mycontainer:/foo.txt`
 * 容器拷贝纸宿主机：`docker cp  {dockerId}:目标路径 文件路径`，示例`docker cp mycontainer:/foo.txt foo.txt`
 
-
+## dockerd 配置
+/etc/docker/daemon.json
+```
+{
+    "log-driver": "json-file",
+    "log-opts": {
+    "max-size": "100m"
+    },
+    "storage-driver": "overlay2",
+    "registry-mirrors":[
+        "https://kfwkfulq.mirror.aliyuncs.com",
+        "https://2lqq34jg.mirror.aliyuncs.com",
+        "https://pee6w651.mirror.aliyuncs.com",
+        "http://hub-mirror.c.163.com",
+        "https://docker.mirrors.ustc.edu.cn",
+        "https://registry.docker-cn.com"
+    ]
+}
+```
 
 ### 镜像命令
 - 查询对应REPOSITORY和tag的镜像ID `docker images registry.cn-hangzhou.aliyuncs.com/sino-dc/apiproxy:2.4 -q`
