@@ -92,9 +92,20 @@ kubeadm init \
 ```
 日志末尾打印出join的命令，记录下来，后面节点加入的时候使用， 类似如下：
 ```
-kubeadm join k8smaster.tech:6443 --token iga2tp.t4fdinzvadminlqu \
-    --discovery-token-ca-cert-hash sha256:4cf53dbc3b32901972487b3474c6760b385b780d2d73bbaef24e5bcb50966732 \
-    --control-plane --certificate-key d12a595435127d11f8f3e051c75c8ef768b29eff88aa1a47c702e9cebd929b2b
+You can now join any number of the control-plane node running the following command on each as root:
+
+  kubeadm join k8smaster.tech:6443 --token ypeiz4.7zsdtx2jjxpdlypr \
+    --discovery-token-ca-cert-hash sha256:54fac7e65287f78cf73cb0357bc3cd6c62830ae1f0beb1257f4d1cfce948bad8 \
+    --control-plane --certificate-key cb95b38b24e63862ba3deed1bf1a1da05b69f58e4e19faaf4cabf409e7bfe16f
+
+Please note that the certificate-key gives access to cluster sensitive data, keep it secret!
+As a safeguard, uploaded-certs will be deleted in two hours; If necessary, you can use
+"kubeadm init phase upload-certs --upload-certs" to reload certs afterward.
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join k8smaster.tech:6443 --token ypeiz4.7zsdtx2jjxpdlypr \
+    --discovery-token-ca-cert-hash sha256:54fac7e65287f78cf73cb0357bc3cd6c62830ae1f0beb1257f4d1cfce948bad8
 ```
 
 下面这个为了"以普通用户身份管理集群", 但是root用户也需要执行一遍，否则后面会报错
