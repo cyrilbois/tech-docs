@@ -109,6 +109,23 @@ log_format logger-json-log escape=json '{'
 	'"upstream_connect_time":"$upstream_connect_time"' 
 '}'; 
 ```
+# 日志分割 - logrotate
+使用linux自带的logrotate来实现nginx 日志管理切割和压缩; 在创建文件/etc/logrotate.d/nginx，内容如下：
+ 
+ ```
+ /var/log/nginx/*log {
+    create 0664 nginx root
+    daily
+    rotate 10
+    missingok
+    notifempty
+    compress
+    sharedscripts
+    postrotate
+        /bin/kill -USR1 `cat /run/nginx.pid 2>/dev/null` 2>/dev/null || true
+    endscript
+}
+```
 # 日志分割
 nginx  本身并不支持日志rotating，需要自己准备类似如下的脚本，在凌晨设置对应的cron job来跑。
 ```
