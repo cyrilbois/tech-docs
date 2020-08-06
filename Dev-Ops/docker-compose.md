@@ -13,6 +13,7 @@ sudo systemctl start docker
 ## Docker 命令
 ### 容器命令
 * 删除所有容器： `docker rm -f $(docker ps -a -q)`
+* 删除所有停止的容器： `docker container prune`
 * 删除所有停止的容器： `docker rm $(docker ps -a -q  --filter status=exited)`
 * 拷贝文件宿主机拷贝至容器 `docker cp 文件路径 {dockerId}:目标路径`， 示例：`docker cp foo.txt mycontainer:/foo.txt`
 * 容器拷贝纸宿主机：`docker cp  {dockerId}:目标路径 文件路径`，示例`docker cp mycontainer:/foo.txt foo.txt`
@@ -36,10 +37,18 @@ sudo systemctl start docker
     ]
 }
 ```
+run `systemctl daemon-reload`
 
 ### 镜像命令
 - 查询对应REPOSITORY和tag的镜像ID `docker images registry.cn-hangzhou.aliyuncs.com/sino-dc/apiproxy:2.4 -q`
 - 查找并删除`docker rmi -f $(docker images registry.cn-hangzhou.aliyuncs.com/sino-dc/apiproxy:2.4 -q)`
+
+#### 打包镜像 & 导入镜像
+```
+docker save docker.elastic.co/logstash/logstash:7.6.0 -o /root/logstash-7.6.0.tar  # 打包
+# scp 上传到目标机器
+docker load < logstash-7.6.0.tar #导入
+```
 
 ### 查看镜像内容
 docker run -it --entrypoint sh image_name
