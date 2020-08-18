@@ -251,3 +251,9 @@ nohup ./startAgent.sh > /dev/null 2>&1 &
 
 ### 其他
 - java安装路径查看： update-alternatives --display java
+
+### stress 安装
+centos7 安装包： https://centos.pkgs.org/7/epel-x86_64/
+```
+wget https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Packages/s/stress-1.0.4-16.el7.x86_64.rpm
+```
