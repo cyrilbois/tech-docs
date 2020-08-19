@@ -252,6 +252,12 @@ nohup ./startAgent.sh > /dev/null 2>&1 &
 ### 其他
 - java安装路径查看： update-alternatives --display java
 
+### base64
+```
+echo -n 'admin' | base64
+echo 'YWRtaW4=' | base64 --decode
+```
+
 ### stress 安装
 centos7 安装包： https://centos.pkgs.org/7/epel-x86_64/
 ```
