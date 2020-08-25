@@ -262,4 +262,8 @@ echo 'YWRtaW4=' | base64 --decode
 centos7 安装包： https://centos.pkgs.org/7/epel-x86_64/
 ```
 wget https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Packages/s/stress-1.0.4-16.el7.x86_64.rpm
+yum localinstall stress-1.0.4-16.el7.x86_64.rpm
+stress --cpu 4 --timeout 600 // 压测 4 个cpu情况
+stress --vm 4 --vm-bytes 512m --vm-hang 100 --timeout 600s  // 压测内存
+stress -d 1 --hdd-bytes 3G // 写数据
 ```
