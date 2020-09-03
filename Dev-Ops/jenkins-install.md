@@ -67,3 +67,9 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 安装如下插件
  - http://updates.jenkins-ci.org/download/plugins/http_request/
  - http://updates.jenkins-ci.org/download/plugins/generic-webhook-trigger/
+
+## 修改时区
+Script Console运行如下命令：
+```
+System.setProperty('org.apache.commons.jelly.tags.fmt.timeZone', 'Asia/Shanghai')
+```
