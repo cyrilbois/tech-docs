@@ -21,3 +21,19 @@ MAKA http://maka.im
 ## 研发
 
 - 数据权限 https://cloud.tencent.com/developer/article/1602036
+
+
+## 网络
+#### 内网穿透
+
+内网穿透： https://natapp.cn/  微信小程序联调
+
+自建步骤：
+1. 安装： https://gofrp.org/docs/setup/
+2. 配置 https://gofrp.org/docs/examples/vhost-http/
+3. Mac 客户端用： frp_***_darwin_amd64.tar.gz
+4. 参考文档: https://www.jianshu.com/p/5f7e71121a4f
+
+
+#### 堡垒机
+https://jumpserver.org/
