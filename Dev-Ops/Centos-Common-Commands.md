@@ -141,10 +141,11 @@ cp -avr /home/vivek/letters /usb/backup
 ### 用户和组
 > /etc/group file that lists all users groups  可以使用cut命令列出来`cut -d: -f1 /etc/group`
 
-**查看当前用户的group:	** `$ groups`
-**查看用户的group:	** `$ groups root` `id -Gn root`
-**添加用户到组:	** `$ sudo usermod -a -G osboxes nginx` 添加用户nginx到组osboxes  `usermod -a -G <groupname> username` 添加完成请用`groups <username> ` 来验证
-**获取组的所有用户:	** `getent group kibana`
+
+ - **查看当前用户的group:	** `$ groups`
+ - **查看用户的group:	** `$ groups root` `id -Gn root`
+ - **添加用户到组:	** `$ sudo usermod -a -G osboxes nginx` 添加用户nginx到组osboxes  `usermod -a -G <groupname> username` 添加完成请用`groups <username> ` 来验证
+ - **获取组的所有用户:	** `getent group kibana`
 
 其他有用资源： [CentOS7之新建用户与SSH登陆](https://segmentfault.com/a/1190000004141370)
 

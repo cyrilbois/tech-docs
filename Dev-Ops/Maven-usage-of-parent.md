@@ -10,8 +10,12 @@ description: 总结通过maven创建父子工程的方式。
 eclipse
 ## 参考
 https://github.com/dubbo/dubbo-spring-boot-project
+
 http://blog.csdn.net/yaerfeng/article/details/26448417
+
 http://blog.csdn.net/isea533/article/details/73744497
+
+https://www.baeldung.com/maven-multi-module
 ## maven 国内镜像
 如果不翻墙，下载maven的依赖相当慢，可以添加阿里云的镜像， 速度相当快。
 修改conf文件夹下的settings.xml文件，添加如下镜像配置：
