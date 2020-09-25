@@ -39,9 +39,19 @@ https://www.cnblogs.com/jimboi/p/8437788.html  配置好源了， 安装啥都�
 sudo yum install elasticsearch
 ```
 
-#### rpm  包安装
+#### rpm  命令
+
+**安装**
 ```
 sudo rpm -ivh kibana-4.6.6-x86_64.rpm  // 安装后通过 sudo service kibana start 来启动
+```
+**查看安装程序路径**
+```
+sudo rpm -ql kibana  // 查看到安装在了/opt/kibana
+```
+```
+sudo rpm -qa|grep jdk  // 查看安装了哪些jdk
+sudo rpm -ql java-1.8.0-openjdk-1.8.0.262.b10-0.el7_8.x86_64 //查看具体包的安装路径
 ```
 
 #### 开机启动服务
@@ -57,10 +67,7 @@ systemctl enable docker # 开机启动docker
 ```
 journalctl -u kubelet
 ```
-#### 查看安装程序路径
-```
-sudo rpm -ql kibana  // 查看到安装在了/opt/kibana
-```
+
 ### ssh 登录
 ssh-copy-id -i id_rsa.pub osboxes@192.168.1.186
 ###  延长SSH会话
