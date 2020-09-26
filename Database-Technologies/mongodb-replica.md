@@ -10,11 +10,18 @@ https://docs.mongodb.com/manual/replication/
 **安装**
 ```
 cd /opt
-curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-4.2.1.tgz
-tar -xvf mongodb-linux-x86_64-rhel70-4.2.1.tgz
-mv mongodb-linux-x86_64-rhel70-4.2.1 mongodb
+sudo curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-4.2.1.tgz
+sudo tar -xvf mongodb-linux-x86_64-rhel70-4.2.1.tgz
+sudo mv mongodb-linux-x86_64-rhel70-4.2.1 mongodb
+```
+
+**设置环境变量**
+编辑`/etc/profile`,在最后添加
+```
 export PATH=$PATH:/opt/mongodb/bin
 ```
+使环境变量生效 `source /etc/profile`。 （这里也可以不配置环境变量， 后面sudo命令会使用全路径）
+
 **创建文件目录**
 
 创建文件目录`mkdir -p /data/mongodb/{data,log}`; 创建配置文件mongod.conf,内容如下：
@@ -31,7 +38,7 @@ net:
 processManagement:
   fork: true # daemon process
 ```
-启动：`mongod -f /data/mongodb/mongod.conf`
+启动：`sudo /opt/mongodb/bin/mongod -f /data/mongodb/mongod.conf`
 ## 复制集架构图
 
 ![mongo-rs-arbiter.png](http://tech.jiu-shu.com/Database-Technologies/mongo-rs-arbiter.png)
