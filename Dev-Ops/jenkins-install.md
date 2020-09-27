@@ -73,3 +73,18 @@ Script Console运行如下命令：
 ```
 System.setProperty('org.apache.commons.jelly.tags.fmt.timeZone', 'Asia/Shanghai')
 ```
+
+## 创建任务
+
+1. 工程编写好Jenkinsfile
+2. 进入jenkins创建一个新的任务，选择”流水线“类型; 流水线脚本从SCM中获取
+![jenkins-pipeline-define.png](http://tech.jiu-shu.com/Dev-Ops/jenkins-pipeline-define.png)
+
+
+## 问题收集
+
+#### 碰见git拉取代码ssl的问题可以如下处理
+```
+docker exec -it jenkins-tutorial sh   # 进去容器
+git config --global http.sslVerify false  # 禁用掉ssl检查
+```
