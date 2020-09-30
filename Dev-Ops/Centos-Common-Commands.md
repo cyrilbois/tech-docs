@@ -180,7 +180,8 @@ vim --cmd 'set encoding=utf-8' <文件名>
 #### 修改文件(夹)owner
 chown 代表change owner；`chown --help` 提供了更详细的信息
 ```
-sudo chown -R okchem:root /ebs
+sudo chown -R joe:root /ebs # 修改了owner为joe 组为root
+sudo chown -R joe /ebs # 修改 /ebs 的owner为joe
 ```
 #### 修改文件[夹]访问权限
 chmod 代表change mode; 
