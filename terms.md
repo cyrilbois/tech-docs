@@ -4,7 +4,11 @@ showOnHome: true
 ...
 
 ## 性能相关
-PV=page view
+PV=PV（Page View）访问量, 即页面浏览量或点击量
+
+UV（Unique Visitor）独立访客，统计1天内访问某站点的用户数(以cookie为依据);访问网站的一台电脑客户端为一个访客
+
+IP（Internet Protocol）独立IP数，是指1天内多少个独立的IP浏览了页面，即统计不同的IP浏览用户数量。
 
 TPS=transactions per second
 
