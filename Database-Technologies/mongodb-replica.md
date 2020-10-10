@@ -24,7 +24,7 @@ export PATH=$PATH:/opt/mongodb/bin
 
 **创建文件目录**
 
-创建文件目录`mkdir -p /data/mongodb/{data,log}`; 创建配置文件mongod.conf,内容如下：
+创建文件目录`mkdir -p /data/mongodb/{data,log}`; 创建配置文件`vim  /data/mongodb/mongod.conf`,内容如下：
 ```
 systemLog:
   destination: file
