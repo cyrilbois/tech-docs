@@ -4,6 +4,12 @@ title:  Mysql 杂集
 
 
 
+### 设置
+#### 关闭safe update mode 
+
+```
+SET SQL_SAFE_UPDATES = 0;
+```
 
 ### utf8和utf8mb4的区别
 拷贝自： https://www.cnblogs.com/cuiqq/p/11045487.html
