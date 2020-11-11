@@ -276,3 +276,19 @@ stress --cpu 4 --timeout 600 // 压测 4 个cpu情况
 stress --vm 4 --vm-bytes 512m --vm-hang 100 --timeout 600s  // 压测内存
 stress -d 1 --hdd-bytes 3G // 写数据
 ```
+
+### 后台启停Jar
+启动脚本：
+```
+#！ /bin/bash
+
+nohup java -jar sdk-api.jar > /dev/null 2>&1 &
+echo $! > sdk-api.pid
+```
+停止脚本
+```
+#！ /bin/bash
+
+kill -9 $(cat sdk-api.pid)
+rm -f sdk-api.pid
+```

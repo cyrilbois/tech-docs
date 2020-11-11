@@ -18,6 +18,11 @@ grant all privileges on dbname.* to dbuser@localhost identified by 'dbpassword';
 ```
 SELECT  * FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'test' and table_rows > 0;
 ```
+
+## 查询表的所有列的信息
+```
+SHOW FULL COLUMNS  FROM `order`;
+```
 ## 粗略找出大记录的表
 ```
 SELECT TABLE_ROWS, TABLE_NAME     FROM INFORMATION_SCHEMA.TABLES      WHERE TABLE_SCHEMA = 'test' ORDER BY TABLE_ROWS DESC;
