@@ -134,6 +134,11 @@ git clean -fd src/* // 移除src目录下面所有的新增的文件
 ```
 git checkout branchename // 切换到branchname分支
 ```
+
+### Merge 分支
+
+`git merge dev // merge dev 分支到当前分支 `
+
 ### 搜索提交log
 便捷的方式找出谁提交的这行代码`git log -S "mention here line of code" [file-path]`
 示例：
