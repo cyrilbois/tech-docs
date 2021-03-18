@@ -10,6 +10,37 @@ title:  docker
 sudo systemctl enable docker
 sudo systemctl start docker
 ```
+
+> 如果不是云上的虚机， 最好先配置阿里云的yum源。
+
+## Docker安装指定版本
+有时候，系统比如centos版本不够新，满足不了最新的Docker 这个时候可以选择安装指定版本的Docker。 
+```
+yum -y install yum-utils lvm2 device-mapper-persistent-data nfs-utils xfsprogs wget
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+yum -y install docker-ce docker-ce-cli containerd.io
+```
+指定版本可以通过如下命令：
+```
+yum list docker-ce.x86_64 --showduplicates | sort -r  // 查找版本
+```
+结果类似如下：
+```
+docker-ce.x86_64            3:20.10.5-3.el7                     docker-ce-stable
+docker-ce.x86_64            3:20.10.4-3.el7                     docker-ce-stable
+docker-ce.x86_64            3:20.10.3-3.el7                     docker-ce-stable
+docker-ce.x86_64            3:20.10.2-3.el7                     docker-ce-stable
+docker-ce.x86_64            3:20.10.1-3.el7                     docker-ce-stable
+docker-ce.x86_64            3:20.10.0-3.el7                     docker-ce-stable
+docker-ce.x86_64            3:19.03.9-3.el7                     docker-ce-stable
+docker-ce.x86_64            3:19.03.8-3.el7                     docker-ce-stable
+docker-ce.x86_64            3:19.03.7-3.el7                     docker-ce-stable
+```
+
+```
+
+sudo yum install docker-ce-19.03.9
+```
 ## Docker 命令
 ### 容器命令
 * 删除所有容器： `docker rm -f $(docker ps -a -q)`
