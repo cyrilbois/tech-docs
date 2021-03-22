@@ -69,3 +69,4 @@ redo log在写入后，进入prepare状态，然后bin log写入后，进入comm
 
 
 
+
