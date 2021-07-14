@@ -100,6 +100,14 @@ git tag -l
 git tag -a 1.0.0 -m "my version 1.0.0"
 git push origin 1.0.0
 ```
+
+### 批量删除标签
+
+删除的时候需要先删除远程，再删除本地
+```
+git tag -d $(git tag -l "1.0.*") // 批量删除本地标签 
+git push -d origin $(git tag -l "1.0.8*") // 批量删除远程标签
+```
 ### 回滚 
 ```
 git add . // Add all new and newly modified files.
