@@ -21,6 +21,12 @@ Spring Boot Docker化 https://spring.io/guides/topicals/spring-boot-docker/
 参考： https://ignaciosuay.com/why-is-spring-ignoring-transactional/
 
 
+#### JPA 时区问题
+timezone  zone
+
+
+https://www.baeldung.com/mysql-jdbc-timezone-spring-boot
+
 
 
 
