@@ -5,7 +5,7 @@ description: 通过多个Nodejs Web App一步步来深入了解CORS每个细节�
 
 通过多个Nodejs Web App一步步来深入了解CORS每个细节，每步都通过实际的验证；最终给出Nodejs Express Web和Java Spring Web的代码示例。
 
-测试CORS代码库： [git@github.com:choelea/cors-tester.git](git@github.com:choelea/cors-tester.git)
+测试CORS代码库：  [https://github.com/choelea/cors-tester](https://github.com/choelea/cors-tester)
 
 ![cors](http://tech.jiu-shu.com/Web-Applications-Technologies/cors-font-request.png)
 ## 什么是CORS
