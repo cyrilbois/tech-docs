@@ -88,6 +88,12 @@ server {
 
 ```
 
+## Https 配置
+
+下面网站可以申请打个域名的免费ssl证书试用及Nginx的配置
+https://help.zerossl.com/hc/en-us/articles/360058295894-Installing-SSL-Certificate-on-NGINX
+
+
 # 日志格式
 http://nginx.org/en/docs/http/ngx_http_log_module.html
 1.11.8及以上可以参考如下格式：
@@ -142,6 +148,7 @@ kill -USR1 $(cat /var/run/nginx.pid)
 rm ${HIST_LOG_PATH}/access_${MONTH_TO_DELETE}*.log
 rm ${HIST_LOG_PATH}/error_${MONTH_TO_DELETE}*.log
 ```
+
 # 问题收集
 
 ### 反向代理后request的host和schema和浏览器请求不一致
