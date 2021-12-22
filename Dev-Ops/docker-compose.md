@@ -210,3 +210,17 @@ ERRO[0005] error waiting for container: context canceled
  ```
 
 
+###  certificate signed by unknown authority
+打开daemon.json
+```
+sudo vi /etc/docker/daemon.json
+```
+加入insecure-registries
+```
+{  
+   "insecure-registries":["私库地址"]
+}
+```
+重启docker
+
+sudo systemctl restart docker
