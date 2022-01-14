@@ -9,8 +9,10 @@ title:  Kong API Gateway 插件开发 - 推送请求日志至Elasticsearch
 Kong被部署在NGINX和Apache Cassandra或PostgreSQL等可靠技术之上，并为您提供了易于使用的RESTful API来操作和配置系统。
 ![kong-architecture.png](http://tech.jiu-shu.com/Micro-Services/kong-architecture.png)
 
-## Kong Apigateway Overview
+## Kong Gateway Overview
 ![Kong-GS-overview.png](http://tech.jiu-shu.com/Micro-Services/Kong-GS-overview.png)
+
+![Kong Gateway 架构](http://tech.jiu-shu.com/Micro-Services/02_-_Kong_Konnect_Gateway_Fundamentals-v2.065-1.jpg)
 ## 安装
 非Docker的方式安装
 
