@@ -84,4 +84,6 @@ brew update
 
 ## 网络代理 抓包工具
 
-Charles 
+Charles
+
+>抓包https网站需要设置 help/SSL Proxying/Install Charles Root Certificate,   Proxy/ SSL Proxying Setting， 参考https://www.youtube.com/watch?v=g1IQTuiPWZQ
