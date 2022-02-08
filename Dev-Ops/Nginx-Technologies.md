@@ -186,16 +186,16 @@ This should ideally solve the issue, can you try and verify once  :-
 
 https://stackoverflow.com/questions/23948527/13-permission-denied-while-connecting-to-upstreamnginx
 
-####  *48 stat() "/home/nantong/www/index.html" failed (13: Permission denied),
+####  *48 stat() "/home/demo/www/index.html" failed (13: Permission denied),
 
-Nginx在目录中运行，因此，如果您无法从nginx用户cd到该目录，（日志中的stat命令也是如此）。 确保nginx的用户可以一直CD到`/home/nantong/www`。 您可以通过运行`sudo -u nginx stat /home/nantong/html`来确认该统计信息将失败还是成功
+Nginx在目录中运行，因此，如果您无法从nginx用户cd到该目录，（日志中的stat命令也是如此）。 确保nginx的用户可以一直CD到`/home/demo/www`。 您可以通过运行`sudo -u nginx stat /home/demo/html`来确认该统计信息将失败还是成功
 SELinux已经禁用了；查看目录权限如下：
 ```
-[nantong@localhost ~]$ ls -l /home/nantong
+[demo@localhost ~]$ ls -l /home/demo
 total 4
-drwxrwxr-x 4 nantong nantong 4096 Sep 28 15:37 www
+drwxrwxr-x 4 demo demo 4096 Sep 28 15:37 www
 ```
 ```
-gpasswd -a nginx nantong  //nginx运行用户可以从nginx.conf 查看
+gpasswd -a nginx demo  //nginx运行用户可以从nginx.conf 查看
 ```
-如果依然报错， 可能是无法进入/home/nantong; 通过运行`sudo chmod g+x /home/nantong` 来解决此问题。
+如果依然报错， 可能是无法进入/home/demo; 通过运行`sudo chmod g+x /home/demo` 来解决此问题。
