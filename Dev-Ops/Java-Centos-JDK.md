@@ -45,3 +45,24 @@ export PATH=${JAVA_HOME}/bin:$PATH
 添加软链接`ln -s /usr/local/java/jdk1.8.0_251/bin/java /usr/bin/java`
 
 检查`java -version`
+
+
+## 安装Maven
+```
+#### 创建安装目录
+mkdir /usr/local/maven/
+#### 解压至安装目录
+tar -zxvf apache-maven-3.8.4-bin.tar.gz -C /usr/local/maven/
+```
+​
+### 设置环境变量
+​
+vim /etc/profile
+在末尾添加
+```
+export MVN_HOME=/usr/local/maven/apache-maven-3.8.4
+export PATH=$PATH:$MVN_HOME/bin
+```
+
+
+

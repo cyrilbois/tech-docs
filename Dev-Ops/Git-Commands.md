@@ -54,6 +54,12 @@ git init // 初始化
 git clone 'url'
 ```
 
+### 问题调试
+
+```
+GIT_SSL_NO_VERIFY=true git clone --recursive git@newgitlab.digitalchina.com:apple-city-data/city-data-backend.git
+```
+
 ### 查看本地分支
 ```
 git branch -vv  // 列出本地分支 * 标识当前分支

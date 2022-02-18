@@ -40,8 +40,46 @@ sudo mysql_secure_installation
 mysqladmin -u root -p version
 ```
 
+### 建库 用户 授权
 
+```
+CREATE DATABASE  IF NOT EXISTS `demo` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
 
+# 本地用户
+CREATE USER 'jeffrey'@'localhost' IDENTIFIED BY 'password';  
+#远程用户
+CREATE USER 'demo'@'%' IDENTIFIED BY 'Demo#123';
+
+GRANT ALL ON demo.* TO 'demo'@'%';
+
+# https://www.jianshu.com/p/9a645c473676
+ALTER USER 'demo'@'%' IDENTIFIED WITH mysql_native_password BY 'Demo#123';
+```
+
+### 修改迁移数据目录
+
+参考： https://www.digitalocean.com/community/tutorials/how-to-change-a-mysql-data-directory-to-a-new-location-on-centos-7
+
+```
+# 关闭
+systemctl stop mysqld
+# 确保已经关闭
+systemctl status mysqld
+mkdir -p /data/mysql
+rsync -av /var/lib/mysql /data
+mv /var/lib/mysql /var/lib/mysql.bak
+```
+
+修改 vi /etc/my.cnf
+```
+datadir=/data/mysql
+socket=/data/mysql/mysql.sock
+
+[client]
+port=3306
+socket=/data/mysql/mysql.sock
+
+```
 
 
 
