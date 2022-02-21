@@ -170,6 +170,9 @@ location / {
  2. remove the IPv6 bind block (something along the lines of ::1:80。 参考：http://serverfault.com/questions/520535/nginx-is-still-on-port-80-bind-to-0-0-0-080-failed-98-address-already-in
  
 ### 403 forbidden (13: Permission denied)
+
+如果是代理静态内容，首先确保nginx运行用户是否有权限。 运行用户配置在nginx.conf 文件
+
 参考：[Nginx报错403 forbidden (13: Permission denied)的解决办法](https://www.hi-docs.com/article/detail-MTE1.html)
 解决办法一： 关闭 SELinux  （在了解了SELinux的重要性后，决定继续寻找更好的解决办法）
 
