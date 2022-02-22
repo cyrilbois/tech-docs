@@ -57,6 +57,11 @@ ALTER USER 'demo'@'%' IDENTIFIED WITH mysql_native_password BY 'Demo#123';
 ## 创建用户的时候设置
 CREATE USER 'demo'@'%' IDENTIFIED WITH mysql_native_password BY 'Demo#123';
 
+## 复制库最好赋予只读权限
+GRANT SELECT ON demo.* to 'demo'@'%';
+
+FLUSH PRIVILEGES;
+
 ```
 
 ### 修改迁移数据目录
@@ -93,8 +98,9 @@ socket=/data/mysql/mysql.sock
 概述来讲需要做如下配置：
 1. 开始binlog， 配置binlog。（默认此版本和对应的安装已经默认开启， 具体log在配置的datadir目录下）
 2. 设置server-id；  默认是1。 源库可以不用设置，用默认的也行
-3. 确定目标库； 确定哪些是目标库或者说排除哪些
-4. 创建复制使用的用户
+3. 设置 relay-log=relay-bin.log    这里如果不设置会有异常 `[Warning] [MY-010604] [Repl] Neither --relay-log nor --relay-log-index were used; so replication may break when this MySQL server acts as a slave and has his hostname changed!! Please use '--relay-log=localhost-relay-bin' to avoid this problem.`
+4. 确定目标库； 确定哪些是目标库或者说排除哪些
+5. 创建复制使用的用户
 
 #### 开启binlog
 mysql8 安装在centos 上后默认是开启了binlog的， 这个可以从my.conf的注释中确认。
@@ -116,6 +122,8 @@ server-id的具体信息参看： https://dev.mysql.com/doc/refman/8.0/en/replic
 ```
 binlog_ignore_db=mysql
 ```
+> 用ignore的方式， 新建库也会自动被复制
+
 #### 创建复制使用的用户
 
 ```
@@ -150,7 +158,7 @@ FLUSH TABLES WITH READ LOCK;
 1. 不存在已有数据需要迁移；【源库：解锁表】 -> 【复制库：创建库】 -> 【复制库：配置复制源】 -> 【复制库：开始复制】
 2. 存在已有数据需要迁移;   源库：【dump数据】-> 【源库：解锁表】 -> 【复制库：创建库导入数据】 -> 【复制库：配置复制源】 -> 【复制库：开始复制】
 
-> 注意及时解锁 `UNLOCK TABLES;`
+> 注意及时解锁 `UNLOCK TABLES;`  
 
 #####  配置复制源
 在复制数据库端配置:
@@ -166,7 +174,6 @@ SOURCE_LOG_POS=2290;
 ##### 开始复制
 
 `START REPLICA;`   查看状态 `SHOW REPLICA STATUS\G;`
-
 
 ##### 验证
 源库操作， 复制库验证

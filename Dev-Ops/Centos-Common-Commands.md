@@ -293,3 +293,8 @@ echo $! > sdk-api.pid
 kill -9 $(cat sdk-api.pid)
 rm -f sdk-api.pid
 ```
+
+### 文件同步
+
+参考链接使用rsync同步文件或文件夹
+https://geekdudes.wordpress.com/2019/08/28/configuring-rsync-centos-7/
