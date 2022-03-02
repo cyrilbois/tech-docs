@@ -316,82 +316,78 @@ public interface Constants {
 ![CamelCase.png](http://tech.jiu-shu.com/Java-Technologies/CamelCase.png)
 
 
+
+
+
 ## 5 编码实践
-6.1 @Override:必须添加
+### 5.1 @Override:必须添加
 方法在可以添加@Override的时候添加上他。这包括重写父类方法，实现接口方法。一个接口方法重新指定父接口方法。
 例外：当父方法被标记为@Deprecated时@Override可以被省略。
 
-6.2 捕获异常：不可忽略
+### 5.2 捕获异常：不可忽略
 除以下情况外，不处理异常是不正确的。（典型的是打印日志，如果认为这种情况不可能出现，重新以AssertionError的形式抛出。）
-当在捕获块中确实应当什么都不做的话，原因应该写在注释里面。
+当在捕获块中确实应当什么都不做的话，原因应该写在注释里面。在业务代码，考虑增加相关日志打印。
 
+```
 try {
   int i = Integer.parseInt(response);
   return handleNumericResponse(i);
 } catch (NumberFormatException ok) {
   // 这不是数字，正常，继续执行
+	log.info();
 }
 return handleTextResponse(response);
-例外：在测试中，如果捕获的异常为预期异常或者以预期开通可以在没有注释的情况下省略。下面是确保测试代码抛出预期异常，所以注释在这里不是必要的。
+```
 
-try {
-  emptyStack.pop();
-  fail();
-} catch (NoSuchElementException expected) {
-}
-6.3 静态成员：通过类引用
+### 5.3 静态成员：通过类引用
 当使用一个静态的类成员，应当使用该类的名词而不是该类对象的引用。
 
-Foo aFoo = ...;
-Foo.aStaticMethod(); // 好
-aFoo.aStaticMethod(); // 坏
-somethingThatYieldsAFoo().aStaticMethod(); // 非常坏
-6.4 回收器：不要用
+#### 5.4 回收器：不要用
 极少重写Object.finalize。
 
-提示：不要这么做，如果你必须这么做请先仔细阅读《Effective Java Item 7》,"Avoid Finalizers"。然后放弃这么做。
 
-7 Javadoc
-7.1 格式化
-7.1.1 一般格式
+## 6 Javadoc
+### 6.1 格式化
+#### 6.1.1 一般格式
 在此示例中可以看到一般的JavaDoc块的格式：
-
+```
 /**
  * Multiple lines of Javadoc text are written here,
  * wrapped normally...
  */
 public int method(String p1) { ... }
+```
 或者单行的例子
-
+```
 /** An especially short bit of Javadoc. */
+```
 基本格式总是可以接受的。当JavaDoc可以在一行内放下时可以采用单行格式代替。注意，这仅适用于没有@return之类的标签的时候。
 
-7.1.2 段落
+#### 6.1.2 段落
 段落之间以一个空行--仅在这行开头有一个星号*，隔开。除第一个单词外，每个段落的第一个单词前面加上<p>后面没有空格。
 
-7.1.3 块标签
+#### 6.1.3 块标签
 所有的“块标签”按顺序出现@param,@return,@throws,@desprecate。这四种标签都不会出现空描述，当一行放不下的时候，下一行缩进到@后面四个或者更多空格的地方。
 
-7.2 摘要碎片
+### 6.2 摘要碎片
 每个JavaDoc都会以一个简短的摘要碎片开始。这个碎片非常重要：它是上下文的一部分文本，例如类和方法的索引。
 这是一个碎片，是一个名词或动词，而不是完整的句子，它不以A {@code Foo} is a...或者This method returns...开头，也不会形成完整的命令式句子Save the record.，但是该碎片被大写并且被标点，就像他是完整句子一样。
 
-	提示：一个常见的错误是简单JavaDoc被写成了这种格式/** @return the customer ID */。这是不正确的，应当写成/** Returns the customer ID. */。
+>	提示：一个常见的错误是简单JavaDoc被写成了这种格式/** @return the customer ID */。这是不正确的，应当写成/** Returns the customer ID. */。
 
-7.3 哪里需要Javadoc
-至少，在public的类中，每个public或protect成员需要JavaDoc，下面有少数特殊情况。
-如第7.3.4节“不需要的Javadoc”中所述，还可能存在其他Javadoc内容。
+### 6.3 哪里需要Javadoc
+至少，在public的类中，每个public或protect成员需要JavaDoc。当然， 规范的命名可以考虑省掉JavaDoc。 因为 “Code is the best document!”
 
-7.3.1 例外：不言自明的方法
-Javadoc在一个简单明显的方法像getFoo。如果真的没有其他话，除了“返回foo”之外，没有什么好说的。
+以下，如果逻辑中没有特殊情况，可以考虑不写JavaDoc
 
-7.3.2 例外：重写
-对于重写的方法，不必总是写Javadoc
+#####  不言自明的方法
+Javadoc在一个简单明显的方法像Foo类的 get(Long Id)。如果真的没有其他话，除了“返回foo”之外，没有什么好说的。
 
-7.3.3 不需要的Javadoc
-当其他类或成员有需要的Javadoc
-当注释被用来描述类或方法的目的或行为时，注释应当写成Javadoc的形式（使用/**）
-7.1.2和7.1.3中的注释中的非必要Javadoc可以省略，既是是建议的。
-
-
+下面是订单OrderService的方法
+```
+public OrderEntity update(OrderEntity entity) // 一看就明白
+public Page<OrderEntity> find(LocalDateTime startOrderTime, LocalDateTime endOrderTime, Pageable pageable); //如果有个好的命名规范，这个也可以不写， 这个明显就是根据传入的过滤条件过滤并分页查询
+```
+##### 重写
+对于重写的方法，不用写Javadoc
 
