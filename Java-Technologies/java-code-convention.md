@@ -315,9 +315,39 @@ public interface Constants {
 
 ![CamelCase.png](http://tech.jiu-shu.com/Java-Technologies/CamelCase.png)
 
+### 4.3 上下文考虑
 
+Java是面向对象的， 在命名的时候要考虑上线文，避免累赘的添加领域名称的前缀。参考以下示例来理解：
 
+##### 类名
+| 错误 | 正确 | 说明 |
+| -------- | -------- | -------- |
+| `com.tyymt.sota.controller.admin.AdminController`     | `com.tyymt.sota.controller.admin.Controller`     | 上级 （包）已经确定了是Admin相关，无需在Class名上多此一举     |
+| `com.tyymt.sota.controller.admin.AdminController`     | `com.tyymt.sota.controller.AdminController `    | 上级 （包）未确定，需在Class名上添加前缀     |
 
+------    
+> 包名是否需要加上业务前缀，可根据实际规模来，如果业务小，可以采取第二种方式。
+   
+##### 方法名
+
+如果我们在用户的Service类(假定：UserService)中, 以下CURD方法
+
+| 错误 | 正确 | 说明 |
+| -------- | -------- | -------- |
+| `getUser(Long id) `    | `get(Long id)`     | 对象类已经明确了是User业务，方法名无需赘述     |
+| `updateUser(UserEntity  userEntity) `    | `update(UserEntity  userEntity)`     | 对象类已经明确了是User业务，方法名无需赘述     |
+| `deleteUser(Long id)`     | `delete(Long id)`     | 对象类已经明确了是User业务，方法名无需赘述     |
+| `createUser(UserEntity  userEntity) `    | `create(UserEntity  userEntity) `    | 对象类已经明确了是User业务，方法名无需赘述     |
+
+--------------------
+
+| 错误 | 正确 | 说明 |
+| -------- | -------- | -------- |
+| `List<UserEntity> findUsers(Role role) `    | `List<UserEntity> find(Role role) `      | 对象类已经明确了是User业务，方法名无需赘述     |
+| `List<UserEntity> findByRole(Role role) `     | `List<UserEntity> find(Role role) `       | 通过方法的签名已经很明确是ByRole， 无需赘述。 这类条件过滤查询列表的方法可能会存在很多重载的方法， 名字保持一致，放在一起    |
+
+---
+> 一般尽量保持用 `get`来获取单个返回一个对象； `find` 查询多个返回集合。
 
 ## 5 编码实践
 ### 5.1 @Override:必须添加
