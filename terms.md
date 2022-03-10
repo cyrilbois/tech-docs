@@ -3,6 +3,22 @@ title:  专业术语
 showOnHome: true
 ...
 
+
+## 数据分析
+类似Google Analytics这类数据分析，常用于广告投放 (Google Analytics )等分析。 参考 https://prestigemarketing.ca/uv-pi-pv-cpm-cpc-ppc-cpa-ron-roc-ros-sov-ctr-rtb-online-advertising-acronyms/
+
+* Impression  - 印象次数  代表这个“广告”进入过你的视线；这个在搜索引擎场景也存在，被你搜索出来了，就代表给了你Impression，无论你是否点击进入
+* CLICK - 广告活动被点击的次数。 相对Impression来讲， Impression只代表出现在了你的实视线内。 Ads Campaign or ad group clicks over time. (Total number of times users have clicked on an ad to reach the property)
+* UV 	在特定时间段内访问网站页面的不同个人的数量，这个计算忽略了多次访问。
+* PV  网页浏览次数；Page View， 这个针对Web网站来讲的，指定时间网页被浏览了多少次
+* CPM - Cost Per Thousands (Impressions)： 网站上 1,000 次广告展示的成本。
+* CPC - Cost Per Click ：每个点击的成本；即：每次点击需支付的价格。
+* CPD - Cost Per Day:  每天的成本
+* CTR - Click Through Rate： 个人理解就是“印象转换率”，简单来就讲就是多少比率的Impression 转换成CLICK了， 这个其实可以用来统计广告够不够吸引人
+* CSR - Corporate Social Responsibility （这个不太确定）
+* CPS - Cost-Per-Sale：=  Total cost / Total sales number
+
+
 ## 性能相关
 PV=PV（Page View）访问量, 即页面浏览量或点击量
 

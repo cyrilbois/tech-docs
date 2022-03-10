@@ -48,6 +48,7 @@ sudo yum install docker-ce-19.03.9
 * 删除所有停止的容器： `docker rm $(docker ps -a -q  --filter status=exited)`
 * 拷贝文件宿主机拷贝至容器 `docker cp 文件路径 {dockerId}:目标路径`， 示例：`docker cp foo.txt mycontainer:/foo.txt`
 * 容器拷贝纸宿主机：`docker cp  {dockerId}:目标路径 文件路径`，示例`docker cp mycontainer:/foo.txt foo.txt`
+* 进入到启动容器中：`docker exex -it <容器ID>  /bin/bash`
 
 ## dockerd 配置
 /etc/docker/daemon.json
