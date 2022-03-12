@@ -31,6 +31,7 @@ EPEL源
 ```
 yum list | grep epel-release
 yum install -y epel-release
+# 如果出现错误：没有可用软件包 epel-release， 可采用  `yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm`
 ```
 https://www.cnblogs.com/jimboi/p/8437788.html  配置好源了， 安装啥都方便了
 #### yum 安装
@@ -298,3 +299,15 @@ rm -f sdk-api.pid
 
 参考链接使用rsync同步文件或文件夹
 https://geekdudes.wordpress.com/2019/08/28/configuring-rsync-centos-7/
+
+
+### 安装python3
+
+
+```
+sudo yum install -y https://repo.ius.io/ius-release-el7.rpm
+// 国内无法访问，可以翻*下载rpm文件传上去安装
+
+sudo yum update
+sudo yum install -y python36u python36u-libs python36u-devel python36u-pip
+```
