@@ -89,10 +89,11 @@ docker run -it --entrypoint sh image_name
 在网站https://hub.docker.com/ 注册个账号；创建对应的repo  。 
 ```
 sudo docker login --username=choelea  # 使用注册的docker id登录；密码就是登陆否则登录hub.docker.com网站的密码
-sudo docker build -t jiu-shu/curator:5.8.1 .
-sudo docker tag jiu-shu/curator:5.8.1 choelea/curator:5.8.1
+sudo docker build -t choelea/curator:5.8.1 .
+sudo docker tag choelea/curator:5.8.1 choelea/curator:5.8.1
 sudo docker push choelea/curator:5.8.1
 ```
+> 镜像的namespace需要保持和dockerhub的用户名一致； 拉取的全路径为：docker.io/choelea/curator
 
 
 ### 推送镜像至阿里云镜像服务
