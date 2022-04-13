@@ -20,15 +20,23 @@ https://www.baeldung.com/maven-multi-module
 如果不翻墙，下载maven的依赖相当慢，可以添加阿里云的镜像， 速度相当快。
 修改conf文件夹下的settings.xml文件，添加如下镜像配置：
 ```
-<mirrors>
-    <mirror>
-      <id>alimaven</id>
-      <name>aliyun maven</name>
-      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-      <mirrorOf>central</mirrorOf>        
-    </mirror>
-  </mirrors>
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+		<mirrors>
+						<mirror>
+								<id>alimaven</id>
+								<mirrorOf>central</mirrorOf>
+								<name>aliyun maven</name>
+								<url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
+				</mirror>
+		</mirrors>
+</settings>
 ```
+
+
 
 ## 步骤
 ### 创建父maven工程
