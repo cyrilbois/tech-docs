@@ -188,9 +188,20 @@ sudo chown -R joe /ebs # 修改 /ebs 的owner为joe
 #### 修改文件[夹]访问权限
 chmod 代表change mode; 
 例如：`chmod 644 important.txt` owner可读可写,group可读，others可读
-> First position refers to the user. Second refers to the group of the user, and the third refers to all others.4 = read 2 = write 1 = execute
+> First position refers to the user. Second refers to the group of the user, and the third refers to all others. 4 = read 2 = write 1 = execute
 
-给脚本添加执行权限:`chmod +x test.sh `
+添加执行权限也可以用:`chmod +x test.sh `, 这样会给owner+group+others都添加上执行权限。 
+
+如果想查看文件/文件夹八进制模式值，可以通过 `stat -c "%a %n"  <filename>`
+
+通过`man stat` 可以发现
+```
+-c  --format=FORMAT
+          use  the  specified  FORMAT instead of the default; output a newline after
+          each use of FORMAT
+%a     Access rights in octal
+%n     File name
+```
 
 文件权限更详细的解释可以参考：[Linux File Permissions](https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
 ### PS 命令
