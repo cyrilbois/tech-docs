@@ -68,6 +68,14 @@ systemctl enable docker # 开机启动docker
 ```
 journalctl -u kubelet
 ```
+### 时间同步 Chrony
+
+启动 Chrony 来同步时间： 
+```
+systemctl start chronyd.service
+systemctl enable chronyd.service
+```
+Chrony是一个开源自由的网络时间协议 NTP 的客户端和服务器软软件。它能让计算机保持系统时钟与时钟服务器（NTP）同步，因此让你的计算机保持精确的时间，Chrony也可以作为服务端软件为其他计算机提供时间同步服务。
 
 ### ssh 登录
 ssh-copy-id -i id_rsa.pub osboxes@192.168.1.186
