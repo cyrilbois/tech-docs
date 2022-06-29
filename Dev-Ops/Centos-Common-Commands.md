@@ -146,6 +146,14 @@ du -smh *
 ls -1 | wc -l   //统计文件夹下面的文件数量
 wc - lc  file1 //统计文件内容的行数
 ```
+
+### 搜索文件
+
+```
+find . -name .project // 搜索当前目录及子目录下的 名称为 '.project'的文件
+find . -name .project  -exec rm -f {} \;   // 搜索出来并删除掉
+```
+
 ### grep 搜索文件内容
 **指定的文件类型中查找**
 当前子目录中查找： `grep -r abcd *.properties` 当前子目录递归查找含有`abcd` 的*.properties 文件
