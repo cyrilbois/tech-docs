@@ -57,6 +57,13 @@ server {
 			}
 }
 ```
+## location配置多个path
+```
+location ~ ^/(wx|login|getUserInfo|logout|system|common) {
+	proxy_pass http://127.0.0.1:8080;
+	...
+}
+```
 ## 使用GoAccess来实时监控
 参考： https://goaccess.io/get-started
 ```
