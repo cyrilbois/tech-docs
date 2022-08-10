@@ -44,6 +44,7 @@ sudo yum install docker-ce-19.03.9
 ## Docker 命令
 ### 容器命令
 * 删除所有容器： `docker rm -f $(docker ps -a -q)`
+* 查看容器详细信息：`docker inspect <容器>`
 * 删除所有停止的容器： `docker container prune`
 * 删除所有停止的容器： `docker rm $(docker ps -a -q  --filter status=exited)`
 * 拷贝文件宿主机拷贝至容器 `docker cp 文件路径 {dockerId}:目标路径`， 示例：`docker cp foo.txt mycontainer:/foo.txt`
@@ -98,6 +99,10 @@ sudo docker push choelea/curator:5.8.1
 
 ### 推送镜像至阿里云镜像服务
 去阿里云创建后按说明操作。
+
+### Docker commit
+
+参考： https://www.jianshu.com/p/27fc4630bed9
 
 ## 其他组件安装
 ### mysql启动：
