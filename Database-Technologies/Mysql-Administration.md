@@ -268,6 +268,19 @@ windows下：修改my.ini 在[mysqld]内加入secure_file_priv =
 
 linux下：修改my.cnf 在[mysqld]内加入secure_file_priv =
 ```
+
+# ubuntu 系统忘记密码
+
+* 找到 mysql 的配置目录 `/etc/mysql`
+* 找到文件 debian.cnf
+* 查看文件中的 debian-sys-maint 对应的密码
+* 使用这个账号登录 `mysql -u debian-sys-maint -p`
+* 进入mysql, 使用mysql数据库 `use mysql`;
+* 更新密码 `grant all privileges on \*.* to 'root'@'%' identified by 'password' with grant option` 或者 `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';`;
+* 刷新权限 `flush privileges`
+* 退出mysql exit; 重启mysql `service mysql restart`
+
+
 # Mysql 慢查询日志
 ## 查看是否开启及日志文件路径
 使用sql `show variables like 'slow_query%';` 来查看配置。 参考：[Mysql开启慢查询-简书](https://www.jianshu.com/p/f7fed1b3b8d6)
