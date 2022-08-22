@@ -23,6 +23,12 @@ Cross-origin resource sharing (CORS)； 跨域资源共享（CORS）是一种机
 摘自维基百科: https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
 
 > 这里的受限制并不是说这些资源需要登录厚着授权等
+
+### 跨域测试
+
+https://cors-test.codehappy.dev/
+
+
 ## 哪些资源是默认可以跨域的
 上面定义提到了"受限制", 也就是说不是所有的跨域资源需要CORS机制。在不做任何设置的的时候，默认图片, css, js 等请求都是可以跨域的。
 > 如果你的css有针对字体的请求，你会发现字体请求**默认**也是受到**同源机制**的限制；包括js 和css对应的map文件的请求都无法跨域访问。
