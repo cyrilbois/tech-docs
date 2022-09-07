@@ -135,6 +135,10 @@ xhr.send();
 - 确定服务端响应字段是否正确
 - 如果服务端响应字段正确，确定客户端是否正确发送了请求，需要的header是否都带上了，需要的cookie是否带上了
 
+## 测试跨域
+测试地址： http://static.icoding.tech/cors-tester.html
+
+如果是本地API，chrome的console会有错误类似 `...resource is in more-private address space local.`   可以采用禁用Chrome的 `Block insecure private network requests` 解决。
 ## 最佳实践
 介绍了这么多，是时候来点干货 了。。。
 
