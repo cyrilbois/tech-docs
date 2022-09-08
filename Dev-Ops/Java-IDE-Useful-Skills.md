@@ -34,6 +34,10 @@ while(headerNames.hasMoreElements()) {
 ```
 
 
+## IntelliJ IDEA  代码错误
+通过`Analyze -> Inspect Code` 来分析代码的错误， 这个在用JPA 的Query的时候非常用用， 方便代码重构。
+
+
 
 
 
