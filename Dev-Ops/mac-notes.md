@@ -84,6 +84,10 @@ brew update
 ```
 
 
+### Excel 乱码处理
+```
+iconv -f UTF8 -t GB18030 20220908.csv > 20220908-1.csv
+```
 
 ## 网络代理 抓包工具
 
