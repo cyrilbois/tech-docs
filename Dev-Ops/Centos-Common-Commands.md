@@ -338,3 +338,6 @@ sudo yum install -y https://repo.ius.io/ius-release-el7.rpm
 sudo yum update
 sudo yum install -y python36u python36u-libs python36u-devel python36u-pip
 ```
+
+### shasum 未找到命令
+使用 `yum install perl-Digest-SHA`进行安装
