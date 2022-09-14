@@ -1,5 +1,5 @@
 ---
-title:  Elastcisearch 6.2 Restful API 
+title:  Elastcisearch 脚本搜集
 description: Elastcisearch 常用的 Restful API
 ...
 
@@ -88,3 +88,34 @@ PUT /news/_mapping/_doc
 > elasticsearch 支持 [Dynamical Mapping](https://www.elastic.co/guide/en/elasticsearch/reference/current/dynamic-mapping.html), 大多数情况下，这都不是一个推荐方式。
 
 
+### runtime field
+
+```
+GET doc_index/_search
+{
+  "fields": [
+    "status"
+  ],
+  "runtime_mappings": {
+    "status": {
+      "type": "long",
+      "script": {
+        "lang": "painless",
+        "source":
+          """
+            if (params.now < doc['beginDate'].value){
+              emit(1);
+            }else if(params.now >= doc['beginDate'].value && params.now <= doc['endDate'].value){
+              emit(0);
+            }else {
+              emit(2);
+            }
+          """,
+        "params": {
+          "now":1663059913000
+        }
+      }
+    }
+  } 
+}
+```
