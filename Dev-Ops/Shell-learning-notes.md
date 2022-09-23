@@ -89,6 +89,28 @@ put -r $currentPath/dist /home/nantong/0_125_Umi/
 quit
 EOT
 ```
+
+### 简易发布Java Maven工程
+```
+#！ /bin/bash
+
+## 修改这一个变量即可，修改为代码clone的那个文件夹
+NAME=websocket-service
+
+# 找出进程ID 
+tokill=`ps -ef | grep java | grep ${NAME} | awk '{print $2}'`
+kill -9 $tokill
+
+## 拉取代码、构建、复制jar、运行
+cd ${NAME}
+git pull
+mvn clean package -Dmaven.test.skip=true
+cd ..
+mv ${NAME}/target/*.jar ./${NAME}.jar
+nohup java -Dspring.profiles.active=dev -jar ${NAME}.jar > ./app.log 2>&1 &
+```
+
+
 ## 参考网站
 https://www.shellscript.sh/
 https://www.shellscript.sh/quickref.html
