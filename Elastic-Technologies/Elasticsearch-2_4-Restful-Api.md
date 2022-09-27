@@ -28,6 +28,7 @@ curl -XDELETE "http://192.168.1.99:9200/test" // 删除索引
 }
 ```
 
+
 **以下开始使用Kibana的Sense 来简化curl的操作**
 ### 查看索引
 ```
