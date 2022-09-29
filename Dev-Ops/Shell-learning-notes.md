@@ -110,6 +110,35 @@ mv ${NAME}/target/*.jar ./${NAME}.jar
 nohup java -Dspring.profiles.active=dev -jar ${NAME}.jar > ./app.log 2>&1 &
 ```
 
+### 远程发布脚本
+
+##### 远程运行脚本
+`deploy.sh`
+
+```
+#！ /bin/bash
+
+## 修改这一个变量即可，修改为代码clone的那个文件夹
+NAME=websocket-service
+
+# 找出进程ID 
+tokill=`ps -ef | grep java | grep ${NAME} | awk '{print $2}'`
+kill -9 $tokill
+
+# 定位到当前脚本所在的目录
+cd "$(dirname "$0")"
+nohup java -Xms256m -Xmx512m  -jar ${NAME}.jar > ./app.log 2>&1 &
+```
+##### 本地脚本
+`remote-deploy.sh`
+```
+#！ /bin/bash
+
+## 修改这一个变量即可，修改为代码clone的那个文件夹
+NAME=websocket-service
+scp websocket-service.jar root@remoteserver:/opt/icviews/websocket/ 
+ssh root@remoteserver '/opt/icviews/websocket/deploy.sh'
+```
 
 ## 参考网站
 https://www.shellscript.sh/
