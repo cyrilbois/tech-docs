@@ -97,16 +97,17 @@ EOT
 ## 修改这一个变量即可，修改为代码clone的那个文件夹
 NAME=websocket-service
 
-# 找出进程ID 
-tokill=`ps -ef | grep java | grep ${NAME} | awk '{print $2}'`
-kill -9 $tokill
-
-## 拉取代码、构建、复制jar、运行
+## 拉取代码、构建、复制jar、杀掉进程、运行
 cd ${NAME}
 git pull
 mvn clean package -Dmaven.test.skip=true
 cd ..
 mv ${NAME}/target/*.jar ./${NAME}.jar
+
+# 找出进程ID 
+tokill=`ps -ef | grep java | grep ${NAME} | awk '{print $2}'`
+kill -9 $tokill
+
 nohup java -Dspring.profiles.active=dev -jar ${NAME}.jar > ./app.log 2>&1 &
 ```
 
