@@ -12,7 +12,7 @@ description: Kafka 快速安装运行调试及Spring Boot 集成
 
 ```
 wget https://archive.apache.org/dist/kafka/1.1.1/kafka_2.11-1.1.1.tgz
-tar -xzf kafka_2.13-3.3.1.tgz
+tar -xzf kafka_2.11-1.1.1.tgz
 ```
 
 ### 启动
