@@ -339,5 +339,12 @@ sudo yum update
 sudo yum install -y python36u python36u-libs python36u-devel python36u-pip
 ```
 
+### vim 语法高亮
+
+便捷 ~/.vimrc 添加：
+```
+syntax on
+```
+
 ### shasum 未找到命令
 使用 `yum install perl-Digest-SHA`进行安装
