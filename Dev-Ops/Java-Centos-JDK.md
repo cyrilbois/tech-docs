@@ -21,6 +21,12 @@ https://code.aliyun.com/kar/oracle-jdk/raw/3c932f02aa11e79dc39e4a68f5b0483ec1d32
 ```
 
 
+## 卸载OpenJDK
+```
+yum list java*
+sudo yum -y remove java*
+java -version
+```
 
 ## 安装JDK
 ```

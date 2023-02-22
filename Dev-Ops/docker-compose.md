@@ -184,6 +184,32 @@ docker run  --name mongod -p 27017:27017  \
 -d mongo:latest
 ```
 
+## 清理Docker所占用的空间
+
+### 查看Docker的磁盘使用情况：
+
+`docker system df` 该命令列出了 docker 使用磁盘的 4 种类型 
+```
+Images: 所有镜像占用的空间，包括拉取的镜像、本地构建的镜像
+
+Containers: 运行中的容器所占用的空间（没运行就不占空间），其实就是每个容器读写层的空间
+
+Local Volumes: 本地数据卷的空间
+
+Build Cache: 镜像构建过程中，产生的缓存数据
+```
+
+`docker system df -v` 命令可以进一步查看单个image镜像、container容器空间占用细节，以确定是哪个镜像、容器或本地卷占用过高空间
+
+
+  
+
+### 解决方案：
+`docker system prune` 命令可以用于清理磁盘，删除关闭的容器、无用的数据卷和网络，以及dangling镜像（即无tag的镜像）
+
+`docker system prune -a` 命令清理得更加彻底，可以将没有容器使用Docker镜像都删掉。注意，这两个命令会把你暂时关闭的容器，以及暂时没有用到的Docker镜像都删掉了……所以使用之前一定要想清楚
+
+
 ## Docker  坑集
 容器不认宿主机的/etc/hosts 除非host 网路模式。 （在用docker-compose的时候想要简单修改下 /etc/hosts 来保证所有的数据库访问OK；遇见此问题）
 ## docker-compose安装

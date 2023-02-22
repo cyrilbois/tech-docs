@@ -17,3 +17,8 @@ description: 汇总个人PPT
 **逍逍家的家规：**
  -  Keynote 文件： [jiu-shu-family-rules.key](http://tech.jiu-shu.com/Work-Related/jiu-shu-family-rules.key) 
  - PDF在线阅读： [jiu-shu-family-rules.pdf](http://tech.jiu-shu.com/Work-Related/jiu-shu-family-rules.pdf)     
+
+
+# 在线素材网站
+
+素材下载网站(微信账号已付费):  https://www.51miz.com/

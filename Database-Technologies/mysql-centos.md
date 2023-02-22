@@ -11,6 +11,7 @@ systemctl start  mysqld.service
 systemctl enable  mysqld.service
 ```
 获取随机生成的密码： `grep "password" /var/log/mysqld.log  `
+进一步运行其他的statement前必须要修改密码: `ALTER USER 'root'@'localhost' identified by 'Abc#123456';`
 
 连接mysql： `mysql -u root -p`
 

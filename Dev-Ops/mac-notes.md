@@ -6,6 +6,11 @@ title:  macOS  系统使用参考
 ## Java 环境
 这里找`/Library/Java/JavaVirtualMachines/` 参考：https://blog.csdn.net/a158123/article/details/79684499。  
 
+## 查看文件编码
+
+```
+ file -I <file>
+```
 ## 环境变量配置
 
 设置JAVA_HOME

@@ -1,5 +1,6 @@
 ---
 title:  股票日记
+showOnHome: false
 ...
 
 

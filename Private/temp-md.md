@@ -1,5 +1,5 @@
 ---
-title:  文档的title，页面及列表都会展示
+title:  模板
 description: 描述这个页面的信息
 showOnHome: false
 ...

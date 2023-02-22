@@ -1,5 +1,5 @@
 ---
-title:  阿里云 - ECS 笔记
+title:  共有云 - 杂记
 ...
 
 ##  挂载云盘
@@ -61,3 +61,6 @@ Disk identifier: 0x2522c6cb
 6. 再次挂载 `mount /dev/vdb1 /data`
 
 
+## 腾讯云 发邮件25端口问题
+此端口默认封的，解封需要单独在安全管控这里申请。
+https://cloud.tencent.com/document/product/213/40436

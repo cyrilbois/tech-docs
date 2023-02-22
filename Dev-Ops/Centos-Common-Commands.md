@@ -67,6 +67,7 @@ systemctl enable docker # 开机启动docker
 如果是通过systemd启动，可使用如下命令
 ```
 journalctl -u kubelet
+journalctl -xe
 ```
 ### 时间同步 Chrony
 
@@ -78,6 +79,8 @@ systemctl enable chronyd.service
 Chrony是一个开源自由的网络时间协议 NTP 的客户端和服务器软软件。它能让计算机保持系统时钟与时钟服务器（NTP）同步，因此让你的计算机保持精确的时间，Chrony也可以作为服务端软件为其他计算机提供时间同步服务。
 
 ### ssh 登录
+生成Key `ssh-keygen -t rsa`
+
 ssh-copy-id -i id_rsa.pub osboxes@192.168.1.186
 ###  延长SSH会话
 编辑`vim /etc/ssh/sshd_config`
@@ -189,6 +192,9 @@ vim --cmd 'set encoding=utf-8' <文件名>
 - rw- 文件属主的权限
 - r-x 文件属组的权限
 - r-- 其他用户的权限
+
+r=4，w=2，x=1 
+
 
 **文件夹有所不同**
 - x 进入目录

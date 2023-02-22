@@ -12,3 +12,9 @@ Flushdb  //清空当前的库
 ```
 
 
+### Redis 5 在Centos上安装
+
+https://blog.csdn.net/m0_67402096/article/details/123868068
+
+
+

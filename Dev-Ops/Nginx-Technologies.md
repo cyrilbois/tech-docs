@@ -64,6 +64,18 @@ location ~ ^/(wx|login|getUserInfo|logout|system|common) {
 	...
 }
 ```
+## 重定向
+
+将`http://*.icoding.tech` 全部重定向到 `https://*.icoding.tech`
+```
+server {
+    listen 80;
+
+    server_name *.icoding.tech;
+
+    return 301 https://$host$request_uri;
+}
+```
 ## 使用GoAccess来实时监控
 参考： https://goaccess.io/get-started
 ```
@@ -121,6 +133,52 @@ log_format logger-json-log escape=json '{'
 	'"upstream_addr":"$upstream_addr",' 
 	'"upstream_connect_time":"$upstream_connect_time"' 
 '}'; 
+```
+
+# 日志分析
+日志分析有很多专业的系统Datalog ELK等， 但是这里提供一个轻量级的，通过python脚本将日志转成csv。 
+脚本来自[accesslog2csv.py](https://gist.github.com/joswr1ght/c2e08f520933bb36c0b19aa0dcb6a173)。 保存脚本, 运行`python3 accesslog2csv.py ./access.log ./accesslog.csv` 即可。 （注意根据自己的日志格式调整正则表达式及csv的列字段）
+
+```python
+# accesslog2csv: Convert default, unified access log from Apache, Nginx
+# servers to CSV format.
+#
+# Original source by Maja Kraljic, July 18, 2017
+# Modified by Joshua Wright to parse all elements in the HTTP request as
+# different columns, December 16, 2019
+
+
+import csv
+import re
+import sys
+
+if len(sys.argv) == 1:
+    sys.stdout.write("Usage: %s <access.log> <accesslog.csv>\n"%sys.argv[0])
+    sys.exit(0)
+
+log_file_name = sys.argv[1]
+csv_file_name = sys.argv[2]
+
+# 这里对应的日志格式是nginx的默认的日志格式， 有关nginx的默认的日志格式，请参考：https://nginx.org/en/docs/http/ngx_http_log_module.html
+# 默认日志格式： '$remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent"';
+# 根据各自的格式，可以调整代码，下面这个匹配默认的日志格式
+# pattern = re.compile(r'(?P<host>\S+).(?P<rfc1413ident>\S+).(?P<user>\S+).\[(?P<datetime>\S+ \+[0-9]{4})]."(?P<httpverb>\S+) (?P<url>\S+) (?P<httpver>\S+)" (?P<status>[0-9]+) (?P<size>\S+) "(?P<referer>.*)" "(?P<useragent>.*)"\s*\Z')
+
+# 匹配日志格式：  '$remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent $upstream_response_time "$http_referer" "$http_user_agent"';
+pattern = re.compile(r'(?P<host>\S+).(?P<rfc1413ident>\S+).(?P<user>\S+).\[(?P<datetime>\S+ \+[0-9]{4})]."(?P<httpverb>\S+) (?P<url>\S+) (?P<httpver>\S+)" (?P<status>[0-9]+) (?P<size>\S+) (?P<spent>\S+) "(?P<referer>.*)" "(?P<useragent>.*)"\s*\Z')
+
+file = open(log_file_name)
+
+with open(csv_file_name, 'w') as out:
+    csv_out=csv.writer(out)
+    #csv_out.writerow(['host', 'ident', 'user', 'time', 'verb', 'url', 'httpver', 'status', 'size', 'referer', 'useragent'])
+    csv_out.writerow(['host', 'ident', 'user', 'time', 'verb', 'url', 'httpver', 'status', 'size', 'spent', 'referer', 'useragent'])
+
+    for line in file:
+        m = pattern.match(line)
+        result = m.groups()
+        csv_out.writerow(result)
+
 ```
 # 日志分割 - logrotate
 使用linux自带的logrotate来实现nginx 日志管理切割和压缩; 在创建文件/etc/logrotate.d/nginx，内容如下：
