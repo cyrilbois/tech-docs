@@ -16,3 +16,7 @@ hdfs:x:994:990:Hadoop HDFS:/var/lib/hadoop-hdfs:/sbin/nologin
 ...
 ```
 编辑/etc/passwd 改成 `hdfs:x:994:990:Hadoop HDFS:/var/lib/hadoop-hdfs:/bin/bash` 保存退出重新登录即可。
+
+### CDH 安装后的hadoop的jar的目录
+
+`/opt/cloudera/parcels/CDH/jars`
