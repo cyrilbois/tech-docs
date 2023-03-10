@@ -91,6 +91,7 @@ Network address translation (NAT) is a method of remapping an IP address space i
 百度百科：
 NAT（Network Address Translation，网络地址转换）是1994年提出的。当在专用网内部的一些主机本来已经分配到了本地IP地址（即仅在本专用网内使用的专用地址），但现在又想和因特网上的主机通信（并不需要加密）时，可使用NAT方法。
 
+SMTP (Simple Mail Transfer Protocol) 是一种提供可靠且有效的电子邮件传输的协议。SMTP是建立在FTP文件传输服务上的一种邮件服务，主要用于系统之间的邮件信息传递，并提供有关来信的通知。
 ## 编程相关
 命令式编程（Imperative）：详细的命令机器怎么（How）去处理一件事情以达到你想要的结果（What）；
 声明式编程（ Declarative）：只告诉你想要的结果（What），机器自己摸索过程（How）
