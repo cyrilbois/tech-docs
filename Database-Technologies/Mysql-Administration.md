@@ -24,6 +24,12 @@ GRANT ALL PRIVILEGES ON demo.* TO 'demo'@'%' IDENTIFIED BY 'demo#123'
 ```
 开启远程访问参考： https://www.digitalocean.com/community/tutorials/how-to-allow-remote-access-to-mysql
 
+查询用户
+
+```
+mysql>use mysql;
+mysql>select user from user;
+```
 
 # SQL 收集
 ## 找出有记录的表
