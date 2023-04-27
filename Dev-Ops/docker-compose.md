@@ -3,7 +3,7 @@ title:  docker
 ...
 ## Docker 安装
 运行命令： `curl -fsSL get.docker.com -o get-docker.sh && sudo sh get-docker.sh --mirror Aliyun`
-如果命令报错，可以手动访问https://get.docker.com/ 下载脚本， sftp上去进行安装。
+如果命令报错，可以手动访问https://get.docker.com/ 下载脚本， sftp上去进行安装。 具体安装可以参考： https://www.runoob.com/docker/centos-docker-install.html
 
 启动并设置开机启动
 ```
