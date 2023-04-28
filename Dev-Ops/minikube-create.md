@@ -9,6 +9,10 @@ title:  基于minikube快读搭建kubernetes集群
 安装步骤参考：https://www.runoob.com/docker/centos-docker-install.html
 本次采用 `curl -sSL https://get.daocloud.io/docker | sh`
 
+其他参考：
+* 官方文档 https://kubernetes.io/docs/tutorials/hello-minikube/
+* 实现集群外访问 https://blog.csdn.net/qq_45613785/article/details/129437313
+
 启动：
 ```
 systemctl start docker
@@ -88,3 +92,12 @@ xdg-open: no method available for opening 'http://127.0.0.1:39291/api/v1/namespa
 浏览器打开如下链接:
 
 http://10.3.70.227:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/daemonset?namespace=default
+
+
+### 尝试发布服务
+
+```
+kubectl expose deployment hello-node --port=8080 --target-port=8080 --type=NodePort
+# port-forward 端口转发且允许任意ip访问
+kubectl port-forward --address 0.0.0.0  service/hello-node 8080:8080
+```
