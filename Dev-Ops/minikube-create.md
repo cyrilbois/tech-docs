@@ -23,7 +23,7 @@ systemctl enable docker.service
 操作 minikube 需要一个具有 root 权限的非root用户
 ```
 adduser minikube
-passed minikukbe
+passwd minikukbe
 usermod -aG wheel minikube
 
 #添加到docker组
