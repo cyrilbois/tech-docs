@@ -1,6 +1,25 @@
 ---
 title:  docker
 ...
+
+## Docker官方安装方法
+参考链接： https://docs.docker.com/engine/install/centos/#set-up-the-repository
+
+优先选用官方安装方式， 安装前建议先创建sudo用户，采用sudo用户安装。
+
+```
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# 测试
+sudo docker run hello-world
+
+```
+
 ## Docker 安装
 运行命令： `curl -fsSL get.docker.com -o get-docker.sh && sudo sh get-docker.sh --mirror Aliyun`
 如果命令报错，可以手动访问https://get.docker.com/ 下载脚本， sftp上去进行安装。 具体安装可以参考： https://www.runoob.com/docker/centos-docker-install.html

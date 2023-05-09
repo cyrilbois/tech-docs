@@ -361,6 +361,39 @@ sudo yum update
 sudo yum install -y python36u python36u-libs python36u-devel python36u-pip
 ```
 
+从源代码安装
+```
+# 安装依赖包
+sudo yum install gcc openssl-devel bzip2-devel libffi-devel
+
+# 下载源代码 & 解压
+wget https://www.python.org/ftp/python/3.9.5/Python-3.9.5.tgz
+tar -xf Python-3.9.5.tgz
+
+# 生成make 文件 
+cd Python-3.9.5
+./configure prefix=/usr/local/python3 #这是指定安装python3目录
+
+# 编译安装
+make && make install
+# make install 之后提示ok 就没问题 要是报错就要找对应错误 先通过yum安装依赖包 然后重新编译安装  
+
+# 将原来的链接备份
+# mv /usr/bin/python /usr/bin/python.bak  #由于Centos 7.5 依赖python2， 如果修改此此软连接，会引发问题，需要保留
+ 
+# 添加python3的软链接  如果要保留python2的软连接 那就设设置 python3  使用时候就用 python3执行就好
+ln -s /usr/local/python3/bin/python3.9 /usr/bin/python3
+ 
+# 测试是否安装成功了
+python -V 
+python3 -V
+```
+Python 升级后，需要重新安装报管理pip，保持和python版本一致
+```
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+```
+
 ### vim 语法高亮
 
 便捷 ~/.vimrc 添加：
