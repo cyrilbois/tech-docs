@@ -79,7 +79,48 @@ sudo yum install docker-ce-19.03.9
 * 删除所有停止的容器： `docker rm $(docker ps -a -q  --filter status=exited)`
 * 拷贝文件宿主机拷贝至容器 `docker cp 文件路径 {dockerId}:目标路径`， 示例：`docker cp foo.txt mycontainer:/foo.txt`
 * 容器拷贝纸宿主机：`docker cp  {dockerId}:目标路径 文件路径`，示例`docker cp mycontainer:/foo.txt foo.txt`
-* 进入到启动容器中：`docker exex -it <容器ID>  /bin/bash`
+* 进入到启动容器中：`docker exec -it <容器ID>  /bin/bash`
+
+## 快速构建自己镜像
+需求： 修改maven镜像，使用阿里云的mirror下载包
+```
+# 1、 装有docker的虚机上创建一个目录， 比如： maven
+# 2、进入目录，添加Dockerfile 和 settings.xml; 内容下面会有
+# 3、 构建镜像
+docker build -t harbor.icoding.tech/public/maven:3-openjdk-8 .
+# 4、 推送镜像, 需要先登录
+docker login harbor.icoding.tech
+docker push harbor.icoding.tech/public/maven:3-openjdk-8
+```
+
+##### Dockerfile 如下
+```
+FROM maven:3-openjdk-8
+COPY settings.xml /usr/share/maven/conf/
+```
+
+##### settings.xml 如下
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
+  
+  <pluginGroups></pluginGroups>
+  <proxies></proxies>
+  <servers></servers>
+
+  <mirrors>
+    <mirror>
+        <id>alimaven</id>
+        <mirrorOf>central</mirrorOf>
+        <name>aliyun maven</name>
+        <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+    </mirror>
+  </mirrors>
+  <profiles></profiles>
+```
+
 
 ## dockerd 配置
 /etc/docker/daemon.json

@@ -1,21 +1,14 @@
 ---
-title: Maven父子工程的搭建
-description: 总结通过maven创建父子工程的方式。
----
-尝试dubbo+spring的同时，总结下通过maven创建父子工程的方法。（不考虑unit test）
-## 版本
-**Spring Boot：** 1.4.7.RELEASE
-**Maven：** 3.2.5
-## 工具
-eclipse
-## 参考
-https://github.com/dubbo/dubbo-spring-boot-project
+title: Maven 知识笔记
+...
 
-http://blog.csdn.net/yaerfeng/article/details/26448417
+## maven 基础知识
+```
+# 列出mvn 保存依赖包的位置
+mvn help:evaluate -Dexpression=settings.localRepository
 
-http://blog.csdn.net/isea533/article/details/73744497
+```
 
-https://www.baeldung.com/maven-multi-module
 ## maven 国内镜像
 如果不翻墙，下载maven的依赖相当慢，可以添加阿里云的镜像， 速度相当快。
 修改conf文件夹下的settings.xml文件，添加如下镜像配置：
@@ -38,7 +31,22 @@ https://www.baeldung.com/maven-multi-module
 
 
 
-## 步骤
+## 父子工程搭建
+尝试dubbo+spring的同时，总结下通过maven创建父子工程的方法。（不考虑unit test）
+
+### 版本
+**Spring Boot：** 1.4.7.RELEASE
+**Maven：** 3.2.5
+### 工具
+eclipse
+### 参考
+https://github.com/dubbo/dubbo-spring-boot-project
+
+http://blog.csdn.net/yaerfeng/article/details/26448417
+
+http://blog.csdn.net/isea533/article/details/73744497
+
+https://www.baeldung.com/maven-multi-module
 ### 创建父maven工程
 #### 创建普通的maven工程，参考如下截图
 ![maven-create-parent](http://tech.jiu-shu.com/Dev-Ops/maven-create-parent.png)
