@@ -76,6 +76,9 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 ## 验证安装
 kubectl version --client --output=yaml
+
+## 命令输入tab 提示
+source <(kubectl completion bash)
 ```
 
 ### 安装minikube dashboard

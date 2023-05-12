@@ -81,6 +81,14 @@ sudo yum install docker-ce-19.03.9
 * 容器拷贝纸宿主机：`docker cp  {dockerId}:目标路径 文件路径`，示例`docker cp mycontainer:/foo.txt foo.txt`
 * 进入到启动容器中：`docker exec -it <容器ID>  /bin/bash`
 
+## Docker 自动完成脚本
+
+```
+sudo curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker.sh
+
+source /etc/bash_completion.d/docker.sh
+
+```
 ## 快速构建自己镜像
 需求： 修改maven镜像，使用阿里云的mirror下载包
 ```
