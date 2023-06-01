@@ -309,6 +309,14 @@ sudo chmod +x /usr/local/bin/docker-compose
 一般来说设置`restart: always`即可。
 https://stackoverflow.com/questions/43671482/how-to-run-docker-compose-up-d-at-system-start-up
  
+ 新版：
+ ```
+ # 停止服务
+sudo docker compose down -v
+
+# 启动服务
+sudo docker compose up -d
+ ```
  
  
  ## 错误收集
