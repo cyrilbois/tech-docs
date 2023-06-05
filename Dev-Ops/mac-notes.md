@@ -35,6 +35,16 @@ export PATH=$JAVA_HOME/bin:$PATH
 ```
 使修改的文件生效：source /etc/profile 
 
+
+## 通过别名设置快捷命令
+
+For Bash, edit the ~/.bashrc or ~/.bash_profile file.
+
+```
+alias idea='open -a "IntelliJ IDEA"'
+```
+This line creates an alias named idea that opens IntelliJ IDEA using the open -a command.
+
 ## 查看端口占用
 ```
 lsof -nP -i4TCP:$PORT | grep LISTEN
