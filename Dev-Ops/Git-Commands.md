@@ -1,8 +1,16 @@
 ---
-title: Git 常用命令
+title: Git 知识汇集
 description: Git 常用的命令，使用命令，让效率更高
 ...
 
+
+# 升级安装Centos 7的git版本
+```
+sudo yum -y remove git
+sudo yum -y remove git-*
+sudo yum -y install https://packages.endpointdev.com/rhel/7/os/x86_64/endpoint-repo.x86_64.rpm
+sudo yum install git
+```
 ## 帮助命令
 
 ```
