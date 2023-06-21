@@ -12,6 +12,8 @@ sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
 sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+# 依赖包不够新可以参考： https://stackoverflow.com/questions/65878769/cannot-install-docker-in-a-rhel-server
+
 sudo systemctl start docker
 sudo systemctl enable docker
 
