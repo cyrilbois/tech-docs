@@ -320,6 +320,14 @@ sudo docker compose down -v
 sudo docker compose up -d
  ```
  
+ ## Dockerfile 示例 
+ 
+ #### 基础镜像安装 ssh和ssl客户端
+ ```Dockerfile
+FROM alpine:3.14
+RUN apk add --no-cache openssh
+RUN apk add openssl
+ ```
  
  ## 错误收集
  
