@@ -317,8 +317,10 @@ https://stackoverflow.com/questions/43671482/how-to-run-docker-compose-up-d-at-s
 sudo docker compose down -v
 
 # 启动服务
-sudo docker compose up -d
+sudo docker compose up -d --force-recreate
  ```
+ 
+ 
  
  ## Dockerfile 示例 
  
