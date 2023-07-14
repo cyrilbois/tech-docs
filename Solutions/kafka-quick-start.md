@@ -71,3 +71,7 @@ bin/kafka-console-consumer.sh --zookeeper 127.0.0.1:2181 --topic test --from-beg
 {"id": "1001","msg":"Hello"}
 文本消息
 ```
+
+
+### 容器部署
+参考： https://docs.confluent.io/platform/current/installation/versions-interoperability.html
