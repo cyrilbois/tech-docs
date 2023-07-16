@@ -1,6 +1,5 @@
 ---
 title:  在Centos 7.5 上安装 Harbor
-showOnHome: false
 ...
 
 Harbor 是一个开源的企业级注册服务器，用于存储和分发 Docker 镜像。Harbor 通过添加企业通常需要的功能（例如安全性、身份和管理）来扩展开源 Docker Distribution。作为企业私有注册中心，Harbor 提供了更好的性能和安全性。让注册表更接近构建和运行环境可以提高镜像传输效率。Harbor 支持设置多个注册中心，并在它们之间复制镜像。此外，Harbor 还提供高级安全功能，例如用户管理、访问控制和活动审计。
@@ -58,3 +57,6 @@ sudo docker compose down -v
 # 启动服务
 sudo docker compose up -d
 ```
+
+#### 存储文件夹
+未做任何定制化修改的时候，所有文件存储 /data目录。 如果是挂载磁盘， 需要提前挂载此目录。
