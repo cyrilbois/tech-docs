@@ -22,7 +22,7 @@ MAKA http://maka.im
 WORD -> PDF   https://www.freepdfconvert.com/word-to-pdf   (翻墙)
 
 ## 研发
-
+- 免费下载实时更新的geoJson数据、行政区划边界数据、区划边界坐标集 https://geojson.hxkj.vip/
 - 数据权限 https://cloud.tencent.com/developer/article/1602036
 - 免费Restful API  测试服务： http://httpbin.org   http://mockbin.org
 
