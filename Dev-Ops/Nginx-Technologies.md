@@ -27,6 +27,7 @@ server {
         location / {
             proxy_redirect off;
             proxy_set_header Host $host;
+						# proxy_set_header   Host             $host:$server_port;  # 非80和443端口的时候，最好加上端口号
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_pass http://backend;
