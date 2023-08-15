@@ -7,6 +7,7 @@ title:  Centos 7 上安装 Mysql 5.7
 wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
 yum -y install mysql57-community-release-el7-10.noarch.rpm
 yum -y install mysql-community-server
+# 上面这步可能会出现错误：mysql-community-common-5.7.43-1.el7.x86_64.rpm 的公钥尚未安装， 解决办法： `rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022` 参考： https://blog.csdn.net/qq_53810226/article/details/124836467
 systemctl start  mysqld.service
 systemctl enable  mysqld.service
 ```
