@@ -106,6 +106,14 @@ $ sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
 $ sudo firewall-cmd --reload
 ```
 
+### 关闭防火墙
+
+```
+systemctl status firewalld.service
+systemctl stop firewalld.service
+systemctl disable firewalld.service
+```
+
 ### netstat 使用
 #### 查看某个服务是否在运行
 
