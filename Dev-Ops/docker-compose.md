@@ -249,6 +249,8 @@ symbolic-links=0
 ```
 
 **启动**
+
+主机访问端口： 3307
 ```
 docker run -p 3307:3306 --name mysql3307 \
 -v $PWD/conf/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf \
@@ -302,7 +304,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 > 可能出现网速太慢的情况，手动下载, 然后sftp传上去`put docker-compose-Linux-x86_64 /usr/local/bin/docker-compose`。 
-> 
+ 
  
 删除`sudo rm /usr/local/bin/docker-compose`
 
@@ -320,8 +322,7 @@ sudo docker compose down -v
 sudo docker compose up -d --force-recreate
  ```
  
- 
- 
+  
  ## Dockerfile 示例 
  
  #### 基础镜像安装 ssh和ssl客户端
