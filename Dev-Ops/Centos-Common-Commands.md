@@ -104,6 +104,9 @@ HOSTNAME=SINO-DEV
 ```
 $ sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
 $ sudo firewall-cmd --reload
+
+# 查看哪些端口开了
+firewall-cmd --list-ports
 ```
 
 ### 关闭防火墙
