@@ -40,6 +40,8 @@ SELECT  * FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'test' and table_
 ## 查询表的所有列的信息
 ```
 SHOW FULL COLUMNS  FROM `order`;
+
+SELECT column_name, column_comment FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'dwd_project';
 ```
 ## 查询索引信息
 ```
