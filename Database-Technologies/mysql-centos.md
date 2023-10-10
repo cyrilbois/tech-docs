@@ -17,11 +17,11 @@ systemctl enable  mysqld.service
 连接mysql： `mysql -u root -p`
 
 修改用户密码及访问限制
-```
+```SQL
 use mysql;
 ALTER USER 'root'@'localhost' identified by 'Abc#123456';
 ALTER USER 'root'@'localhost' PASSWORD EXPIRE NEVER;
-UPDATE USER SET HOST = '%' WHERE USER = 'root';
+-- UPDATE USER SET HOST = '%' WHERE USER = 'root'; // 这个不生效
 update user set host = '%' where user = 'root';
 FLUSH   PRIVILEGES;
 ```

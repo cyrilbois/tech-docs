@@ -58,7 +58,7 @@ export PATH=${JAVA_HOME}/bin:$PATH
 #### 创建安装目录
 mkdir /usr/local/maven/
 #### 解压至安装目录
-tar -zxvf apache-maven-3.8.4-bin.tar.gz -C /usr/local/maven/
+tar -zxvf apache-maven-3.9.5-bin.tar.gz -C /usr/local/maven/
 ```
 ​
 ### 设置环境变量
@@ -66,7 +66,7 @@ tar -zxvf apache-maven-3.8.4-bin.tar.gz -C /usr/local/maven/
 vim /etc/profile
 在末尾添加
 ```
-export MVN_HOME=/usr/local/maven/apache-maven-3.8.4
+export MVN_HOME=/usr/local/maven/apache-maven-3.9.5
 export PATH=$PATH:$MVN_HOME/bin
 ```
 
