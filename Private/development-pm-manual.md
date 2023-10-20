@@ -39,3 +39,8 @@ showOnHome: false
 
 #### nacos 使用规范
 https://blog.csdn.net/czpandy/article/details/120514268
+
+#### 增量式发布需要考虑的问题
+
+##### 关于非业务数据同步的问题
+比如菜单，新增了菜单如何同步到客户内网或者生产环境。 如果是通过ID关联， ID 可能会不一致， 最好通过唯一的code来关联。

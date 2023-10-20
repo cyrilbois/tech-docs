@@ -297,6 +297,9 @@ get -r  folder  /home/joe/
 put  /name1.html  /name2/
 ```
 
+### Vsftpd
+https://blog.51cto.com/u_11409186/5636987 
+
 ### scp 命令
 ```
 scp PLC.png root@10.3.69.65:/www/media/images/   ##复制当前目录下的PLC.png 到目标机器的/www/media/images/ 
