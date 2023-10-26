@@ -98,6 +98,9 @@ git -C "$(brew --repo homebrew/cask)" remote set-url origin https://github.com/H
 brew update
 ```
 
+### 加密压缩
+
+zip -er xxx.zip  xxx/
 
 ### Excel 乱码处理
 ```
