@@ -12,7 +12,7 @@ Mysql 常用命令： https://www.runoob.com/mysql/mysql-administration.html
 # 建库及用户
 创建数据库dbname及用户dbuser/dbpassword 并授权数据全部权限给用户dbuser
 ```sql
-CREATE DATABASE  IF NOT EXISTS `dbname` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */
+CREATE DATABASE  IF NOT EXISTS `dbname` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */
 grant all privileges on dbname.* to  `dbuser `@ `localhost ` identified by 'dbpassword';
 ```
 

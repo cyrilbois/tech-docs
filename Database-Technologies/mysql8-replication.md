@@ -40,6 +40,8 @@ sudo mysql_secure_installation
 mysqladmin -u root -p version
 ```
 
+> 修改root用户密码： `ALTER USER 'root'@'localhost' IDENTIFIED BY 'Abc#123456';`。 
+
 ### 建库 用户 授权
 
 ```
