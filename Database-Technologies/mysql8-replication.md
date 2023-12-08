@@ -1,5 +1,5 @@
 ---
-title:  基于Centos 7.5 搭建 Mysql 8 的复制
+title:  基于Centos 7.5 搭建 Mysql 8 的复制  及 Mysql 8 相关收集
 ...
 
 这可以在其中一个数据库服务器发生故障时提供冗余，并且可以提高数据库的可用性、可伸缩性和整体性能。 跨多个独立数据库同步数据的做法称为复制。 
@@ -182,7 +182,19 @@ SOURCE_LOG_POS=2290;
 
 
 
+## 附录
+#### 修改密码策略
 
+修改 `/etc/my.cnf` 添加如下， 重启mysqld 服务之后，可以用密码 `123456`
+```
+validate_password.policy=LOW
+validate_password.length=6
+```
+
+####  修改密码命令
+```
+ alter user 'lichaoan'@'%' IDENTIFIED BY '123456';
+```
 
 
 

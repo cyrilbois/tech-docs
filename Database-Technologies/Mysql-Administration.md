@@ -13,15 +13,13 @@ Mysql 常用命令： https://www.runoob.com/mysql/mysql-administration.html
 创建数据库dbname及用户dbuser/dbpassword 并授权数据全部权限给用户dbuser
 ```sql
 CREATE DATABASE  IF NOT EXISTS `dbname` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */
-grant all privileges on dbname.* to  `dbuser `@ `localhost ` identified by 'dbpassword';
+
+create user 'fangyhc'@'%' IDENTIFIED BY '123456';
+GRANT ALL PRIVILEGES ON data_fangyhc.* TO 'fangyhc'@'%';
+FLUSH PRIVILEGES;
 ```
 
-示例： 创建demo数据库及用户demo/demo#123 bing
-```
-CREATE DATABASE  IF NOT EXISTS `demo` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */
-GRANT ALL PRIVILEGES ON demo.* TO 'demo'@'%' IDENTIFIED BY 'demo#123' 
-
-```
+ 
 开启远程访问参考： https://www.digitalocean.com/community/tutorials/how-to-allow-remote-access-to-mysql
 
 查询用户
