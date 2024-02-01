@@ -21,6 +21,8 @@ MAKA http://maka.im
 
 WORD -> PDF   https://www.freepdfconvert.com/word-to-pdf   (翻墙)
 
+开源组件: E-iceblue; https://www.e-iceblue.com/Introduce/free-pdf-for-java.html
+
 ## 研发
 - 免费下载实时更新的geoJson数据、行政区划边界数据、区划边界坐标集 https://geojson.hxkj.vip/
 - 数据权限 https://cloud.tencent.com/developer/article/1602036
