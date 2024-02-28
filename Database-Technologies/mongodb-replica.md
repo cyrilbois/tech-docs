@@ -41,7 +41,7 @@ processManagement:
 启动：`sudo /opt/mongodb/bin/mongod -f /data/mongodb/mongod.conf`
 ## 复制集架构图
 
-![mongo-rs-arbiter.png](http://tech.jiu-shu.com/Database-Technologies/mongo-rs-arbiter.png)
+![mongo-rs-arbiter.png](http://tech.icoding.tech/Database-Technologies/mongo-rs-arbiter.png)
 ## 安装mongo
 下载 解压 设置环境变量 启动
 ```

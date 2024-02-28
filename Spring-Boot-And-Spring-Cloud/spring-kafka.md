@@ -88,6 +88,6 @@ public class KafkaMessageSender {
 
 
 
-![kafka-sequence.png](http://tech.jiu-shu.com/Spring-Boot-And-Spring-Cloud/kafka-sequence.png)
+![kafka-sequence.png](http://tech.icoding.tech/Spring-Boot-And-Spring-Cloud/kafka-sequence.png)
 
 

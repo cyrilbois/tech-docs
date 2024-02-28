@@ -78,7 +78,7 @@ System.setProperty('org.apache.commons.jelly.tags.fmt.timeZone', 'Asia/Shanghai'
 
 1. 工程编写好Jenkinsfile
 2. 进入jenkins创建一个新的任务，选择”流水线“类型; 流水线脚本从SCM中获取
-![jenkins-pipeline-define.png](http://tech.jiu-shu.com/Dev-Ops/jenkins-pipeline-define.png)
+![jenkins-pipeline-define.png](http://tech.icoding.tech/Dev-Ops/jenkins-pipeline-define.png)
 
 
 ## 问题收集

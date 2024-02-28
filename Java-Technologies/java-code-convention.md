@@ -313,7 +313,7 @@ public interface Constants {
 
 ### 4.3 驼峰：定义
 
-![CamelCase.png](http://tech.jiu-shu.com/Java-Technologies/CamelCase.png)
+![CamelCase.png](http://tech.icoding.tech/Java-Technologies/CamelCase.png)
 
 ### 4.3 上下文考虑
 

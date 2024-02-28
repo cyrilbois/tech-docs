@@ -2,15 +2,15 @@
 title:  Kong API Gateway 插件开发 - 推送请求日志至Elasticsearch
 ...
 
-前面有有一篇 [Kong Apigateway 快速开始 Docker+DB版](http://tech.jiu-shu.com/Micro-Services/kong-guickstart) 采用了docker 的方式快速探索了Kong Apigateway的DB的模式。在有一定了解，并对kong的plugin做了尝试之后，这里继续探索插件的开发。
+前面有有一篇 [Kong Apigateway 快速开始 Docker+DB版](http://tech.icoding.tech/Micro-Services/kong-guickstart) 采用了docker 的方式快速探索了Kong Apigateway的DB的模式。在有一定了解，并对kong的plugin做了尝试之后，这里继续探索插件的开发。
 ## 背景
 需求需要记录API请求的信息，包括请求Body和响应的Body，并推送至elasticsearch， 使用kibana来查询。 （旧的说法是ELK）
 ## Kong的架构
 Kong被部署在NGINX和Apache Cassandra或PostgreSQL等可靠技术之上，并为您提供了易于使用的RESTful API来操作和配置系统。
-![kong-architecture.png](http://tech.jiu-shu.com/Elastic-Technologies/kong-architecture.png)
+![kong-architecture.png](http://tech.icoding.tech/Elastic-Technologies/kong-architecture.png)
 
 ## Kong Apigateway Overview
-![Kong-GS-overview.png](http://tech.jiu-shu.com/Elastic-Technologies/Kong-GS-overview.png)
+![Kong-GS-overview.png](http://tech.icoding.tech/Elastic-Technologies/Kong-GS-overview.png)
 ## 安装
 非Docker的方式安装
 

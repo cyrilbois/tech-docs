@@ -49,11 +49,11 @@ http://blog.csdn.net/isea533/article/details/73744497
 https://www.baeldung.com/maven-multi-module
 ### 创建父maven工程
 #### 创建普通的maven工程，参考如下截图
-![maven-create-parent](http://tech.jiu-shu.com/Dev-Ops/maven-create-parent.png)
+![maven-create-parent](http://tech.icoding.tech/Dev-Ops/maven-create-parent.png)
 #### 填写参数
-![maven-create-parent-1](http://tech.jiu-shu.com/Dev-Ops/maven-create-parent-1.png)
+![maven-create-parent-1](http://tech.icoding.tech/Dev-Ops/maven-create-parent-1.png)
 #### 删除无用文件夹
-![maven-create-parent-2](http://tech.jiu-shu.com/Dev-Ops/maven-create-parent-2.png)
+![maven-create-parent-2](http://tech.icoding.tech/Dev-Ops/maven-create-parent-2.png)
 #### 修改pom.xml
 
  1. packaging 从jar改成pom `<packaging>pom</packaging>`
@@ -114,7 +114,7 @@ https://www.baeldung.com/maven-multi-module
 	<version>0.0.1-SNAPSHOT</version>
 </parent>
 ```
-![Spring Initiator](http://tech.jiu-shu.com/Dev-Ops/spring-io-initiator.png)
+![Spring Initiator](http://tech.icoding.tech/Dev-Ops/spring-io-initiator.png)
 
 在父工程中添加module：
 

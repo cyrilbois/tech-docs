@@ -6,12 +6,12 @@ description: 理解Spring 线程次中三个重要的参数 corePoolSize, maxPoo
 
 Spring 默认的任务执行器是ThreadPoolTaskExecutor， 其类关系参考下图
 
-![ThreadPoolTaskExecutor.png](http://tech.jiu-shu.com/Spring-Boot-And-Spring-Cloud/ThreadPoolTaskExecutor.png)
+![ThreadPoolTaskExecutor.png](http://tech.icoding.tech/Spring-Boot-And-Spring-Cloud/ThreadPoolTaskExecutor.png)
 
 
 这种模式引入队列缓冲来保证线程数量的可控。 
 
-![ThreadPoolTaskExecutor-queue.png](http://tech.jiu-shu.com/Spring-Boot-And-Spring-Cloud/ThreadPoolTaskExecutor-queue.png)
+![ThreadPoolTaskExecutor-queue.png](http://tech.icoding.tech/Spring-Boot-And-Spring-Cloud/ThreadPoolTaskExecutor-queue.png)
 
 ### 理解三个重要的参数 corePoolSize, maxPoolSize和queueCapacity
 

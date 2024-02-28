@@ -7,7 +7,7 @@ description: 通过多个Nodejs Web App一步步来深入了解CORS每个细节�
 
 测试CORS代码库：  [https://github.com/choelea/cors-tester](https://github.com/choelea/cors-tester)
 
-![cors](http://tech.jiu-shu.com/Web-Applications-Technologies/cors-font-request.png)
+![cors](http://tech.icoding.tech/Web-Applications-Technologies/cors-font-request.png)
 ## 什么是CORS
 解释这个概念之前先要认识下什么是 域(Origin)。
 ### 什么是Origin 
@@ -16,7 +16,7 @@ description: 通过多个Nodejs Web App一步步来深入了解CORS每个细节�
 >这个是一个标准，但不是所有浏览器的所有版本都严格执行了，特别是关于端口这点。
 
 通过下面的表可以更直观的认识到什么才是'**同一个域(同源)**'。(图标截自维基百科)
-![Same Origin Metric](http://tech.jiu-shu.com/Web-Applications-Technologies/same-origin-table.png)
+![Same Origin Metric](http://tech.icoding.tech/Web-Applications-Technologies/same-origin-table.png)
 
 ### CORS 定义
 Cross-origin resource sharing (CORS)； 跨域资源共享（CORS）是一种机制，这种机制在允许在网页中请求另一个域**受限制**的资源。
@@ -34,7 +34,7 @@ https://cors-test.codehappy.dev/
 > 如果你的css有针对字体的请求，你会发现字体请求**默认**也是受到**同源机制**的限制；包括js 和css对应的map文件的请求都无法跨域访问。
 
 #### AJAX请求可以吗
-浏览器打开`http://corsdisableapi.jiu-shu.com/users`可以获取到json结果如下：
+浏览器打开`http://corsdisableapi.icoding.tech/users`可以获取到json结果如下：
 ```
 [
     {
@@ -45,16 +45,16 @@ https://cors-test.codehappy.dev/
     }
 ]
 ```
-但是我们打开页面`http://corsweb.jiu-shu.com/public-resources.html` (或者任何其他域),在console里面做出如下请求：
+但是我们打开页面`http://corsweb.icoding.tech/public-resources.html` (或者任何其他域),在console里面做出如下请求：
 ```
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'http://corsdisableapi.jiu-shu.com/users'); 
+xhr.open('GET', 'http://corsdisableapi.icoding.tech/users'); 
 xhr.send();
 ```
 你会发现console报出了如下的错误; 很明显请求是收到**同源机制**的限制。
-![cors policy error](http://tech.jiu-shu.com/Web-Applications-Technologies/cors-policy-error.png)
+![cors policy error](http://tech.icoding.tech/Web-Applications-Technologies/cors-policy-error.png)
 
-打开页面http://corsweb.jiu-shu.com/public-resources.html 通过源代码和开发者工具理解这一节知识。
+打开页面http://corsweb.icoding.tech/public-resources.html 通过源代码和开发者工具理解这一节知识。
 ## 开启CORS
 很明显很多时候我们必须有个策略来**突破/放宽**同源政策的限制； 比如Web页面www.example.com 需要请求api.example.com的资源；比如：PC站www.example.com 和M站m.example.com 需要共同获取/修改api.example.com的资源。
 > CORS 只是**突破/放宽同源政策**中的一个种, 其他具体可以参考： https://en.wikipedia.org/wiki/Same-origin_policy
@@ -68,10 +68,10 @@ CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持�
 
 ### 服务端开启CORS
 这里示例代码均采用nodejs express 的web应用，使用[cors](https://www.npmjs.com/package/cors)组件即可轻松实现服务端开启CORS。
-将之前的corsdisableapi.jiu-shu.com服务复制一份增加CORS的支持，以corsenable.jiu-shu.com这个域来提供；然后访问页面http://corsweb.jiu-shu.com/request-cors-resources.html 对比前面一个页面 http://corsweb.jiu-shu.com/public-resources.html 可以发现之前浏览器console抛出的cors相关的错误全部消失了。
+将之前的corsdisableapi.icoding.tech服务复制一份增加CORS的支持，以corsenable.icoding.tech这个域来提供；然后访问页面http://corsweb.icoding.tech/request-cors-resources.html 对比前面一个页面 http://corsweb.icoding.tech/public-resources.html 可以发现之前浏览器console抛出的cors相关的错误全部消失了。
 
 ## 浏览器的两种CORS请求
-大部分有些了解CORS都听过OPTION请求; 也叫"预检"请求（preflight）。但是前面的页面http://corsweb.jiu-shu.com/request-cors-resources.html 中的跨域的请求，通过开发者工具查看，在network这个标签中无法找到OPTION的请求。这是因为CORS有两种请求：简单请求和非简单请求；简单请求是不需要**预检**请求的。 但是无论是什么CORS请求，浏览器都会自动加上Origin这个header。
+大部分有些了解CORS都听过OPTION请求; 也叫"预检"请求（preflight）。但是前面的页面http://corsweb.icoding.tech/request-cors-resources.html 中的跨域的请求，通过开发者工具查看，在network这个标签中无法找到OPTION的请求。这是因为CORS有两种请求：简单请求和非简单请求；简单请求是不需要**预检**请求的。 但是无论是什么CORS请求，浏览器都会自动加上Origin这个header。
 ### 简单请求
 一般来说满足下面的有可能是简单请求。
 - 请求方法是 HEAD/GET/POST
@@ -82,10 +82,10 @@ CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持�
 ### 非简单请求
 非简单请求就需要"预检"请求(preflight); 浏览器根据preflight的结果来决定下一个正式请求**是否可以发**以及**怎么发**。
 
-访问页面http://corsweb.jiu-shu.com/request-cors-resources.html 打开console输入下面请求，观察网络请求，可以发现两个请求。
+访问页面http://corsweb.icoding.tech/request-cors-resources.html 打开console输入下面请求，观察网络请求，可以发现两个请求。
 ```
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'http://corsenableapi.jiu-shu.com/users'); 
+xhr.open('GET', 'http://corsenableapi.icoding.tech/users'); 
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.send();
 ```
@@ -116,11 +116,11 @@ xhr.send();
 
 > 当开启Credentials的时候，为了安全考虑，浏览器要求Access-Control-Allow-Origin 必须制定值不能用`*`，否则会得到如下的错误
 
-![credentials restrict specific origin](http://tech.jiu-shu.com/Web-Applications-Technologies/credentials-restrict-specific-origin.png)
+![credentials restrict specific origin](http://tech.icoding.tech/Web-Applications-Technologies/credentials-restrict-specific-origin.png)
 
 ```
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'http://corssession.jiu-shu.com/viewhistories'); 
+xhr.open('GET', 'http://corssession.icoding.tech/viewhistories'); 
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.withCredentials = true;
 xhr.send();
@@ -152,7 +152,7 @@ xhr.send();
 const cors = require('cors');
 ...
 const corsOptioin = {
-  "origin": /\.jiu-shu\.com$/, // jiu-shu.com 的所有子域名
+  "origin": /\.jiu-shu\.com$/, // icoding.tech 的所有子域名
   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
   "optionsSuccessStatus": 204,
 	"allowedHeaders":"X-Csrf-Token, X-Requested-With", // 给出你允许的所有的Header
@@ -203,7 +203,7 @@ public class CorsFilter extends OncePerRequestFilter {
     			}
     		} else {
     			// Throw 403 status OR send default allow
-    			response.addHeader("Access-Control-Allow-Origin", "https://www.jiu-shu.com");
+    			response.addHeader("Access-Control-Allow-Origin", "https://www.icoding.tech");
     		}    		
     	} 
     	filterChain.doFilter(request, response);	

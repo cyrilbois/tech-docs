@@ -22,7 +22,7 @@ upstream backend {
 }
 server {
         listen 80;
-        server_name auth.jiu-shu.com;
+        server_name auth.icoding.tech;
 
         location / {
             proxy_redirect off;

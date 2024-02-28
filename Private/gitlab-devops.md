@@ -21,7 +21,7 @@ This is a mindset, a culture, and a set of technical practices. It provides comm
 
 DevOps的3个支柱之中，即人（People）、流程（Process）和平台（Platform）
 
-![devops-3factors.png](http://tech.jiu-shu.com/Private/devops-3factors.png)
+![devops-3factors.png](http://tech.icoding.tech/Private/devops-3factors.png)
 
 人+流程 =  文化     （研发运维责任互担）
 

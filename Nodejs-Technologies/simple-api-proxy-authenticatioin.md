@@ -9,7 +9,7 @@ title:  简易鉴权Api网关
 - 可配置化
 
 Repository: https://github.com/choelea/tokenbased-api-gateway
-![token-based-api-proxy.jpg](http://tech.jiu-shu.com/Nodejs-Technologies/token-based-api-proxy.jpg)
+![token-based-api-proxy.jpg](http://tech.icoding.tech/Nodejs-Technologies/token-based-api-proxy.jpg)
 
 
 # Docker部署快速开始

@@ -74,7 +74,7 @@ public class DomainRegexTester {
 	   assertTrue(matchMain("m.ru.okchem.com"));	  
 	   
 	   assertTrue(matchMain("m.www.okchem.com"));
-	   assertFalse(matchMain("m.www.jiu-shu.com"));
+	   assertFalse(matchMain("m.www.icoding.tech"));
 	}
 	
 	public void testVipDomainmatch() {
@@ -211,7 +211,7 @@ public class DomainRegexTester {
 	   assertFalse(match("abcdefghij123456789012345679801.m.pt.okchem.com"));// vipcode is too short
 	   
 	   assertTrue(match("m.www.okchem.com"));
-	   assertFalse(match("m.www.jiu-shu.com"));
+	   assertFalse(match("m.www.icoding.tech"));
 	}
 	
 	public static boolean match(String text) {

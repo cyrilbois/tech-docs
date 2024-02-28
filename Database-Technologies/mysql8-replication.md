@@ -152,7 +152,7 @@ FLUSH TABLES WITH READ LOCK;
 
 查看当前binlog文件和文件 `SHOW MASTER STATUS`:
 
-![master-status.png](http://tech.jiu-shu.com/Database-Technologies/master-status.png)
+![master-status.png](http://tech.icoding.tech/Database-Technologies/master-status.png)
 
 > 记录File 和 Position 备用
 

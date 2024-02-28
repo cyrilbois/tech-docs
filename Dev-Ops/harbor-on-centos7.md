@@ -11,7 +11,7 @@ Harbor 是一个开源的企业级注册服务器，用于存储和分发 Docker
 
 ### 安装 Docker 和 Docker-Compose
 Harbor 部署为多个 Docker 容器。因此，它可以部署在任何支持 Docker 的 Linux 发行版上。目标主机需要安装 Docker 和 Docker Compose。
-参考 ： http://tech.jiu-shu.com/Dev-Ops/docker-compose
+参考 ： http://tech.icoding.tech/Dev-Ops/docker-compose
 
 
 ### 安装 Harbor

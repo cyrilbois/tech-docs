@@ -17,4 +17,4 @@ showOnHome: false
 
 ## Spring MVC  框架
 
-![spring-mvc-architecture.png](http://tech.jiu-shu.com/Spring-Boot-And-Spring-Cloud/spring-mvc-architecture.png)
+![spring-mvc-architecture.png](http://tech.icoding.tech/Spring-Boot-And-Spring-Cloud/spring-mvc-architecture.png)
