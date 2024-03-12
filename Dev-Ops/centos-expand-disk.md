@@ -47,4 +47,4 @@ Command (m for help): w
 - 需要获取逻辑卷的名称：`lvdisplay` 查找以 XXXXXXX/root 结尾的卷的名称（在下面的示例中为 /dev/centos/root）
 - 扩展逻辑卷： `lvextend -l +100%FREE /dev/XXXXXXX/root`;   这里实际是 `lvextend -l +100%FREE /dev/centos/root`
 - 命令不支持的话，采用`xfs_growfs /dev/XXXXXXX/root`
-- 运行命令查看 `df -h`
+- 运行命令查看 `df -h`;  如果没有加上，尝试使用`resize2fs /dev/mapper/centos-root`
