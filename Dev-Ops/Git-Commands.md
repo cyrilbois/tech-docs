@@ -65,7 +65,7 @@ git clone 'url'
 ### 问题调试
 
 ```
-GIT_SSL_NO_VERIFY=true git clone --recursive git@newgitlab.digitalchina.com:apple-city-data/city-data-backend.git
+GIT_SSL_NO_VERIFY=true git clone --recursive git@gitlab.XXXX.com:apple-city-data/city-data-backend.git
 ```
 
 ### 查看本地分支
